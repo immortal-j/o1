@@ -1,3 +1,5 @@
-.illus1{
-    right:-10px;
+.app{
+    background-image: url("./illus1.svg");
+    background-repeat: no-repeat;
+    background-position-x: -245px;
 }
