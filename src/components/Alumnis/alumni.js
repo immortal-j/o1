@@ -42,6 +42,7 @@ function Alumni()
     const classes=useStyles();
     return(
     <div>
+    <section id="Alumni">
     <Box m={10}>
     <Grid container justifyContent='center' spacing={3}>
         <Grid item container xs={12} sm={12} justifyContent='center'>
@@ -62,6 +63,7 @@ function Alumni()
     </Grid>
 
       </Box>
+      </section>
     </div>
     );
 }
