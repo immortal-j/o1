@@ -15,12 +15,29 @@ const useStyles = makeStyles((theme) => ({
   }));
 function Alumni()
 {
+    const [status,setstatus]=useState(false);
+    const [status2,setstatus2]=useState(false);
     const [arr,setarr]=useState([]);
+    if(status===false)
+    {
+        setstatus(true);
+        setarr(Arr);
+    }
     function handleClick(){
        
-        arr=arr+Arr2;
-        console.log(arr);
-        
+        if(!status2)
+        {
+        setstatus2(true);
+        setarr((prev)=>{
+            return [...prev,...Arr2];
+        })
+        }
+        else
+        {
+
+            setstatus2(false);
+            setarr(Arr);
+        }
     }
     const classes=useStyles();
     return(
@@ -32,13 +49,13 @@ function Alumni()
         Our Alumnis
         </Typography>
         </Grid>
-        {Arr.map((user) => (
+        {arr.map((user) => (
             <Grid item container xs={12} sm={3} justifyContent='center'>
                 <Card user={user}/>
             </Grid>
         ))}
         <Grid item container xs={12} justifyContent='center'>
-        <Button onClick={handleClick}>More</Button>
+        <Button onClick={handleClick}>{status2?'See Less':'More'}</Button>
         </Grid>
        
     </Grid>
