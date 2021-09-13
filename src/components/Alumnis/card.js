@@ -17,6 +17,10 @@ const useStyles = makeStyles((theme) => ({
   },
   root: {
     maxWidth: 400,
+    transition: '0.3s all ease-in-out',
+    '&:hover':{
+      marginTop:'-10px',
+    },
   },
   media: {
     height: 0,
@@ -33,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     transform: 'rotate(180deg)',
   },
   typo:{
-    color:'#9CA9B3',
+    color:'#22577A',
    fontSize:'18px',
   },
   avatar: {
@@ -57,14 +61,14 @@ export default function  UserCard(props) {
   return (
     <div>
       
-    <Card className={classes.root} style={{backgroundColor:"#fdce68",color:"#fff"}} elevation={3}>
+    <Card className={classes.root} style={{backgroundColor:"#FFAA4C",color:"#fff"}} elevation={3}>
       <CardHeader
         avatar={
           <Avatar aria-label="image" className={classes.avatar} src={props.user.image}>
           </Avatar>
         }
         action={
-          <a href={props.linkedin}>
+          <a href={props.user.linkedin}>
           <FontAwesomeIcon icon={faLinkedinIn} size="1.8x" color="#24e5af"/>
           </a>
         }
@@ -73,14 +77,14 @@ export default function  UserCard(props) {
       />
       <CardContent>
         <Typography variant="body2"  component="p" className={classes.subheader}>
-        I started my interview preparation journey from the first seminar of O(1). Things were explained very well in detail, from tips and tricks for interviews to resources for DSA and core subjects.
-          <Button onClick={handleExpandClick} style={{display:`${visible}`,color:"#24e5af",fontFamily:"sans-serif"}}variant="body2"  component="p" >
+          {props.user.description1}
+          <Button onClick={handleExpandClick} style={{display:`${visible}`,color:"#5089C6",fontFamily:"sans-serif"}}variant="body2"  component="p" >
             Read more
           </Button>
           <Typography style={{display:`${visible === 'none' ? 'inline' : 'none'}`}}variant="body2"  component="p" className={classes.subheader}> 
-           CPL was one of the highlights for me as I was able to improve my problem solving skills significantly. I would recommend O(1) to every fresher looking for mentorship, guidance and a productive atmosphere to learn and grow.
+          {props.user.description2}
           </Typography>
-          <Button onClick={handlecontract} style={{display:`${visible === 'none' ? 'inline' : 'none'}`,color:"#24e5af"}}variant="body2"  component="p">
+          <Button onClick={handlecontract} style={{display:`${visible === 'none' ? 'inline' : 'none'}`,color:"#5089C6"}}variant="body2"  component="p">
             Read Less
           </Button>
         </Typography>

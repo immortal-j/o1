@@ -53,6 +53,7 @@ function Alumni()
             <Grid item container xs={12} sm={3} justifyContent='center'>
                 <Card user={user}/>
             </Grid>
+
         ))}
         <Grid item container xs={12} justifyContent='center'>
         <Button onClick={handleClick}>{status2?'See Less':'More'}</Button>
