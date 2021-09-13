@@ -10,10 +10,11 @@ const useStyles = makeStyles((theme) => ({
       fontFamily:'Inter',
       fontSize:'52px',
       fontWeight:800,
+      marginTop:90,
   },
   subtitle:{
     textAlign:'center',
-    color:'#9ca9b3',
+    color:'#333',
     fontFamily:'Inter',
     fontSize:'20px',
     fontWeight:400,
@@ -21,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
     aboutus:{
         textAlign:'center',
-        color:'#eceded',
+        color:'#000',
         fontFamily:'Inter',
         fontSize:'44px',
         fontWeight:800,
@@ -29,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     },
     aboutdesc:{
         textAlign:'center',
-    color:'#9ca9b3',
+    color:'#333',
     fontFamily:'Inter',
     fontSize:'20px',
     fontWeight:400,
@@ -50,13 +51,13 @@ const useStyles = makeStyles((theme) => ({
       // },
     },
     ftitle:{
-      color:'#eceded',
+      color:'#000',
       fontFamily:'Inter',
       fontSize:'24px',
       fontWeight:800,
     },
     fdesc:{
-      color:'#9ca9b3',
+      color:'#333',
       fontFamily:'Inter',
       fontSize:'18px',
       fontWeight:400,

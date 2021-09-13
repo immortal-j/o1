@@ -39,7 +39,7 @@ export default function ButtonAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar style={{ marginTop:0 }} position="static" color="transparent" elevation="none" >
+      <AppBar style={{ marginTop:0 }} position="fixed" color="transparent" elevation="none" >
         <Toolbar>
         <div className={classes.menuSpace1}></div>
          
