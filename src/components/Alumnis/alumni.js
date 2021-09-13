@@ -55,7 +55,7 @@ function Alumni()
             </Grid>
         ))}
         <Grid item container xs={12} justifyContent='center'>
-        <Button onClick={handleClick}>{status2?'See Less':'More'}</Button>
+        <Button onClick={handleClick}>{status2?'See Less':'See More'}</Button>
         </Grid>
        
     </Grid>

@@ -64,7 +64,7 @@ export default function  UserCard(props) {
           </Avatar>
         }
         action={
-          <a href={props.linkedin}>
+          <a href={props.user.linkedin}>
           <FontAwesomeIcon icon={faLinkedinIn} size="1.8x" color="#24e5af"/>
           </a>
         }
