@@ -7,9 +7,9 @@ import Arr2 from './array2';
 const useStyles = makeStyles((theme) => ({
     title:{
         textAlign:'center',
-        color:'#fff',
+        color:'#000',
         fontFamily:'Inter',
-        fontSize:'44px',
+        fontSize:'35px',
         fontWeight:800,
     }
   }));
@@ -42,7 +42,7 @@ function Alumni()
     const classes=useStyles();
     return(
     <div>
-    <section id="Alumni" style={{backgroundColor:'#000'}}>
+    <section id="Alumni" >
     <Box m={10}  >
     <Grid container justifyContent='center' spacing={0}>
         <Grid item container xs={12} sm={12} justifyContent='center'>
@@ -61,6 +61,7 @@ function Alumni()
         </Grid>
         
         <Grid item xs={0} sm={1}></Grid>
+        <Grid item sm={12}><br></br></Grid>
         <Grid item container xs={12} justifyContent='center'>
         <Button onClick={handleClick}>{status2?'See Less':'See More'}</Button>
         </Grid>

@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign:'center',
         color:'#000',
         fontFamily:'Inter',
-        fontSize:'44px',
+        fontSize:'35px',
         fontWeight:800,
   },
   title: {
@@ -30,25 +30,24 @@ export default function Placedat() {
         <Box m={2} p={1}>
         <h1 className={classes.center}>Our students are placed at</h1>
         <br/><br/>
-        <Grid  container justifyContent='center' spacing={1}>
+        <Grid  container justifyContent='center' spacing={5}>
         <Grid container item xs={4} md={3} justifyContent='center'>
-           <img src={"amazon.png"} className={classes.title} height="auto" />
+           <img src={"amazon.png"} className={classes.title} height="100" />
         </Grid>
         <Grid container item xs={4} md={3} justifyContent='center'>
-           <img src={"vmware.png"} className={classes.title} height="auto"  />
+           <img src={"vmware.png"} className={classes.title} height="100"  />
         </Grid>
         <Grid container item xs={4} md={3} justifyContent='center'>
-           <img src={"bny-mellon.png"} className={classes.title} height="auto"  />
+           <img src={"bny-mellon.png"} className={classes.title} height="100"  />
         </Grid>
         <Grid container item xs={4} md={2} justifyContent='center'>
-           <img src={"hackerearth.png"} className={classes.title} height="auto"  />
+           <img src={"hackerearth.png"} className={classes.title} height="100"  />
         </Grid>
         <Grid container item xs={4} md={2} justifyContent='center'>
-           <img src={"fivetran.png"} className={classes.title} height="auto"  />
+           <img src={"fivetran.png"} className={classes.title} height="100"  />
         </Grid>
         </Grid>
         </Box>
-        <br></br>
         <br></br>
         <br></br>
         <br></br>

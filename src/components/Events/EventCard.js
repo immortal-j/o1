@@ -16,6 +16,7 @@ import Slide from '@material-ui/core/Slide';
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 400,
+    minWidth:270,
     border: '1px solid black',
     // background: 'radial-gradient(#1fe4f5, #3fbafe)'
   },
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   heading: {
     textAlign: 'center',
     fontSize: '30px',
-    fontWeight: 500,
+    fontWeight: 700,
   },
   btn: {
     marginBottom: '20px',

@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
+import {Menu,Typography} from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
 import Fade from '@material-ui/core/Fade';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,6 +11,15 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 
 const useStyles = makeStyles((theme) => ({
+  title:{
+    textAlign:'center',
+    color:'#8739f9',
+    fontFamily:'Inter',
+    fontSize:'30px',
+    fontWeight:800,
+    marginLeft:'15px',
+   
+},
   root: {
     flexGrow: 1,
     padding:-1,
@@ -64,12 +73,12 @@ export default function ButtonAppBar() {
   };
   return (
     <div className={classes.root}>
-      <AppBar style={{ marginTop:0 }} position="fixed" color="transparent" elevation="none" >
+      <AppBar style={{ marginTop:0,backgroundColor:'#f9f3f3'}} position="fixed" color="#000"  >
         <Toolbar>
         <div className={classes.menuSpace1}></div>
          
             <img src={"logo2.svg"} height="50px"/>
-  
+            <Typography className={classes.title} >O(1) Coding Club</Typography>
           <div className={classes.menuSpace2}></div>
           <Button className={classes.btn} >Coderun</Button>
           <Button className={classes.btn} >Study</Button>

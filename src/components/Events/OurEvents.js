@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
         textAlign:'center',
         color:'#000',
         fontFamily:'Inter',
-        fontSize:'44px',
+        fontSize:'35px',
         fontWeight:800,
     }
   }));
