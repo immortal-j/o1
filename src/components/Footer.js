@@ -1,6 +1,5 @@
-import { makeStyles, Typography } from '@material-ui/core';
+import { makeStyles, Typography,Grid,Button } from '@material-ui/core';
 import React from 'react'
-import logo from './../assets/images/logo2.png'
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
@@ -9,18 +8,12 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 
 const useStyles = makeStyles((theme) => ({
-    image:{
-        marginLeft: '150px',
-        flex:1,
-        flexDirection:'row',
-        alignItems:'center',
-        justifyContent:'center',
-    },
     madeby:{    
         marginLeft: '125px',
         marginTop: '-10px',
         marginBottom:'45px',
-        color:'#eceded',
+        color:'#333',
+        flexGrow:1,
     }
 })) 
 
@@ -30,9 +23,18 @@ function Footer(){
     return (
         <section>
             <footer >
-            <img className={classes.image} src={logo}  width="100" height="100"  />
+            <Grid container>
+            <Grid item container  justifyContent='center' xs={3}>
+            <img className={classes.image} src={'logo2.svg'}  width="50" height="50"  />
             <Typography className={classes.madeby}  >Made by <b>o1codingclub</b></Typography>
-            <FontAwesomeIcon icon={['fab', 'apple']} />
+            </Grid>
+            <Grid item xs={6}>
+            </Grid>
+            <Grid item xs={3}>
+            <Button>hello</Button>
+            </Grid>
+            </Grid>
+            
             </footer>            
         </section>
     )

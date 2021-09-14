@@ -16,7 +16,8 @@ const useStyles = makeStyles((theme) => ({
    fontSize: '14px',
   },
   root: {
-    maxWidth: 400,
+    minWidth: 275,
+    minHeight:275,
     transition: '0.3s all ease-in-out',
     '&:hover':{
       marginTop:'-10px',
@@ -60,11 +61,11 @@ export default function  UserCard(props) {
 };
   return (
     <div>
-      
+     <img /> 
     <Card className={classes.root} style={{backgroundColor:"#FFAA4C",color:"#fff"}} elevation={3}>
       <CardHeader
         avatar={
-          <Avatar aria-label="image" className={classes.avatar} src={props.user.image}>
+          <Avatar aria-label="image" className={classes.avatar} src={props.user.image} >
           </Avatar>
         }
         action={

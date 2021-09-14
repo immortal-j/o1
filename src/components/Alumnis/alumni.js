@@ -7,7 +7,7 @@ import Arr2 from './array2';
 const useStyles = makeStyles((theme) => ({
     title:{
         textAlign:'center',
-        color:'#000',
+        color:'#fff',
         fontFamily:'Inter',
         fontSize:'44px',
         fontWeight:800,
@@ -42,20 +42,25 @@ function Alumni()
     const classes=useStyles();
     return(
     <div>
-    <section id="Alumni">
-    <Box m={10}>
-    <Grid container justifyContent='center' spacing={3}>
+    <section id="Alumni" style={{backgroundColor:'#000'}}>
+    <Box m={10}  >
+    <Grid container justifyContent='center' spacing={0}>
         <Grid item container xs={12} sm={12} justifyContent='center'>
         <Typography className={classes.title}>
         Our Alumnis
         </Typography>
         </Grid>
-        {arr.map((user) => (
-            <Grid item container xs={12} sm={3} justifyContent='center'>
+        <Grid item xs={0} sm={1}></Grid>
+        <Grid item container xs={12} sm={8} justifyContent='center' spacing={3}>
+        {arr.map(user => (
+            <Grid item container xs={12} sm={4} justifyContent='center'>
                 <Card user={user}/>
             </Grid>
 
         ))}
+        </Grid>
+        
+        <Grid item xs={0} sm={1}></Grid>
         <Grid item container xs={12} justifyContent='center'>
         <Button onClick={handleClick}>{status2?'See Less':'See More'}</Button>
         </Grid>
