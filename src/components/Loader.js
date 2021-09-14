@@ -7,7 +7,7 @@ import OurEvents from './Events/OurEvents';
 import Placedat from './Placedat';
 import Footer from './Footer';
 import {TinyButton as ScrollUpButton} from "react-scroll-up-button";
-import Newcard from './Events/newcard';
+import Newcard from './Events/NewCard';
 function Loader()
 {
     return(
@@ -25,7 +25,6 @@ function Loader()
         <Alumni />
         </Fade>
         <Footer />
-        <Newcard/>
     </div>
     );
 }

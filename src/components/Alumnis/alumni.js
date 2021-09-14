@@ -51,7 +51,7 @@ function Alumni()
         </Typography>
         </Grid>
         <Grid item xs={0} sm={1}></Grid>
-        <Grid item container xs={12} sm={8} justifyContent='center' spacing={3}>
+        <Grid item container xs={12} sm={10} justifyContent='center' spacing={3}>
         {arr.map(user => (
             <Grid item container xs={12} sm={4} justifyContent='center'>
                 <Card user={user}/>
