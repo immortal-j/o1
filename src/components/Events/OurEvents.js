@@ -2,7 +2,7 @@ import React from 'react'
 import Arr from './Array1'
 import {Box,Typography,Grid,Button,makeStyles} from '@material-ui/core';
 import EventCard from './EventCard';
-
+import NewCard from './NewCard'
 
 const useStyles = makeStyles((theme) => ({
     title:{
@@ -25,17 +25,18 @@ function OurEvents(){
                     Our Events
                     </Typography>
                 </Grid>
-                <Grid item xs={0} sm={1}>
-                </Grid>
-                <Grid container item xs={12} sm={10} justifyContent='center' spacing={7} >
+                {/* <Grid item xs={0} sm={1}>
+                </Grid> */}
+                <Grid container item xs={12} sm={12} justifyContent='center' spacing={7} >
                 {Arr.map((e) => (
-                    <Grid item container xs={12} sm={4} justifyContent='center'>
-                        <EventCard event={e} />
+                    <Grid item container xs={12} sm={6} justifyContent='center'>
+                        {/* <EventCard event={e} /> */}
+                        <NewCard event={e} />
                     </Grid>
                 ))} 
                 </Grid>
-                <Grid item sm={1} xs={0}>
-                </Grid>
+                {/* <Grid item sm={1} xs={0}>
+                </Grid> */}
             </Grid>
         </Box>
         </div>
