@@ -21,6 +21,7 @@
 	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 	display: flex;
 	max-width: 100%;
+	min-height:600; 
 	margin: 20px;
 	overflow: hidden;
 	width: 700px;
@@ -42,7 +43,7 @@
 	background-color: #2A265F;
 	color: #fff;
 	padding: 30px;
-	max-width: 250px;
+	min-width: 150px;
 }
 
 .course-preview a {
