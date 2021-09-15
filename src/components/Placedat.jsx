@@ -26,7 +26,8 @@ const useStyles = makeStyles((theme) => ({
 export default function Placedat() {
   const classes = useStyles();
     return (
-      <div>
+      <div >
+      <br/><br/>
         <Box m={2} p={1}>
         <h1 className={classes.center}>Our students are placed at</h1>
         <br/><br/>

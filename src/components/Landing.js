@@ -62,6 +62,9 @@ const useStyles = makeStyles((theme) => ({
       fontSize:'18px',
       fontWeight:400,
       textAlign:'center',
+    },
+    hr:{
+      width:'75%',
     }
 
    
@@ -130,7 +133,11 @@ function Landing()
       
     </Grid>
     </Box>
+    
     <br></br>
+    <hr className={classes.hr}/>
+    <br/>
+    
       </section>
     </div>
     );
