@@ -4,6 +4,7 @@ import {Box,Typography,Grid,Button,makeStyles} from '@material-ui/core';
 import EventCard from './EventCard';
 import NewCard from './newcard'
 
+
 const useStyles = makeStyles((theme) => ({
     title:{
         textAlign:'center',
