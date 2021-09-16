@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
 function OurEvents(){
     const classes=useStyles();
     return(
+        <section id="Events">
         <div>
         <Box m={10}>
             <Grid container justifyContent='center' spacing={2}>
@@ -37,6 +38,7 @@ function OurEvents(){
             </Grid>
         </Box>
         </div>
+        </section>
     )
 }
 

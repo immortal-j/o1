@@ -12,10 +12,10 @@ const useStyles = makeStyles((theme)=>({
       fontFamily:'Roboto,sans-serif',
       width:100,
       height:100,
-    borderRadius:'8px',
+    borderRadius:'100px',
     [theme.breakpoints.up('sm')]: {
-        width:200,
-        height:200,
+        width:120,
+        height:120,
     },
   },
   bullet: {
@@ -25,15 +25,17 @@ const useStyles = makeStyles((theme)=>({
   },
   title: {
     fontSize:'10px',
+    textAlign:'center',
     color:'#fff',
     fontWeight:600,
     [theme.breakpoints.up('sm')]: {
-        fontSize:'38px',
+        fontSize:'19px',
     },
   },
   pos: {
     marginBottom: 12,
     fontSize:'8px',
+    textAlign:'center',
     color:'#fff',
     [theme.breakpoints.up('sm')]: {
         fontSize:'16px',
