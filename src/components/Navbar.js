@@ -18,6 +18,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize:'30px',
     fontWeight:800,
     marginLeft:'15px',
+    display:'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'block',
+    },
    
 },
   root: {
@@ -56,6 +60,18 @@ const useStyles = makeStyles((theme) => ({
     '&:hover':{
       color:'#FF2442',
     }
+  },
+  desktop:{
+    display:'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'block',
+    },
+  },
+  mobile:{
+    display:'block',
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
   }
 }));
 
@@ -80,9 +96,14 @@ export default function ButtonAppBar() {
             <img src={"logo2.svg"} height="50px"/>
             <Typography className={classes.title} >O(1) Coding Club</Typography>
           <div className={classes.menuSpace2}></div>
-          <Button className={classes.btn} >Coderun</Button>
-          <Button className={classes.btn} >Study</Button>
-          <Button aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>
+          <div className={classes.desktop}>
+          <Button href="#Landing" className={classes.btn} >Home</Button>
+          <Button href="#Events" className={classes.btn} >Events</Button>
+          <Button href="#Alumni" className={classes.btn} >Alumnis</Button>
+          <Button href="http://www.o1codingclub.in/login" className={classes.btn} >Coderun</Button>
+          <Button href="http://www.o1codingclub.in/os/" className={classes.btn} >Study</Button>
+          </div>
+          <Button className={classes.mobile} aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>
           <FontAwesomeIcon className={classes.btn} icon={faBars} size="2x" color="#8739f9"/>
           </Button>
       <Menu
@@ -94,8 +115,10 @@ export default function ButtonAppBar() {
         TransitionComponent={Fade}
       >
         <a className={classes.anchor} href="#Landing"><MenuItem className={classes.menuitm} onClick={handleClose}>Home</MenuItem></a>
+        <a className={classes.anchor} href="#Events"><MenuItem className={classes.menuitm} onClick={handleClose}>Events</MenuItem></a>
         <a className={classes.anchor} href="#Alumni"><MenuItem className={classes.menuitm} onClick={handleClose}>Alumni</MenuItem></a>
-        
+        <a className={classes.anchor} href="http://www.o1codingclub.in/login"><MenuItem className={classes.menuitm} onClick={handleClose}>Coderun</MenuItem></a>
+        <a className={classes.anchor} href="http://www.o1codingclub.in/os/"><MenuItem className={classes.menuitm} onClick={handleClose}>Study</MenuItem></a>
       </Menu>
         </Toolbar>
       </AppBar>

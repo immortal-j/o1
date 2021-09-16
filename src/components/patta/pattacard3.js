@@ -9,14 +9,13 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles((theme)=>({
   root: {
     backgroundImage: 'linear-gradient(to top, #30cfd0 0%, #330867 100%)',
-      fontFamily:'Roboto,sans-serif',
-      width:100,
-      height:100,
-    borderRadius:'8px',
-    [theme.breakpoints.up('sm')]: {
-        width:200,
-        height:200,
-    },
+    width:100,
+    height:100,
+  borderRadius:'100px',
+  [theme.breakpoints.up('sm')]: {
+      width:120,
+      height:120,
+  },
   },
   bullet: {
     display: 'inline-block',
@@ -25,15 +24,17 @@ const useStyles = makeStyles((theme)=>({
   },
   title: {
     fontSize:'10px',
+    textAlign:'center',
     color:'#fff',
     fontWeight:600,
     [theme.breakpoints.up('sm')]: {
-        fontSize:'38px',
+        fontSize:'19px',
     },
   },
   pos: {
     marginBottom: 12,
     fontSize:'8px',
+    textAlign:'center',
     color:'#fff',
     [theme.breakpoints.up('sm')]: {
         fontSize:'16px',

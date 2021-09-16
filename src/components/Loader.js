@@ -1,6 +1,7 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 import Navbar from './Navbar';
+
 import Landing from './Landing';
 import Alumni from './Alumnis/alumni';
 import OurEvents from './Events/OurEvents';
@@ -14,6 +15,7 @@ function Loader()
     <div>
         <ScrollUpButton style={{backgroundColor:''}}/>
         <Navbar />
+       
         <Landing />
         <Fade>
         <Pata/>
