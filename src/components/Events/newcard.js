@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import Arr from './Array1'
 import {Box,Typography,Grid,Button,makeStyles} from '@material-ui/core';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
 import Slide from '@material-ui/core/Slide';
+import lottie from 'lottie-web';
+import TrophyMake from './TrophyMake';
 
 const useStyles = makeStyles((theme) => ({
    ncroot:{
@@ -38,7 +37,10 @@ const useStyles = makeStyles((theme) => ({
 	width:'100%',
    },
    desfont:{
-	   fontSize:15,
+	   fontSize:9,
+	   [theme.breakpoints.up('sm')]: {
+		fontSize:20,
+	},
    },
    coursepreview :{
 		backgroundColor: '#2A265F',
@@ -52,6 +54,9 @@ const useStyles = makeStyles((theme) => ({
 	btn:{
 		borderRadius:25,
 		fontSize:9,
+		[theme.breakpoints.up('sm')]: {
+        	fontSize:12,
+    	},
 	},
 	dlgtitle:{
 		backgroundColor: '#000',
@@ -79,7 +84,19 @@ const useStyles = makeStyles((theme) => ({
 function NewCard(props){
     const classes=useStyles();
     const [expanded, setExpanded] = React.useState(false);
-  const [open, setOpen] = React.useState(false);
+  	const [open, setOpen] = React.useState(false);
+	const container = useRef(null);
+
+	useEffect(() => {
+		lottie.loadAnimation({
+		  container: container.current,
+		  renderer: 'svg',
+		  loop: true,
+		  autoplay: true,
+		  animationData: require('./trophy.json')
+		})
+	  }, [])
+
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -100,12 +117,13 @@ function NewCard(props){
 		<div className={classes.coursepreview}>
 			<h6>Event</h6>
 			<Typography className={classes.hname} >{props.event.name}</Typography>
+			<TrophyMake />
 		</div>
 		<div className={classes.courseinfo}>
 			<h6>About</h6>
 			<Typography className={classes.desfont}>{props.event.description1}</Typography>
 			<br/>
-			<Button className={classes.btn} onClick={handleClickOpen} variant="contained" color="secondary">Read more</Button>
+			<Button className={classes.btn} onClick={handleClickOpen} variant="contained" color="secondary">Details</Button>
 		</div>
 		<Dialog
         open={open}

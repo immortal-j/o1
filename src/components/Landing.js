@@ -83,7 +83,9 @@ function Landing()
         <Typography className={classes.subtitle}>Closer to your AMBITIONS,<br/>a step at a time.</Typography>
         <Lottie />
         <Typography className={classes.aboutus}  >About Us</Typography>
-        <Box> <Typography className={classes.aboutdesc} >We get you placed in the biggest tech-giants of the country, be it off-campus or on-campus we got it all. Our experts train you & make you placement ready, but wait, just training is not the end of our journey, infact we are right there helping you throughout until you get placed, because ..."We dont just train you, We get you placed."</Typography></Box>
+        <Box> <Typography className={classes.aboutdesc} > 
+        Not just a coding school, but a complete placement ecosystem with strong emphasis on high quality placement training & support, not only equipping you with relevant job market skills but providing every help to land your dream job.
+        </Typography></Box>
     </Box>
 
     <Box m={5}>

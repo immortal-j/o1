@@ -101,7 +101,6 @@ export default function ButtonAppBar() {
           <Button href="#Events" className={classes.btn} >Events</Button>
           <Button href="#Alumni" className={classes.btn} >Alumnis</Button>
           <Button href="http://www.o1codingclub.in/login" className={classes.btn} >Coderun</Button>
-          <Button href="http://www.o1codingclub.in/os/" className={classes.btn} >Study</Button>
           </div>
           <Button className={classes.mobile} aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>
           <FontAwesomeIcon className={classes.btn} icon={faBars} size="2x" color="#8739f9"/>

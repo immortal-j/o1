@@ -13,11 +13,11 @@ import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 const useStyles = makeStyles((theme) => ({
   subheader:{
    color:'#000',
-   fontSize: '14px',
+   fontSize: '18px',
   },
   root: {
-    minWidth: 275,
-    minHeight:275,
+    minWidth: 287,
+    minHeight:287,
     transition: '0.3s all ease-in-out',
     '&:hover':{
       marginTop:'-10px',
@@ -41,10 +41,17 @@ const useStyles = makeStyles((theme) => ({
     color:'#22577A',
    fontSize:'18px',
   },
+  personName:{
+    fontSize: '20px',
+    color: '#2A0944',
+    [theme.breakpoints.up('sm')]: {
+      fontSize:'25px',
+    },
+  },
   avatar: {
-resize:'contain',
-height:'60px',
-width:'60px',
+  resize:'contain',
+  height:'60px',
+  width:'60px',
   },
 }));
 
@@ -73,8 +80,8 @@ export default function  UserCard(props) {
           <FontAwesomeIcon icon={faLinkedinIn} size="1.8x" color="#24e5af"/>
           </a>
         }
-        title={props.user.name}
-        subheader={<Typography className={classes.typo} color="textSecondary" fontSize='18'>{props.user.position}</Typography>}
+        title={<Typography className={classes.personName} >{props.user.name}</Typography>}
+        subheader={<Typography className={classes.typo} color="textSecondary" fontSize='29px'>{props.user.position}</Typography>}
       />
       <CardContent>
         <Typography variant="body2"  component="p" className={classes.subheader}>
@@ -85,7 +92,7 @@ export default function  UserCard(props) {
           <Typography style={{display:`${visible === 'none' ? 'inline' : 'none'}`}}variant="body2"  component="p" className={classes.subheader}> 
           {props.user.description2}
           </Typography>
-          <Button onClick={handlecontract} style={{display:`${visible === 'none' ? 'inline' : 'none'}`,color:"#5089C6"}}variant="body2"  component="p">
+          <Button onClick={handlecontract} style={{display:`${visible === 'none' ? 'inline' : 'none'}`,color:"#5089C6",}}variant="body2"  component="p">
             Read Less
           </Button>
         </Typography>

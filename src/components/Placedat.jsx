@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     width:100,
     [theme.breakpoints.up('sm')]: {
-        width:120,
+        width: 125,
     },
 },
 
@@ -32,20 +32,47 @@ export default function Placedat() {
         <h1 className={classes.center}>Our students are placed at</h1>
         <br/><br/>
         <Grid  container justifyContent='center' spacing={5}>
-        <Grid container item xs={4} md={3} justifyContent='center'>
-           <img src={"amazon.png"} className={classes.title} height="100" />
-        </Grid>
-        <Grid container item xs={4} md={3} justifyContent='center'>
-           <img src={"vmware.png"} className={classes.title} height="100"  />
-        </Grid>
-        <Grid container item xs={4} md={3} justifyContent='center'>
-           <img src={"bny-mellon.png"} className={classes.title} height="100"  />
+        <Grid container item xs={4} md={2} justifyContent='center'>
+           <img src={"amazon.png"} className={classes.title} height="120" />
         </Grid>
         <Grid container item xs={4} md={2} justifyContent='center'>
-           <img src={"hackerearth.png"} className={classes.title} height="100"  />
+           <img src={"vmware.png"} className={classes.title} height="120"  />
         </Grid>
         <Grid container item xs={4} md={2} justifyContent='center'>
-           <img src={"fivetran.png"} className={classes.title} height="100"  />
+           <img src={"bny-mellon.png"} className={classes.title} height="120"  />
+        </Grid>
+        <Grid container item xs={4} md={2} justifyContent='center'>
+           <img src={"hackerearth.png"} className={classes.title} height="120"  />
+        </Grid>
+        <Grid container item xs={4} md={2} justifyContent='center'>
+           <img src={"fivetran.png"} className={classes.title} height="120"  />
+        </Grid>
+        <Grid container item xs={4} md={2} justifyContent='center'>
+           <img src={"ori_publicis_sapiens.png"} className={classes.title} height="120" />
+        </Grid>
+        <Grid container item xs={4} md={2} justifyContent='center'>
+           <img src={"ori_sahaj.jpg"} className={classes.title} height="120" />
+        </Grid>
+        <Grid container item xs={4} md={2} justifyContent='center'>
+           <img src={"ori_principal_global.png"} className={classes.title} height="120" />
+        </Grid>
+        <Grid container item xs={4} md={2} justifyContent='center'>
+           <img src={"ori_tcs.png"} className={classes.title} height="120" />
+        </Grid>
+        <Grid container item xs={4} md={2} justifyContent='center'>
+           <img src={"ori_infosys.png"} className={classes.title} height="120" />
+        </Grid>
+        <Grid container item xs={4} md={2} justifyContent='center'>
+           <img src={"ori_lti.jpg"} className={classes.title} height="120" />
+        </Grid>
+        <Grid container item xs={4} md={2} justifyContent='center'>
+           <img src={"ori_capgemini.jpg"} className={classes.title} height="120" />
+        </Grid>
+        <Grid container item xs={4} md={2} justifyContent='center'>
+           <img src={"ori_cognizant.png"} className={classes.title} height="120" />
+        </Grid>
+        <Grid container item xs={4} md={2} justifyContent='center'>
+           <img src={"ori_accenture.png"} className={classes.title} height="120" />
         </Grid>
         </Grid>
         </Box>

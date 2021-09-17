@@ -2,50 +2,56 @@ var arr=[
     {
         id:1,
         name:'CodeRun',
-        description1:'I started my interview preparation journey from the first seminar of O(1)',
-        description2:'CPL was one of the highlights for me as I was able to improve my problem solving skills',
+        description1:"Designed to uplift one's coding skills to ease through various placement hurdles like coding rounds, interviews etc",
+        description2:"Designed with an initiative to get pre-final/final year students placed by training & improving one's coding abilities preparing them not only for high paying off-campus placement opportunities like Hackwithinfy, TCS Codevita etc but also for coding rounds/interviews of campus companies. Who better to get you placed than our experts who themselves have recently secured top ranks in the country in such off-campus placement events, we assure to take one's coding skills to the next level & make you placement ready.",
         image:'images/akshay Mishra.png',
-        bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)'
+        bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)',
+        lottiefile: 'TrophyMake',
     },
     {
         id:2,
         name:'Coding Premier League',
-        description1:'I participated in CPL organized by O(1) Coding Club in',
-        description2:'skills but also helped me to understand- 1. How to collaboratively solve a problem as a team. 2. Other better approaches for the same problem that you find out after discussing with your team mates. I would highly recommend to participate in CPL contest organized by O(1) coding club.',
+        description1:"Let's make coding super fun with friendly teammates, experienced coaches, gritty training nets & thrilling matches",
+        description2:"Coding Premier League as the name suggests is a team coding event comprising of multiple coding matches, every team has an experienced captain/mentor who trains and helps uplift the coding abilities of his/her teammates so that they can perform well in coding matches, hence helping their teams to victory. Team based environment helps one learn and improve in a fun manner & at the same time make new connections.",
         image:'images/Amarkumar Mishra.png',
-        bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)'
+        bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)',
+        lottiefile: 'TrophyMake',
     },
     {
         id:3,
         name:'Workshops',
         description1:'I participated in CPL organized by O(1) Coding Club in',
-        description2:'coding problems on Codechef and Codeforces but after receiving proper guidance on resources and improving thought process for solving problems by O(1) Coding Club, I improved a lot in few months. None of the interviews I gave had gone without solving a coding problem, so I would suggest to improve your competitive coding skill if you are not good in it and I would highly recommend to be part of O(1) Coding Club and take active participation in various contests and sessions organized by them.',
+        description2:"A 3-5 days learning program to master a particular skill from scratch. A great learning experience from the experts working in the same field. Why to waste a month learning a skill when the experience & direction of our experts can make you do the same in less than a week. Most importantly, you'll be making a live project in this learning period.",
         image:'images/Sudhanshu Bhogal.png',
-        bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)'
+        bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)',
+        lottiefile: 'TrophyMake',
     },
     {
         id:4,
         name:'Bootcamps',
         description1:'I participated in CPL organized by O(1) Coding Club in',
-        description2:'way and it also improved coding culture. It would help beginners to kickstart their coding journey. Various off-campus opportunities were also posted which can help to avoid missing on opportunities.',
+        description2:"Bootcamps are perfectly designed to get you started and in practice. Various bootcamps like Python, OOP, etc. Usually lasts for about 20-40 days. Along with learning, you get doubt solving session and practice problems as well. With zero knowledge on the subject at the start, you end up being confident enough to brag about your skills.",
         image:'images/Pranav Manbhekar.png',
-        bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)'
+        bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)',
+        lottiefile: 'TrophyMake',
     },
     {
         id:5,
         name:'Apti Series',
         description1:'I participated in CPL organized by O(1) Coding Club in',
-        description2:'It was the best learning experience for me because it had coding problems of all levels, starting right from basics and going up to difficult problems to be solved in 2.5 - 3 hours. It made a good habit of solving problems on daily basis and helped us to have a grip on competitive coding questions. As far as the interviews are concerned, the videos uploaded by O(1) were very helpful particular to each company, where they told us what exactly do they expect and how to prepare for it. ',
+        description2:"A tailor made program to tackle the requirement hurdles of different formats. Company specific apti series where in you get to practice with the exact format, difficulty and time constraint, making you ready to make your mark on the final day. Questions are hand picked and hard tested. Master the aptitude round, let your score speak for you.",
         image:'images/Vishal Kriplani.png',
-        bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)'
+        bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)',
+        lottiefile: 'TrophyMake',
     },
     {
         id:6,
-        name:'Streak ',
+        name:'Internship',
         description1:'I participated in CPL organized by O(1) Coding Club in',
-        description2:'My first experience with O(1) coding club was from their first seminar and since then, I have nothing but good things to say. From their guidance relating to placements, both on and off campus',
+        description2:"The main motive of programming streaks is to rinse away the rust & get back to the rhythm of programming through a continuous streak of programming contests. Coding is all about rhythm & no matter whether you are a beginner or an experienced coder, you cannot code well under time pressure if you haven't coded for few days, hence this event sets the tone of programming for you getting you in the perfect rhythm.",
         image:'images/Vishal Kriplani.png',
-        bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)'
+        bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)',
+        lottiefile: 'TrophyMake',
     },
 ]
 export default arr;
