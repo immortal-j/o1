@@ -98,7 +98,7 @@ function NewCard(props){
        <div className={classes.coursecontainer}>
 	<div className={classes.course}>
 		<div className={classes.coursepreview}>
-			<h6>Event</h6>
+			{/* <h6>Event</h6> */}
 			<Typography className={classes.hname} >{props.event.name}</Typography>
 		</div>
 		<div className={classes.courseinfo}>

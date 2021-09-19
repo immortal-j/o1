@@ -29,7 +29,7 @@ function Footer(){
             <img src={'logo2.svg'}  width="50" height="50"  />
             </Grid>
             <Grid item container justifyContent='center'>
-            <Typography className={classes.madeby}  >Made by <b>o1codingclub</b></Typography>
+            <Typography className={classes.madeby}  >Made by <b>O(1) Coding Club</b></Typography>
             </Grid>
             </Grid>
             <Grid xs={0} item sm={4}>
@@ -41,7 +41,7 @@ function Footer(){
             <Button href="https://instagram.com/o1codingclub?igshid=9cnjafv7rzkv"><FontAwesomeIcon icon={faInstagram} size="2x" color="#8739f9" /></Button>  
             </Grid>
             <Grid item container xs={12} justifyContent='center'>
-            <a className={classes.anchr} href="http://www.o1codingclub.in/#0"><Typography className={classes.madeby}>o1codingclub.help@gmail.com</Typography></a>
+            <a className={classes.anchr} href="#Landing"><Typography className={classes.madeby}>o1codingclub.help@gmail.com</Typography></a>
             </Grid>    
             </Grid>
 

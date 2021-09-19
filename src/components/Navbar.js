@@ -93,13 +93,13 @@ export default function ButtonAppBar() {
         <Toolbar>
         <div className={classes.menuSpace1}></div>
          
-            <img src={"logo2.svg"} height="50px"/>
+           <Button href="/"> <img src={"logo2.svg"} height="50px"/></Button>
             <Typography className={classes.title} >O(1) Coding Club</Typography>
           <div className={classes.menuSpace2}></div>
           <div className={classes.desktop}>
           <Button href="#Landing" className={classes.btn} >Home</Button>
           <Button href="#Events" className={classes.btn} >Events</Button>
-          <Button href="#Alumni" className={classes.btn} >Alumnis</Button>
+          <Button href="#Alumni" className={classes.btn} >Alumni</Button>
           <Button href="http://www.o1codingclub.in/login" className={classes.btn} >Coderun</Button>
           <Button href="http://www.o1codingclub.in/os/" className={classes.btn} >Study</Button>
           </div>

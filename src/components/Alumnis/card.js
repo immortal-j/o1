@@ -46,6 +46,9 @@ resize:'contain',
 height:'60px',
 width:'60px',
   },
+  title:{
+    color:'#000',
+  }
 }));
 
 export default function  UserCard(props) {
@@ -73,7 +76,7 @@ export default function  UserCard(props) {
           <FontAwesomeIcon icon={faLinkedinIn} size="1.8x" color="#24e5af"/>
           </a>
         }
-        title={props.user.name}
+        title={<Typography >{props.user.name}</Typography>}
         subheader={<Typography className={classes.typo} color="textSecondary" fontSize='18'>{props.user.position}</Typography>}
       />
       <CardContent>
