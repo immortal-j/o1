@@ -1,11 +1,14 @@
 import React, { useEffect, useRef } from 'react'
-import Arr from './Array1'
 import {Box,Typography,Grid,Button,makeStyles} from '@material-ui/core';
 import Dialog from '@material-ui/core/Dialog';
 import Slide from '@material-ui/core/Slide';
 import lottie from 'lottie-web';
 import TrophyMake from './TrophyMake';
-
+import BarChartL from './BarChartL';
+import WorkshopMake from './WorkshopMake';
+import InternshipMake from './InternshipMake';
+import BootcampMake from './BootcampMake';
+import AptiMake from './AptiMake';
 const useStyles = makeStyles((theme) => ({
    ncroot:{
 	maxWidth:450,
@@ -28,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 	margin: '20px',
 	overflow: 'hidden',
 	[theme.breakpoints.up('sm')]: {
-        minHeight:250,
+        minHeight:380,
     },
    },
    courseinfo:{
@@ -81,22 +84,32 @@ const useStyles = makeStyles((theme) => ({
 	return <Slide direction="up" ref={ref} {...props} />;
   });
 
+  //workshop 3 done
+  // cpl 2 done
+  // coderun 1 done
+  // bootcamp 4 done
+  // Apti Series 5 
+  //Internship 6 done
+  function whatToRender(id){
+	if(id===1)
+		return <div><BarChartL /></div>
+	else if(id===2)
+		return <div><TrophyMake /></div>
+	else if(id===3)
+		return <div><WorkshopMake /></div>
+	else if(id===4)
+		return <div><BootcampMake /></div>
+	else if(id===6)
+		return <div><InternshipMake /></div>
+	else
+		return <div><AptiMake /></div>
+  }
+
 function NewCard(props){
     const classes=useStyles();
     const [expanded, setExpanded] = React.useState(false);
   	const [open, setOpen] = React.useState(false);
 	const container = useRef(null);
-
-	useEffect(() => {
-		lottie.loadAnimation({
-		  container: container.current,
-		  renderer: 'svg',
-		  loop: true,
-		  autoplay: true,
-		  animationData: require('./trophy.json')
-		})
-	  }, [])
-
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -117,7 +130,9 @@ function NewCard(props){
 		<div className={classes.coursepreview}>
 			<h6>Event</h6>
 			<Typography className={classes.hname} >{props.event.name}</Typography>
-			<TrophyMake />
+			{whatToRender(props.event.id)}
+			{/* <TrophyMake /> */}
+			{/* <BarChartL /> */}
 		</div>
 		<div className={classes.courseinfo}>
 			<h6>About</h6>
@@ -133,12 +148,10 @@ function NewCard(props){
         aria-labelledby="alert-dialog-slide-title"
         aria-describedby="alert-dialog-slide-description"
       >
-	  {/* <Grid container item xs={0} sm={3}   ></Grid> */}
         <Grid container item xs={12} className={classes.dlg} >
 		<Typography className={classes.dlgtitle}>{props.event.name}</Typography>
 		<Typography className={classes.dlgcontent} >{props.event.description2}</Typography>
 		</Grid>
-		{/* <Grid container item xs={0} sm={3} ></Grid> */}
       </Dialog>
 	</div>
 </div>

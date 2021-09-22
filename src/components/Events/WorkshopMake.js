@@ -11,13 +11,13 @@ function TrophyMake() {
       renderer: 'svg',
       loop: true,
       autoplay: true,
-      animationData: require('./trophy.json')
+      animationData: require('./workshop.json')
     })
   }, [])
   
   return (
     <div className="App">
-      <div className="container" ref={container} style={{width: 140, height: 140, alignSelf: 'center', marginLeft: -10 }}></div>
+      <div className="container" ref={container} style={{width: 150, height: 150, alignSelf: 'center', marginLeft: -25 }}></div>
     </div>
   );
 }

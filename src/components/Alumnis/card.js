@@ -13,15 +13,16 @@ import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 const useStyles = makeStyles((theme) => ({
   subheader:{
    color:'#000',
-   fontSize: '18px',
+   fontSize: '15px',
   },
   root: {
-    minWidth: 287,
-    minHeight:287,
+    minWidth: 320,
+    minHeight:320,
     transition: '0.3s all ease-in-out',
     '&:hover':{
       marginTop:'-10px',
     },
+    marginBottom: '8px',
   },
   media: {
     height: 0,
@@ -39,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
   typo:{
     color:'#22577A',
-   fontSize:'18px',
+   fontSize:'15px',
   },
   personName:{
     fontSize: '20px',

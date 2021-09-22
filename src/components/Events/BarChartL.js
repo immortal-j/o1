@@ -11,13 +11,13 @@ function TrophyMake() {
       renderer: 'svg',
       loop: true,
       autoplay: true,
-      animationData: require('./trophy.json')
+      animationData: require('./bar-chart.json')
     })
   }, [])
   
   return (
     <div className="App">
-      <div className="container" ref={container} style={{width: 140, height: 140, alignSelf: 'center', marginLeft: -10 }}></div>
+      <div className="container" style={{width: 160, height: 160, alignSelf: 'center', marginLeft: -25 }}  ref={container}></div>
     </div>
   );
 }

@@ -93,7 +93,7 @@ export default function ButtonAppBar() {
         <Toolbar>
         <div className={classes.menuSpace1}></div>
          
-            <img src={"logo2.svg"} height="50px"/>
+            <a href='/' ><img src={"logo2.svg"} height="50px"/></a>
             <Typography className={classes.title} >O(1) Coding Club</Typography>
           <div className={classes.menuSpace2}></div>
           <div className={classes.desktop}>

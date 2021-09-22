@@ -63,6 +63,7 @@ function Alumni()
         <Grid item xs={0} sm={1}></Grid>
         <Grid item sm={12}><br></br></Grid>
         <Grid item container xs={12} justifyContent='center'>
+        <br/><br/>
         <Button variant='contained' color='secondary' onClick={handleClick}>{status2?'See Less':'See More'}</Button>
         </Grid>
        
