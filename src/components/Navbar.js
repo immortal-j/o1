@@ -99,8 +99,8 @@ export default function ButtonAppBar() {
           <div className={classes.desktop}>
           <Button href="#Landing" className={classes.btn} >Home</Button>
           <Button href="#Events" className={classes.btn} >Events</Button>
-          <Button href="#Alumni" className={classes.btn} >Alumnis</Button>
-          <Button href="http://www.o1codingclub.in/login" className={classes.btn} >Coderun</Button>
+          <Button href="#Alumni" className={classes.btn} >Stories</Button>
+          <Button href="https://o1coderun.netlify.app/" target="__blank"  className={classes.btn} >CodeRun</Button>
           </div>
           <Button className={classes.mobile} aria-controls="fade-menu" aria-haspopup="true" onClick={handleClick}>
           <FontAwesomeIcon className={classes.btn} icon={faBars} size="2x" color="#8739f9"/>
@@ -115,9 +115,8 @@ export default function ButtonAppBar() {
       >
         <a className={classes.anchor} href="#Landing"><MenuItem className={classes.menuitm} onClick={handleClose}>Home</MenuItem></a>
         <a className={classes.anchor} href="#Events"><MenuItem className={classes.menuitm} onClick={handleClose}>Events</MenuItem></a>
-        <a className={classes.anchor} href="#Alumni"><MenuItem className={classes.menuitm} onClick={handleClose}>Alumni</MenuItem></a>
-        <a className={classes.anchor} href="http://www.o1codingclub.in/login"><MenuItem className={classes.menuitm} onClick={handleClose}>Coderun</MenuItem></a>
-        <a className={classes.anchor} href="http://www.o1codingclub.in/os/"><MenuItem className={classes.menuitm} onClick={handleClose}>Study</MenuItem></a>
+        <a className={classes.anchor} href="#Alumni"><MenuItem className={classes.menuitm} onClick={handleClose}>Stories</MenuItem></a>
+        <a className={classes.anchor} href="https://o1coderun.netlify.app/" target="__blank" ><MenuItem className={classes.menuitm} onClick={handleClose}>CodeRun</MenuItem></a>
       </Menu>
         </Toolbar>
       </AppBar>

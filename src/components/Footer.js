@@ -29,7 +29,7 @@ function Footer(){
             <a href='/' ><img src={'logo2.svg'}  width="50" height="50"  /></a>
             </Grid>
             <Grid item container justifyContent='center'>
-            <Typography className={classes.madeby}>Made by <b>o1codingclub</b></Typography>
+            <Typography className={classes.madeby}>Made by <b>O(1) Coding Club</b></Typography>
             </Grid>
             </Grid>
             <Grid xs={0} item sm={4}>

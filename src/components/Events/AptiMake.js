@@ -17,7 +17,7 @@ function TrophyMake() {
   
   return (
     <div className="App">
-      <div className="container" style={{width: 190, height: 190, alignSelf: 'center', marginLeft: -40 }}  ref={container}></div>
+      <div className="container"  style={{width: 190, height: 190, alignSelf: 'center', marginLeft: -40 }}  ref={container}></div>
     </div>
   );
 }

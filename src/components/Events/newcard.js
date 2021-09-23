@@ -14,7 +14,8 @@ const useStyles = makeStyles((theme) => ({
 	maxWidth:450,
    },
    hname:{
-	 fontSize: 25,  
+	 fontSize: 25, 
+	 marginLeft: -10, 
    },
    coursecontainer:{
 		maxWidth:350,
@@ -92,17 +93,17 @@ const useStyles = makeStyles((theme) => ({
   //Internship 6 done
   function whatToRender(id){
 	if(id===1)
-		return <div><BarChartL /></div>
+		return <div><br/><BarChartL /></div>
 	else if(id===2)
 		return <div><TrophyMake /></div>
 	else if(id===3)
-		return <div><WorkshopMake /></div>
+		return <div><br/><WorkshopMake /></div>
 	else if(id===4)
-		return <div><BootcampMake /></div>
+		return <div><br/><BootcampMake /></div>
 	else if(id===6)
 		return <div><InternshipMake /></div>
 	else
-		return <div><AptiMake /></div>
+		return <div><br/><AptiMake /></div>
   }
 
 function NewCard(props){

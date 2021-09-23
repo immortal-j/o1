@@ -20,7 +20,7 @@ var arr=[
     {
         id:3,
         name:'Workshops',
-        description1:'I participated in CPL organized by O(1) Coding Club in',
+        description1:"Add a skill and upgrade your inventory with some amazing projects, all made by you, guided by us within just a week's time!! Perfect for all beginners as well as experts",
         description2:"A 3-5 days learning program to master a particular skill from scratch. A great learning experience from the experts working in the same field. Why to waste a month learning a skill when the experience & direction of our experts can make you do the same in less than a week. Most importantly, you'll be making a live project in this learning period.",
         image:'images/Sudhanshu Bhogal.png',
         bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)',
@@ -29,7 +29,7 @@ var arr=[
     {
         id:4,
         name:'Bootcamps',
-        description1:'I participated in CPL organized by O(1) Coding Club in',
+        description1:'Learn from scratch and get comfortable with a 15-20 days Bootcamp covering all basic to advanced concepts',
         description2:"Bootcamps are perfectly designed to get you started and in practice. Various bootcamps like Python, OOP, etc. Usually lasts for about 20-40 days. Along with learning, you get doubt solving session and practice problems as well. With zero knowledge on the subject at the start, you end up being confident enough to brag about your skills.",
         image:'images/Pranav Manbhekar.png',
         bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)',
@@ -47,7 +47,7 @@ var arr=[
     {
         id:6,
         name:'Internship',
-        description1:'I participated in CPL organized by O(1) Coding Club in',
+        description1:'An opportunity for the young enthusiasts to work on live projects under O(1) Coding Club. Understand industry requirements, experience, expertise.',
         description2:"The main motive of programming streaks is to rinse away the rust & get back to the rhythm of programming through a continuous streak of programming contests. Coding is all about rhythm & no matter whether you are a beginner or an experienced coder, you cannot code well under time pressure if you haven't coded for few days, hence this event sets the tone of programming for you getting you in the perfect rhythm.",
         image:'images/Vishal Kriplani.png',
         bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)',

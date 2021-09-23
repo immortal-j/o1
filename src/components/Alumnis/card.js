@@ -88,13 +88,13 @@ export default function  UserCard(props) {
         <Typography variant="body2"  component="p" className={classes.subheader}>
           {props.user.description1}
           <Button onClick={handleExpandClick} style={{display:`${visible}`,color:"#5089C6",fontFamily:"sans-serif"}}variant="body2"  component="p" >
-            Read more
+            See More
           </Button>
           <Typography style={{display:`${visible === 'none' ? 'inline' : 'none'}`}}variant="body2"  component="p" className={classes.subheader}> 
           {props.user.description2}
           </Typography>
           <Button onClick={handlecontract} style={{display:`${visible === 'none' ? 'inline' : 'none'}`,color:"#5089C6",}}variant="body2"  component="p">
-            Read Less
+            See Less
           </Button>
         </Typography>
       </CardContent>

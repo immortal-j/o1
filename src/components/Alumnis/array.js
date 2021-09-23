@@ -44,6 +44,15 @@ var arr=[
         linkedin:'https://www.linkedin.com/in/bhumikanagrecha/',
         image:'images/Bhumika Nagrecha.png',
     },
+    {
+        id:6,
+        name:'Shrey Agrawal',
+        position:'Power Programmer at Infosys',
+        description1:'My first experience with O(1) coding club was from their first seminar and since then, I have nothing but good things to say. From their guidance relating to placements, both on and off campus,',
+        description2:'to their CPL, everything important was explained and helped in becoming better programmers. I was fortunate enough lead a team in CPL, and watching me, my classmates, and juniors improve every contest was a great experience.',
+        linkedin:'https://www.linkedin.com/in/shrey-agrawal-329829172/',
+        image:'images/Shrey Agrawal.png',
+    },
    
 
 ]

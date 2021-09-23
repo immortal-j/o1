@@ -1,6 +1,6 @@
 const arr2=[
     {
-        id:6,
+        id:7,
         name:'Vishal Kriplani',
         position:'Software Engineering Intern at Fivetran',
         description1:'The CPL helped me to maintain the speed and accuracy of problem-solving. Senior-Junior interaction was increased during these events. The Knowledge sessions were quite informative.',
@@ -9,22 +9,13 @@ const arr2=[
         image:'images/Vishal Kriplani.png',
     },
     {
-        id:7,
+        id:8,
         name:'Sudhanshu Bhogal',
         position:'SDE-T at Amazon',
         description1:'I took part in Coding Premier League and multiple Competitive Coding Streak contests organised by O(1) Coding Club.Before attending those events I was not able to solve even very simple',
         description2:'coding problems on Codechef and Codeforces but after receiving proper guidance on resources and improving thought process for solving problems by O(1) Coding Club, I improved a lot in few months. None of the interviews I gave had gone without solving a coding problem, so I would suggest to improve your competitive coding skill if you are not good in it and I would highly recommend to be part of O(1) Coding Club and take active participation in various contests and sessions organized by them.',
         linkedin:'https://in.linkedin.com/in/sudhanshu-bhogal',
         image:'images/Sudhanshu Bhogal.png',
-    },
-    {
-        id:8,
-        name:'Shrey Agrawal',
-        position:'Power Programmer at Infosys',
-        description1:'My first experience with O(1) coding club was from their first seminar and since then, I have nothing but good things to say. From their guidance relating to placements, both on and off campus,',
-        description2:'to their CPL, everything important was explained and helped in becoming better programmers. I was fortunate enough lead a team in CPL, and watching me, my classmates, and juniors improve every contest was a great experience.',
-        linkedin:'https://www.linkedin.com/in/shrey-agrawal-329829172/',
-        image:'images/Shrey Agrawal.png',
     },
     {
         id:9,
