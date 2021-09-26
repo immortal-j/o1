@@ -3,5 +3,14 @@
     background-repeat: no-repeat;
     background-position-x: -245px;
     background-position-y: 60px;
+    
     /* background-color: #fdce68; */
+}
+.loader{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
 }

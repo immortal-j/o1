@@ -3,9 +3,8 @@ var arr=[
         id:1,
         name:'CodeRun',
         description1:"Designed to uplift one's coding skills to ease through various placement hurdles like coding rounds, interviews etc",
-        description2:"Designed with an initiative to get pre-final/final year students placed by training & improving one's coding abilities preparing them not only for high paying off-campus placement opportunities like Hackwithinfy, TCS Codevita etc but also for coding rounds/interviews of campus companies. Who better to get you placed than our experts who themselves have recently secured top ranks in the country in such off-campus placement events, we assure to take one's coding skills to the next level & make you placement ready.",
-        image:'images/akshay Mishra.png',
-        bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)',
+        description2:"Designed with an initiative to improve one's coding abilities preparing them not only for high paying off-campus placement opportunities but also for coding rounds/interviews of campus companies. Master skills like dynamic programming, greedy, tree, graph, etc. We assure to take one's coding skills to the next level & make you placement ready.",
+       
         lottiefile: 'TrophyMake',
     },
     {
@@ -13,8 +12,6 @@ var arr=[
         name:'Coding Premier League',
         description1:"Let's make coding super fun with friendly teammates, experienced coaches, gritty training nets & thrilling matches",
         description2:"Coding Premier League as the name suggests is a team coding event comprising of multiple coding matches, every team has an experienced captain/mentor who trains and helps uplift the coding abilities of his/her teammates so that they can perform well in coding matches, hence helping their teams to victory. Team based environment helps one learn and improve in a fun manner & at the same time make new connections.",
-        image:'images/Amarkumar Mishra.png',
-        bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)',
         lottiefile: 'TrophyMake',
     },
     {
@@ -22,8 +19,7 @@ var arr=[
         name:'Workshops',
         description1:"Add a skill and upgrade your inventory with some amazing projects, all made by you, guided by us within just a week's time!! Perfect for all beginners as well as experts",
         description2:"A 3-5 days learning program to master a particular skill from scratch. A great learning experience from the experts working in the same field. Why to waste a month learning a skill when the experience & direction of our experts can make you do the same in less than a week. Most importantly, you'll be making a live project in this learning period.",
-        image:'images/Sudhanshu Bhogal.png',
-        bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)',
+       
         lottiefile: 'TrophyMake',
     },
     {
@@ -31,8 +27,7 @@ var arr=[
         name:'Bootcamps',
         description1:'Learn from scratch and get comfortable with a 15-20 days Bootcamp covering all basic to advanced concepts',
         description2:"Bootcamps are perfectly designed to get you started and in practice. Various bootcamps like Python, OOP, etc. Usually lasts for about 20-40 days. Along with learning, you get doubt solving session and practice problems as well. With zero knowledge on the subject at the start, you end up being confident enough to brag about your skills.",
-        image:'images/Pranav Manbhekar.png',
-        bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)',
+        
         lottiefile: 'TrophyMake',
     },
     {
@@ -40,8 +35,7 @@ var arr=[
         name:'Aptitude Series',
         description1:'Our test series offers company specific tests designed by experts, consisting of all previous years questions with the latest test format.',
         description2:"A tailor made program to tackle the requirement hurdles of different formats. Company specific apti series where in you get to practice with the exact format, difficulty and time constraint, making you ready to make your mark on the final day. Questions are hand picked and hard tested. Master the aptitude round, let your score speak for you.",
-        image:'images/Vishal Kriplani.png',
-        bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)',
+        
         lottiefile: 'TrophyMake',
     },
     {
@@ -49,8 +43,6 @@ var arr=[
         name:'Internship',
         description1:'A final touch to your master piece. This is what separates a leader from the herd.',
         description2:"An opportunity for the young enthusiasts to work on live projects under O(1) Coding Club. Understand industry requirements, experience, expertise.",
-        image:'images/Vishal Kriplani.png',
-        bg: 'linear-gradient(90deg, #EE82EE 0%, #00D1FF 100%)',
         lottiefile: 'TrophyMake',
     },
 ]
