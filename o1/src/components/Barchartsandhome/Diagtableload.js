@@ -53,7 +53,8 @@ const useStyles = makeStyles((theme) => ({
     }));
 function Diagtableloader(props) {
     const classes=useStyles();
-  return (
+    // console.log(props)
+    return (
       <Grid container item xs={12} sm={12} spacing={4}>
     <Grid item container justifyContent='center' xs={12} sm={12}>
             <div >
@@ -97,7 +98,8 @@ function Diagtableloader(props) {
 			        <Typography variant="h5">Status</Typography>
 			    </Grid>
                 </Grid>
-                        {props.arrlen>0?<Diagtable uid={props.uid} mark={props.mark} x={props.arr[props.arr.length-1]}/>:''}
+                {console.log(props.mark)}
+                        {props.arrlen>0 ?<Diagtable uid={props.uid} mark={props.mark} x={props.arr[props.arr.length-1]}/>:''}
                  </Container>
                 </Grid>
                 </Grid>
