@@ -133,6 +133,9 @@ export default function ChartsLoader(props) {
      function markque(tosend) {
        console.log(tosend);
         axios.post(`https://coderun-temp.herokuapp.com/update/`,tosend);
+
+        console.log("ye wala dekh");
+        console.log(tosend);
         getdata();
       }
 
@@ -195,9 +198,9 @@ export default function ChartsLoader(props) {
   return (
     <div >
        <Container>
-            <Grid container xs={12} sm={12} justifyContent='center' >
-               {/* {contestdata==null? <Contest x={contestdata}/> */}
-                           <Diagtableloader uid={props.uid} arr={arr} arrlen={arrlen} mark={markque} />
+            <Grid container xs={12} sm={12} justifyContent='center'>
+               {contestdata==null? <Contest x={contestdata}/>
+                           :<Diagtableloader uid={props.uid} arr={arr} arrlen={arrlen} mark={markque} />}
             </Grid>
         </Container>
         <Container>
