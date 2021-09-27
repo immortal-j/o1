@@ -6,7 +6,7 @@ import {Switch,Route,Redirect} from 'react-router-dom';
 import Login from './components/Login/login';
 import { read_cookie } from "sfcookies";
 import Preload from "./preload";
-const Chartsloader = lazy(()=>import('./components/Barcharts/chartsLoader'));
+const Chartsloader = lazy(()=>import('./components/Barchartsandhome/chartsLoader'));
 const Footer = lazy(()=>import('./components/Footer/Footer'));
 const Button = lazy(()=>import('@material-ui/core'));
 const Cardloader = lazy(()=>import('./components/Cards/Cardloader'));
@@ -28,12 +28,18 @@ const useStyles = makeStyles((theme) => ({
 function Loader() {
   const classes=useStyles();
   const [status,setStatus]=useState("No");
- 
+  const [uid,setUid]=useState('Null');
   useEffect(()=>{
     var x=read_cookie("loggedin");
+    var y=read_cookie("uid");
+    if(y.length>0)
+    {
+      setUid(y);
+    }
     if(x.length===0)
     {
       x="No";
+      setUid("Null");
     } 
     setStatus(x);
   },[])
@@ -43,26 +49,29 @@ function Loader() {
   const handleLogout = () =>{
     setStatus("No");
   }
+  const handleUid = (x) =>{
+    setUid(x);
+  }
+  const handleUidnull = () =>{
+    setUid("Null");
+  }
   return (
     <div>
-      
-  
-   
     <Route exact path="/login">
-    {status==="No"?<Login status={handleLog}/>:<Redirect to="/home"/>}
+    {status==="No"||uid==="Null"?<Login status={handleLog} uid={handleUid} />:<Redirect to="/home"/>}
     </Route>
 
 
       <Route exact path="/home">
-      {status==="yes"?
+      {status==="yes"&&uid!="Null"?
       <div className="home">
-      <Upper_Navbar handleLogout={handleLogout}/>
+      <Upper_Navbar handleLogout={handleLogout} uidnull={handleUidnull}/>
       <Lower_Navbar/>
       <br></br>
       <br></br>
       <br></br>
       <Suspense fallback={<Preload/>}>
-      <Chartsloader/>
+      <Chartsloader uid={uid}/>
       </Suspense>
       <Suspense fallback={<Preload/>}>
       <Footer />
@@ -71,11 +80,11 @@ function Loader() {
     </Route>
 
     <Route exact path="/practice">
-    {status==="yes"?<div className="home">
-    <Upper_Navbar handleLogout={handleLogout}/>
+    {status==="yes"&&uid!="Null"?<div className="home">
+    <Upper_Navbar handleLogout={handleLogout} uidnull={handleUidnull}/>
     <Lower_Navbar/>
     <Suspense fallback={<Preload/>}>
-      <Cardloader />
+      <Cardloader uid={uid}/>
       </Suspense>
       <Suspense fallback={<Preload/>}>
       <Footer />

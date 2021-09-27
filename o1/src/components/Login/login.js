@@ -33,12 +33,15 @@ function Login(props) {
   const horizontal='right';
   const handleclick = (e) => {
       e.preventDefault();
-      axios.post(`https://coderun-temp.herokuapp.com/login`,{
-        email:usrname,
-        password:pass,
+      axios.post(`http://coderun-temp.herokuapp.com/user/login/`,{
+        "email":usrname,
+        "password":pass,
     })
     .then(function (response) {
       bake_cookie("loggedin","yes");
+      bake_cookie("uid",response.data.uid);
+      bake_cookie("div",response.data.div);
+      props.uid(response.data.uid);
       props.status();
       history.replace("/home");
       })
@@ -49,7 +52,6 @@ function Login(props) {
   };
   const handleusr = (value) => {
     setUsrname(value);
-    console.log(usrname);
   };
   const handlepass = (value) => {
     setPass(value);

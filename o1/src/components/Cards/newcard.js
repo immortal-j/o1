@@ -125,7 +125,7 @@ function NewCard(props){
     setChecked(newChecked);
   };
   const handleClick = () => {
-	  props.ts({'id':props.x.id,'problems':tosend});
+	  props.ts({'uid':props.uid,'day':props.x.id,'problems':tosend});
     setsnack(true);
 	handleClose();
   };

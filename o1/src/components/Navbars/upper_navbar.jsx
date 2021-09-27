@@ -75,7 +75,9 @@ export default function MenuAppBar(props) {
   };
   const logout = () =>{
     delete_cookie("loggedin");
+    delete_cookie("uid");
     props.handleLogout();
+    props.uidnull();
     history.push("/");
   };
   return (

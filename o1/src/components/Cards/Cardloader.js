@@ -5,7 +5,7 @@ import axios from 'axios';
 
 
 
-function OurEvents(){
+function Practiceloader(props){
     const [arr,setArr]=useState([]);
 
     useEffect(()=>{
@@ -13,8 +13,11 @@ function OurEvents(){
     },[]);
 
     async function getdata(){
-         await axios.get(`https://coderun-temp.herokuapp.com/`)
+         await axios.post(`http://coderun-temp.herokuapp.com/diagnosis/`,{
+           "uid":props.uid
+         })
         .then(function (response) {
+          console.log(response);
             setArr(response.data);
           })
           .catch(function (error) {
@@ -23,8 +26,7 @@ function OurEvents(){
       }
 
       function markque(tosend) {
-        console.log(tosend);
-        axios.post(`https://coderun-temp.herokuapp.com/update`,tosend);
+        axios.post(`https://coderun-temp.herokuapp.com/update/`,tosend);
         getdata();
       }
 
@@ -37,7 +39,7 @@ function OurEvents(){
                arr.map((x)=>{
                 return(
                     <Grid item xs={12} sm={4} container justifyContent='center'>
-                    <NewCard x={x} ts={markque}/>
+                    <NewCard x={x} uid={props.uid} ts={markque}/>
                 </Grid>
                 );
             }).reverse()
@@ -48,4 +50,4 @@ function OurEvents(){
     )
 }
 
-export default OurEvents;
+export default Practiceloader;

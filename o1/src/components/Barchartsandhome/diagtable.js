@@ -36,11 +36,10 @@ function Diagtable(props) {
           tos.splice(tos.indexOf(props.x.problems[value]),1);
         }
         setTosend(tos);
-        console.log(tosend);
         setChecked(newChecked);
       };
       const handleClick = () =>{
-        props.mark({'id':props.x.id,'problems':tosend});
+        props.mark({'uid':props.uid,'day':props.x.id,'problems':tosend});
       }
   return (
     <div>

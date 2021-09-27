@@ -3,7 +3,8 @@ import {Grid,Box,Paper,makeStyles, Typography,Button,Checkbox,Container} from '@
 import Barchart from './Barchart';
 import Linechart from './Linechart';
 import Doughnut from './doughnut';
-import Diagtable from './diagtable';
+import Contest from './contest';
+import Diagtableloader from './Diagtableload';
 import axios from 'axios';
 const useStyles = makeStyles((theme) => ({
   charttitle:{
@@ -54,15 +55,42 @@ const useStyles = makeStyles((theme) => ({
  }
    
   }));
-export default function ChartsLoader() {
+export default function ChartsLoader(props) {
     const [arr,setArr]=useState([]);
+    const [contestdata,setContestdata]=useState(null);
+    var obj1,obj2,obj3;
     useEffect(()=>{
+        getgraphs();
         getdata();
     },[])
     const arrlen=arr.length;
-	
+    async function getgraphs(){
+       await axios.post(`http://coderun-temp.herokuapp.com/chartdata/`,{
+           "uid":props.uid,
+       })
+       .then(function(response){
+        console.log(response);
+       })
+       .catch(function(err){
+           console.log(err);
+       })
+     }
+
+
+
+
     async function getdata(){
-        await axios.get(`https://coderun-temp.herokuapp.com/`)
+        await axios.get(`http://coderun-temp.herokuapp.com/contest/`)
+       .then(function (response) {
+           setContestdata(response.data);
+         })
+         .catch(function (error) {
+           console.log(error);
+         })
+        await axios.post(`http://coderun-temp.herokuapp.com/diagnosis/`,
+          {
+            "uid":props.uid
+          })
        .then(function (response) {
            setArr(response.data);
          })
@@ -72,7 +100,6 @@ export default function ChartsLoader() {
      }
 
      function markque(tosend) {
-        console.log(tosend);
         axios.post(`https://coderun-temp.herokuapp.com/update`,tosend);
         getdata();
       }
@@ -135,77 +162,32 @@ export default function ChartsLoader() {
     }
   return (
     <div >
-       <Box m={8}>
-            <Grid container spacing={4}>
-            {/* 4 cards */}
-            <Grid item xs={12} sm={12}>
-            <div className={classes.up}>
-                <Typography variant="h3" className={classes.diagnosis}> Hi Rishikesh</Typography>
-                <Typography variant="h6">Our algorithm analysed your recent contest's performance and found out the following scopes of improvement for you :-</Typography>
-            </div>
+       <Container>
+            <Grid container xs={12} sm={12} justifyContent='center'>
+               {contestdata==null? <Contest x={contestdata}/>
+                           :<Diagtableloader arr={arr} arrlen={arrlen} mark={markque} />}
             </Grid>
-          
-           <br/>
-           <br/>
-           <br/>   
+        </Container>
+        <Container>
+            <Grid container spacing={4}>
            
-                     <Grid container item xs={6} sm={6} justifyContent='flex-end'>
-                        <Paper className={classes.card} elevation={2}>
-                         <Typography type="h1" className={classes.cardtitle}>Today's Weakest Topic</Typography>
-                         <Typography type="h1" className={classes.cardContent}>Dynamic Programming</Typography>
-                         </Paper>
-                    </Grid>
-                    <Grid container item xs={6} sm={6} justifyContent='flex-start'>
-                         <Paper className={classes.card} elevation={2}>
-                    <Typography type="h1" className={classes.cardtitle}>Targeted Rating to Achieve</Typography>
-                    <Typography type="h1" className={classes.cardContent}>1500</Typography>
-                    </Paper>
-                    </Grid>
-           
-                <Grid item container xs={12} sm={12} justifyContent='center'>
-                <Typography variant="h6">To overcome the above weakness we handpicked some diagnosis questions specially for you which should be mandatorily solved.</Typography>
-                </Grid>
-                <br/>
-                <br/>
-                <Grid item sm={12}>
-                <Container maxWidth="xl">
-                <Grid sm={12} xs={12} item container justifyContent='center' className={classes.wi}>
-                <Grid className={classes.diagheader} item container xs={6} sm={4} justifyContent='center'>
-			        <Typography variant="h5">Problems</Typography>
-			    </Grid>
-                <Grid className={classes.diagheader} item container xs={6} sm={4} justifyContent='center'>
-			        <Typography variant="h5">Rating</Typography>
-			    </Grid>
-                <Grid  className={classes.diagheader} item container xs={6} sm={4} justifyContent='center'>
-			        <Typography variant="h5">Status</Typography>
-			    </Grid>
-                </Grid>
-                        {arrlen>0?<Diagtable mark={markque} x={arr[arr.length-1]}/>:''}
-                 </Container>
-                </Grid>
-                {/* Rating Wise Problem Solved Graph */}
-                <Grid item xs={12}>
+                <Grid item xs={12} sm={12}>
                     <h1 className={classes.charttitle}>Rating Wise Problems Solved</h1>
                     <Paper elevation={3}><Barchart obj={obj1}/></Paper>
                  </Grid>
-                <Grid item xs={12}>
-                {/* Rating Graph */}
+                <Grid item xs={12} sm={12}>
+             
                     <h1 className={classes.charttitle}>Rating Graph</h1>
                     <Paper elevation={3}><Linechart obj={obj2}/></Paper>
                 </Grid>
-                {/* TagWise probelm Solved */}
-                <Grid item xs={12}>
+                <Grid item xs={12} sm={12}>
                     <h1 className={classes.charttitle}>Tag wise Problems Solved</h1>
                     <Paper elevation={3}><Doughnut obj={obj3}/></Paper>
                 </Grid>
 
 
-                </Grid>
-
-
-               
-            
-        </Box>
+            </Grid>
+        </Container>
     </div>
   );
 }
