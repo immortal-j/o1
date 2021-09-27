@@ -1,13 +1,11 @@
 import React from "react";
-import {Typography} from '@material-ui/core';
+import {Typography,Grid} from '@material-ui/core';
 import Report from "./Report";
 function Contest(props) {
   return (
-      <div>
-   <Typography>Todays contest link</Typography>
-  
+     <Grid item container xs={12} sm={12} justifyContent='center'>
    <Report x={props.x} />
-   </div>
+   </Grid>
   );
 }
 

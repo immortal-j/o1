@@ -43,6 +43,7 @@ function Diagtable(props) {
       }
   return (
     <div>
+    {console.log(props.x)}
   { props.x.problems.map((value)=>{
         return(
             <Grid sm={12} xs={12} item container justifyContent='center' className={classes.wi}>

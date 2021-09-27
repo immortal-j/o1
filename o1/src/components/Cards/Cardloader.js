@@ -26,6 +26,7 @@ function Practiceloader(props){
       }
 
       function markque(tosend) {
+        console.log(tosend);
         axios.post(`https://coderun-temp.herokuapp.com/update/`,tosend);
         getdata();
       }

@@ -6,6 +6,7 @@ import Doughnut from './doughnut';
 import Contest from './contest';
 import Diagtableloader from './Diagtableload';
 import axios from 'axios';
+import {read_cookie} from 'sfcookies';
 const useStyles = makeStyles((theme) => ({
   charttitle:{
       textAlign:'center',
@@ -58,7 +59,12 @@ const useStyles = makeStyles((theme) => ({
 export default function ChartsLoader(props) {
     const [arr,setArr]=useState([]);
     const [contestdata,setContestdata]=useState(null);
-    var obj1,obj2,obj3;
+    const [label1,setLabel1]=useState([]);
+    const [label2,setLabel2]=useState([]);
+    const [label3,setLabel3]=useState([]);
+    const [data1,setData1]=useState([]);
+    const [data2,setData2]=useState([]);
+    const [data3,setData3]=useState([]);
     useEffect(()=>{
         getgraphs();
         getdata();
@@ -69,7 +75,32 @@ export default function ChartsLoader(props) {
            "uid":props.uid,
        })
        .then(function(response){
-        console.log(response);
+           var arr=response.data,tmp1=[],tmp2=[]
+           for(var i=0;i<arr.rating_graph.length;i++)
+           {
+                tmp1.push(i+1);
+                tmp2.push(arr.rating_graph[i]);
+           }
+           setLabel2(tmp1);
+           setData2(tmp2);
+           tmp1=[]
+           tmp2=[]
+           for (const [key, value] of Object.entries(arr.rating_wise)) {
+           
+            tmp1.push(key);
+            tmp2.push(value);
+          }
+          setLabel1(tmp1);
+           setData1(tmp2);
+           tmp1=[]
+           tmp2=[]
+           for (const [key, value] of Object.entries(arr.tag_wise)) {
+          
+            tmp1.push(key);
+            tmp2.push(value);
+          }
+          setLabel3(tmp1);
+           setData3(tmp2);
        })
        .catch(function(err){
            console.log(err);
@@ -100,16 +131,17 @@ export default function ChartsLoader(props) {
      }
 
      function markque(tosend) {
-        axios.post(`https://coderun-temp.herokuapp.com/update`,tosend);
+       console.log(tosend);
+        axios.post(`https://coderun-temp.herokuapp.com/update/`,tosend);
         getdata();
       }
 
     const classes=useStyles();
     var obj1={
-        labels: ['800', '900', '1000', '1100', '1200', '1300','1500','1600','1700','1800'],
+        labels: label1,
         datasets: [{
             label: 'Problems Solved',
-            data: [12, 19, 3, 5, 2, 3,1,4,2,5],
+            data: data1,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -130,10 +162,10 @@ export default function ChartsLoader(props) {
         }]
     }
     var obj2={
-        labels: ['1', '2', '3', '4', '5', '6','7','8','9','10'],
+        labels:label2,
         datasets: [{
             label: 'Rating',
-            data: [1200, 1000, 300, 1700, 1600, 1600,1500,1200,1300,1100],
+            data: data2,
             borderColor: [
                 'rgba(255, 99, 132, 1)',
             ],
@@ -141,10 +173,10 @@ export default function ChartsLoader(props) {
         }]
     }
     var obj3={
-        labels: ['Maths', 'Greedy', 'Implemantaion', 'Binary Search', 'Data Structures', 'Searching','String','Graphs','DP'],
+        labels: label3,
         datasets: [{
             label: 'Problems Solved',
-            data: [12, 19, 3, 5, 2, 3,1,4,2],
+            data: data3,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.8)',
                 'rgba(54, 162, 235, 0.8)',
@@ -163,9 +195,9 @@ export default function ChartsLoader(props) {
   return (
     <div >
        <Container>
-            <Grid container xs={12} sm={12} justifyContent='center'>
-               {contestdata==null? <Contest x={contestdata}/>
-                           :<Diagtableloader arr={arr} arrlen={arrlen} mark={markque} />}
+            <Grid container xs={12} sm={12} justifyContent='center' >
+               {/* {contestdata==null? <Contest x={contestdata}/> */}
+                           <Diagtableloader uid={props.uid} arr={arr} arrlen={arrlen} mark={markque} />
             </Grid>
         </Container>
         <Container>
