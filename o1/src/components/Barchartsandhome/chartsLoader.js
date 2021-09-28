@@ -71,7 +71,7 @@ export default function ChartsLoader(props) {
     },[])
     const arrlen=arr.length;
     async function getgraphs(){
-       await axios.post(`http://coderun-temp.herokuapp.com/chartdata/`,{
+       await axios.post(`https://coderun-temp.herokuapp.com/chartdata/`,{
            "uid":props.uid,
        })
        .then(function(response){
@@ -113,14 +113,14 @@ export default function ChartsLoader(props) {
 
     async function getdata(){
       var div=read_cookie("div");
-        await axios.get(`http://coderun-temp.herokuapp.com/contest/?div=${div}`)
+        await axios.get(`https://coderun-temp.herokuapp.com/contest/?div=${div}`)
        .then(function (response) {
            setContestdata(response.data);
          })
          .catch(function (error) {
            console.log(error);
          })
-        await axios.post(`http://coderun-temp.herokuapp.com/diagnosis/`,
+        await axios.post(`https://coderun-temp.herokuapp.com/diagnosis/`,
           {
             "uid":props.uid
           })

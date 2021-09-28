@@ -13,7 +13,7 @@ function Practiceloader(props){
     },[]);
 
     async function getdata(){
-         await axios.post(`http://coderun-temp.herokuapp.com/diagnosis/`,{
+         await axios.post(`https://coderun-temp.herokuapp.com/diagnosis/`,{
            "uid":props.uid
          })
         .then(function (response) {

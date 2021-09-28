@@ -11,6 +11,10 @@ import Checkbox from '@mui/material/Checkbox';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import Progress from './progress';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+
 const useStyles = makeStyles((theme) => ({
    ncroot:{
 	maxWidth:450,
@@ -78,8 +82,15 @@ const useStyles = makeStyles((theme) => ({
 		flexGrow: 1,
 	},
 	weak:{
-		fontSize:"20px",
+		fontSize:"26px",
 		fontWeight:600,
+		fontFamily: 'Roboto,sans-serif',
+	},
+	topic:{
+		fontSize: '20px',
+	},
+	fullCard:{
+		backgroundColor: '#F9E4C8',
 	}
 }));
 
@@ -183,20 +194,6 @@ function NewCard(props){
 		<Box m={10}>
 		<Grid container justifyContent='center'>
 		{console.log(props.x)}
-		<Grid item container spacing={4} >
-			<Grid item container xs={6} sm={6} justifyContent='flex-end'>
-			<Typography className={classes.weak}>Weakest Topic:-</Typography>
-			</Grid>
-			<Grid item container xs={6} sm={6}>
-			<Typography className={classes.weak}>{props.x.weakest_topic}</Typography>
-			</Grid>
-			<Grid item container xs={6} sm={6} justifyContent='flex-end'>
-			<Typography className={classes.weak}>Target Rating:-</Typography>
-			</Grid>
-			<Grid item container xs={6} sm={6}>
-			<Typography className={classes.weak}>{props.x.target_rating}</Typography>
-			</Grid>
-		</Grid>
       {
 		  props.x.problems.map((value) => {
         return (
@@ -217,6 +214,35 @@ function NewCard(props){
       })}
 	  </Grid>
 	  </Box>
+	  <Grid item container spacing={1} >
+	  <Grid item container xs={12} sm={2} ></Grid>
+			<Grid item container xs={12} sm={4}  justifyContent='center'>
+					<Card className = {classes.fullCard} sx={{ minWidth: 275 }}>
+				<CardContent>
+				<Typography className={classes.weak}  variant="h5" component="div">
+					Weakest Topic
+				</Typography>
+				<Typography className={classes.topic} >
+				{props.x.weakest_topic}
+				</Typography>
+				</CardContent>
+			</Card>
+			</Grid>
+			<Grid item container xs={0} sm={3} justifyContent='center'>
+				<Card className = {classes.fullCard} sx={{ minWidth: 275 }}>
+				<CardContent>	
+				<Typography className={classes.weak}  variant="h5" component="div">
+					Target Rating
+				</Typography>
+				<Typography className={classes.topic} >
+				{props.x.target_rating}
+				</Typography>
+				</CardContent>
+			</Card>
+			</Grid>
+			<Grid item container xs={0} sm={2} ></Grid>
+		</Grid>
+
       </Dialog>
 
 

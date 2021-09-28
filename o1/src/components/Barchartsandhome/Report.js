@@ -69,7 +69,7 @@ function Report(props) {
            "questions": props.x.questions,
             "status":checked
             }
-      axios.post(`http://coderun-temp.herokuapp.com/report/`,obj);
+      axios.post(`https://coderun-temp.herokuapp.com/report/`,obj);
       props.statuschange(true);
             delete_cookie("conteststatus");
             bake_cookie("conteststatus",true);
