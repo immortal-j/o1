@@ -76,7 +76,11 @@ const useStyles = makeStyles((theme) => ({
 	},
 	space: {
 		flexGrow: 1,
-	  }
+	},
+	weak:{
+		fontSize:"20px",
+		fontWeight:600,
+	}
 }));
 
 
@@ -178,6 +182,21 @@ function NewCard(props){
 
 		<Box m={10}>
 		<Grid container justifyContent='center'>
+		{console.log(props.x)}
+		<Grid item container spacing={4} >
+			<Grid item container xs={6} sm={6} justifyContent='flex-end'>
+			<Typography className={classes.weak}>Weakest Topic:-</Typography>
+			</Grid>
+			<Grid item container xs={6} sm={6}>
+			<Typography className={classes.weak}>{props.x.weakest_topic}</Typography>
+			</Grid>
+			<Grid item container xs={6} sm={6} justifyContent='flex-end'>
+			<Typography className={classes.weak}>Target Rating:-</Typography>
+			</Grid>
+			<Grid item container xs={6} sm={6}>
+			<Typography className={classes.weak}>{props.x.target_rating}</Typography>
+			</Grid>
+		</Grid>
       {
 		  props.x.problems.map((value) => {
         return (

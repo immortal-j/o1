@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
 function Loader() {
   const classes=useStyles();
   const [status,setStatus]=useState("No");
+  const [conteststatus,SetConteststaus]=useState(false);
   const [uid,setUid]=useState('Null');
   useEffect(()=>{
     var x=read_cookie("loggedin");
@@ -55,10 +56,13 @@ function Loader() {
   const handleUidnull = () =>{
     setUid("Null");
   }
+  const handleconteststatus = (status) =>{
+    SetConteststaus(status);
+  }
   return (
     <div>
     <Route exact path="/login">
-    {status==="No"||uid==="Null"?<Login status={handleLog} uid={handleUid} />:<Redirect to="/home"/>}
+    {status==="No"||uid==="Null"?<Login status={handleLog} uid={handleUid} conteststatus={handleconteststatus}/>:<Redirect to="/home"/>}
     </Route>
 
 
@@ -71,7 +75,7 @@ function Loader() {
       <br></br>
       <br></br>
       <Suspense fallback={<Preload/>}>
-      <Chartsloader uid={uid}/>
+      <Chartsloader uid={uid} status={conteststatus} conteststatuschange={handleconteststatus}/>
       </Suspense>
       <Suspense fallback={<Preload/>}>
       <Footer />

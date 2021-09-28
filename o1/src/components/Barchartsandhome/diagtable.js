@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
      border:'1px solid black',
   },
   btn:{
-    backgroundColor:'#C400FF',
+    backgroundColor:'#8739f9',
     color:'#fff',
   },
   anchr:{
@@ -46,7 +46,6 @@ function Diagtable(props) {
       }
   return (
     <div>
-    {console.log(props.x)}
   { props.x.problems.map((value)=>{
         return(
             <Grid sm={12} xs={12} item container justifyContent='center' className={classes.wi}>

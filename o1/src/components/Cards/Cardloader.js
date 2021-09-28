@@ -17,7 +17,7 @@ function Practiceloader(props){
            "uid":props.uid
          })
         .then(function (response) {
-          console.log(response);
+          // console.log(response);
             setArr(response.data);
           })
           .catch(function (error) {
@@ -26,7 +26,7 @@ function Practiceloader(props){
       }
 
       function markque(tosend) {
-        console.log(tosend);
+        // console.log(tosend);
         axios.post(`https://coderun-temp.herokuapp.com/update/`,tosend);
         getdata();
       }
@@ -43,7 +43,7 @@ function Practiceloader(props){
                     <NewCard x={x} uid={props.uid} ts={markque}/>
                 </Grid>
                 );
-            }).reverse()
+            })
           }
             </Grid>
         </Box>

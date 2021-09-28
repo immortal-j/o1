@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
   cardtitle:{
       color:"#fff",
       textAlign:'center',
-      backgroundColor:'#C400FF',
+      backgroundColor:'#8739f9',
       fontSize:20,
       [theme.breakpoints.up('sm')]: {
         fontSize:25,
@@ -75,11 +75,12 @@ export default function ChartsLoader(props) {
            "uid":props.uid,
        })
        .then(function(response){
+        //  console.log(response)
            var arr=response.data,tmp1=[],tmp2=[]
-           for(var i=0;i<arr.rating_graph.length;i++)
+           for(var i=0;i<arr.contest_wise.length;i++)
            {
                 tmp1.push(i+1);
-                tmp2.push(arr.rating_graph[i]);
+                tmp2.push(arr.contest_wise[i]);
            }
            setLabel2(tmp1);
            setData2(tmp2);
@@ -107,11 +108,12 @@ export default function ChartsLoader(props) {
        })
      }
 
-
+     var conteststatus=read_cookie("conteststatus");
 
 
     async function getdata(){
-        await axios.get(`http://coderun-temp.herokuapp.com/contest/`)
+      var div=read_cookie("div");
+        await axios.get(`http://coderun-temp.herokuapp.com/contest/?div=${div}`)
        .then(function (response) {
            setContestdata(response.data);
          })
@@ -123,6 +125,8 @@ export default function ChartsLoader(props) {
             "uid":props.uid
           })
        .then(function (response) {
+        //  console.log("yehwala");
+        //  console.log(response.data);
            setArr(response.data);
          })
          .catch(function (error) {
@@ -131,11 +135,8 @@ export default function ChartsLoader(props) {
      }
 
      function markque(tosend) {
-       console.log(tosend);
-        axios.post(`https://coderun-temp.herokuapp.com/update/`,tosend);
 
-        console.log("ye wala dekh");
-        console.log(tosend);
+        axios.post(`https://coderun-temp.herokuapp.com/update/`,tosend);
         getdata();
       }
 
@@ -199,7 +200,8 @@ export default function ChartsLoader(props) {
     <div >
        <Container>
             <Grid container xs={12} sm={12} justifyContent='center'>
-               {contestdata==null? <Contest x={contestdata}/>
+          
+               {conteststatus===false&&contestdata!=null? <Contest x={contestdata} uid={props.uid} statuschange={props.conteststatuschange}/>
                            :<Diagtableloader uid={props.uid} arr={arr} arrlen={arrlen} mark={markque} />}
             </Grid>
         </Container>

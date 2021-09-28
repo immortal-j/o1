@@ -1,10 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import {Box,Grid,Checkbox,AppBar, makeStyles,Button, Dialog,ListItemText,ListItem,List,Divider,Toolbar,IconButton,Typography,Slide } from '@material-ui/core';
-
+import axios from 'axios';
 import CloseIcon from '@material-ui/icons/Close';
 import { color } from '@mui/system';
-
+import {delete_cookie,bake_cookie} from 'sfcookies';
 
 const useStyles = makeStyles((theme) => ({
     appBar: {
@@ -20,9 +20,16 @@ const useStyles = makeStyles((theme) => ({
     btn:{
       backgroundColor:'#8739f9',
       color:'#fff',
-      marginLeft:'10px',
       fontSize:'18px',
       fontWeight:600,
+    },
+    image:{
+        height:"150px",
+        width:"300px",
+        [theme.breakpoints.up('sm')]: {
+          height:"400px",
+          width:"800px",
+    	},
     }
   }));
   const Transition = React.forwardRef(function Transition(props, ref) {
@@ -33,34 +40,41 @@ const useStyles = makeStyles((theme) => ({
 
 function Report(props) {
     const classes=useStyles();
-    const [tosend,setTosend]=useState([]);
-	const [checked, setChecked] = React.useState([false,false,false,false,false,false]);
-    const [open, setOpen] = React.useState(false);
+	const [checked, setChecked] = useState([false,false,false,false,false,false]);
+    const [open, setOpen] = useState(false);
 
-
-
+ 
     const handleToggle = (value) => () => {
         var newChecked = [...checked];
-        var tos=[...tosend]
         
-        if(newChecked[props.x.questions.indexOf(value)]===false)
+        if(newChecked[value]===false)
         {
-            newChecked[props.x.questions.indexOf(value)]=true;
-            tos.push(props.x.questions.indexOf(value));
+            newChecked[value]=true;
         }
-        else if(newChecked[props.x.questions.indexOf(value)]===true)
+        else if(newChecked[value]===true)
         {
-            newChecked[props.x.questions.indexOf(value)]=false;
-            tos.splice(tos.indexOf(props.x.questions.indexOf(value)),1);
+            newChecked[value]=false;
         }
-        setTosend(tos);
-        console.log(tos);
         setChecked(newChecked);
       };
 
 
     const handleClose = () => {
         setOpen(false);
+      };
+      const handleClosewithpost = () => {
+     
+         var obj={ 
+           "uid":props.uid,
+           "questions": props.x.questions,
+            "status":checked
+            }
+      axios.post(`http://coderun-temp.herokuapp.com/report/`,obj);
+      props.statuschange(true);
+            delete_cookie("conteststatus");
+            bake_cookie("conteststatus",true);
+        setOpen(false);
+        window.location.reload();
       };
 
     const handleClick = () =>{
@@ -69,11 +83,12 @@ function Report(props) {
   return (
     <Grid item container xs={12} sm={12} justifyContent='center' spacing={4}>
     <Grid xs={12} sm={12} item container justifyContent='center'>
-    <Typography className={classes.con}>Here is your Today's Contest Link<br/> </Typography>
-    <Button className={classes.btn} href={props.x.contest_link}>Go to Contest</Button>
+   <a href={props.x.contest_link} target="_blank"> <img src="banner.jpeg" className={classes.image}/></a>
+    {/* <Typography className={classes.con}>Here is your Today's Contest Link<br/> </Typography> */}
+    
+    {/* <Button className={classes.btn} href={props.x.contest_link}>Go to Contest</Button> */}
     </Grid>
     <Grid xs={12} sm={12} item container justifyContent='center'>
-    <Typography className={classes.con}>Get today's Analysis </Typography> 
     <Button className={classes.btn} onClick={handleClick}>Get Analysis</Button>
     </Grid>
     <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
@@ -85,7 +100,7 @@ function Report(props) {
         <Typography variant="h6" className={classes.title}>
           Questions
         </Typography>
-        <Button autoFocus color="inherit" onClick={handleClose}>
+        <Button autoFocus color="inherit" onClick={handleClosewithpost}>
           Get Analysis
         </Button>
       </Toolbar>
@@ -104,7 +119,7 @@ function Report(props) {
 			<Grid item container justifyContent='flex-end' xs={6} sm={6}>
 			<Checkbox
                 edge="end"
-                onChange={handleToggle(value)}
+                onChange={handleToggle(props.x.questions.indexOf(value))}
                 checked={checked[props.x.questions.indexOf(value)]}
                
               />
