@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import {Box,Grid,Checkbox,AppBar, makeStyles,Button, Dialog,ListItemText,ListItem,List,Divider,Toolbar,IconButton,Typography,Slide } from '@material-ui/core';
 import axios from 'axios';
 import CloseIcon from '@material-ui/icons/Close';
@@ -40,10 +40,21 @@ const useStyles = makeStyles((theme) => ({
 
 function Report(props) {
     const classes=useStyles();
-	const [checked, setChecked] = useState([false,false,false,false,false,false]);
+	const [checked, setChecked] = useState([]);
     const [open, setOpen] = useState(false);
+    useEffect(()=>{
+      setchecked();
+  },[]);
+const setchecked = () =>{
+  var tem=[];
 
- 
+  for(var i=0;i<props.x.questions.length;i++)
+  {
+    tem.push(false);
+  }
+  setChecked(tem);
+}
+
     const handleToggle = (value) => () => {
         var newChecked = [...checked];
         
@@ -69,12 +80,20 @@ function Report(props) {
            "questions": props.x.questions,
             "status":checked
             }
-      axios.post(`https://coderun-temp.herokuapp.com/report/`,obj);
-      props.statuschange(true);
-            delete_cookie("conteststatus");
-            bake_cookie("conteststatus",true);
-        setOpen(false);
-        window.location.reload();
+            console.log(obj);
+      axios.post(`https://coderun-temp.herokuapp.com/report/`,obj)
+      
+      .then(function (response) {
+        props.statuschange(true);
+        delete_cookie("conteststatus");
+        bake_cookie("conteststatus",true);
+    setOpen(false);
+    window.location.reload();
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+    
       };
 
     const handleClick = () =>{

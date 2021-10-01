@@ -192,29 +192,7 @@ function NewCard(props){
 
 
 		<Box m={10}>
-		<Grid container justifyContent='center'>
-		{console.log(props.x)}
-      {
-		  props.x.problems.map((value) => {
-        return (
-			<Grid item container>
-			<Grid item container xs={6} sm={6}>
-			<a href={value} target='_blank'><Button>{props.x.names[props.x.problems.indexOf(value)]}</Button></a>
-			</Grid>
-			<Grid item container justifyContent='flex-end' xs={6} sm={6}>
-			<Checkbox
-                edge="end"
-                onChange={handleToggle(props.x.problems.indexOf(value))}
-                checked={checked[props.x.problems.indexOf(value)]}
-               
-              />
-			</Grid>
-			</Grid>
-        );
-      })}
-	  </Grid>
-	  </Box>
-	  <Grid item container spacing={1} >
+		<Grid item container spacing={1} >
 	  <Grid item container xs={12} sm={2} ></Grid>
 			<Grid item container xs={12} sm={4}  justifyContent='center'>
 					<Card className = {classes.fullCard} sx={{ minWidth: 275 }}>
@@ -243,6 +221,29 @@ function NewCard(props){
 			<Grid item container xs={0} sm={2} ></Grid>
 		</Grid>
 
+		<Grid container justifyContent='center'>
+		{console.log(props.x)}
+      {
+		  props.x.problems.map((value) => {
+        return (
+			<Grid item container>
+			<Grid item container xs={6} sm={6}>
+			<a href={value} target='_blank'><Button>{props.x.names[props.x.problems.indexOf(value)]}</Button></a>
+			</Grid>
+			<Grid item container justifyContent='flex-end' xs={6} sm={6}>
+			<Checkbox
+                edge="end"
+                onChange={handleToggle(props.x.problems.indexOf(value))}
+                checked={checked[props.x.problems.indexOf(value)]}
+               
+              />
+			</Grid>
+			</Grid>
+        );
+      })}
+	  </Grid>
+	  </Box>
+	 
       </Dialog>
 
 
