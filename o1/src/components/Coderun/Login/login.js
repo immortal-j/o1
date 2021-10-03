@@ -39,7 +39,7 @@ function Login(props) {
         password: pass,
       })
       .then(function (response) {
-        console.log(response);
+        // console.log(response);
         bake_cookie("loggedin", "yes");
         bake_cookie("uid", response.data.uid);
         bake_cookie("div", response.data.div);

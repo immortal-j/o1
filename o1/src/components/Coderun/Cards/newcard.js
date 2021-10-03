@@ -147,7 +147,7 @@ function NewCard(props) {
             <h6 className={classes.lefttitle}>Day{props.x.id}</h6>
           </div>
           <div className={classes.courseinfo}>
-          {console.log(props.x)}
+          {/* {console.log(props.x)} */}
             <Progress solved={props.x.solved} length={props.x.names.length} />
             <br />
             <Button
@@ -225,7 +225,7 @@ function NewCard(props) {
               </Grid>
 
               <Grid container justifyContent="center">
-                {console.log(props.x)}
+                {/* {console.log(props.x)} */}
                 {props.x.problems.map((value) => {
                   return (
                     <Grid item container>
