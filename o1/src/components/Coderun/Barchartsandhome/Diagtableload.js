@@ -1,5 +1,5 @@
 import React from "react";
-import Diagtable from "./diagtable";
+import Diagtable from "./diagtable2";
 import { useState } from "react";
 import {
   Typography,
@@ -65,7 +65,7 @@ function Diagtableloader(props) {
         <div>
           <Typography variant="h3" className={classes.diagnosis}>
             {" "}
-            Hi Rishikesh
+            Hi !!!!!!!!!!
           </Typography>
           <Typography variant="h6">
             Our algorithm analysed your recent contest's performance and found
@@ -109,45 +109,7 @@ function Diagtableloader(props) {
       <br />
       <Grid item sm={12}>
         <Container maxWidth="xl">
-          <Grid
-            sm={12}
-            xs={12}
-            item
-            container
-            justifyContent="center"
-            className={classes.wi}
-          >
-            <Grid
-              className={classes.diagheader}
-              item
-              container
-              xs={6}
-              sm={4}
-              justifyContent="center"
-            >
-              <Typography variant="h5">Problems</Typography>
-            </Grid>
-            <Grid
-              className={classes.diagheader}
-              item
-              container
-              xs={6}
-              sm={4}
-              justifyContent="center"
-            >
-              <Typography variant="h5">Rating</Typography>
-            </Grid>
-            <Grid
-              className={classes.diagheader}
-              item
-              container
-              xs={6}
-              sm={4}
-              justifyContent="center"
-            >
-              <Typography variant="h5">Status</Typography>
-            </Grid>
-          </Grid>
+         
           {props.arrlen > 0 ? (
             <Diagtable uid={props.uid} mark={props.mark} x={props.arr[0]} />
           ) : (

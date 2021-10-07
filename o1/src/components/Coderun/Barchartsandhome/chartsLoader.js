@@ -72,13 +72,11 @@ export default function ChartsLoader(props) {
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
   const [data3, setData3] = useState([]);
-  const [conteststatus,setConteststatus]=useState(false);
+  const [conteststatus, setConteststatus] = useState(false);
   useEffect(() => {
-    
-  var cs = read_cookie("conteststatus");
-  setConteststatus(cs);
-    if (conteststatus===false)
-    {
+    var cs = read_cookie("conteststatus");
+    setConteststatus(cs);
+    if (conteststatus === false) {
       getdata();
     }
     getgraphs();
@@ -104,7 +102,14 @@ export default function ChartsLoader(props) {
         tmp2 = [];
         for (const [key, value] of Object.entries(arr.rating_wise)) {
           tmp1.push(key);
-          tmp2.push(value);
+        }
+
+        tmp1.sort(function (a, b) {
+          return a - b;
+        });
+
+        for (i in tmp1) {
+          tmp2.push(arr.rating_wise[tmp1[i]]);
         }
         setLabel1(tmp1);
         setData1(tmp2);
@@ -121,7 +126,6 @@ export default function ChartsLoader(props) {
         console.log(err);
       });
   }
-
 
   async function getdata() {
     var div = read_cookie("div");
