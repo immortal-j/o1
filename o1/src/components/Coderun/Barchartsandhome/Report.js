@@ -21,6 +21,8 @@ import axios from "axios";
 import CloseIcon from "@material-ui/icons/Close";
 import { color } from "@mui/system";
 import { delete_cookie, bake_cookie } from "sfcookies";
+import DataDialog from './DataDialog';
+
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -56,6 +58,9 @@ function Report(props) {
   const classes = useStyles();
   const [checked, setChecked] = useState([]);
   const [open, setOpen] = useState(false);
+  const[showDialog,setshowDialog] = useState(false);
+  const [showdemoDialog,setshowDemoDialog] = useState(false);
+
   useEffect(() => {
     setchecked();
   }, []);
@@ -79,10 +84,16 @@ function Report(props) {
     setChecked(newChecked);
   };
 
+  const handleHEllo = () => {
+    setshowDemoDialog(true);
+  }
+
   const handleClose = () => {
     setOpen(false);
   };
   const handleClosewithpost = () => {
+    // <DataDialog />
+    setshowDialog(true);
     var obj = {
       uid: props.uid,
       questions: props.x.questions,
@@ -142,6 +153,13 @@ function Report(props) {
             <Typography variant="h6" className={classes.title}>
               Questions
             </Typography>
+            {/* <Button onClick={handleHEllo}>
+              Hello
+            </Button>
+            {showdemoDialog?
+            <DataDialog/>
+            :
+            ""} */}
           </Toolbar>
         </AppBar>
         <Box m={10}>
@@ -164,10 +182,10 @@ function Report(props) {
                 </Grid>
               );
             })}
-            <br/><br/><br/>
-            <Button autoFocus color="inherit" onClick={handleClosewithpost}>
+            <Button style={{marginTop:'45px'}} color="inherit" onClick={handleClosewithpost} variant='contained' >
               Get Analysis
             </Button>
+            {showDialog?<DataDialog />:""}
           </Grid>
         </Box>
       </Dialog>
