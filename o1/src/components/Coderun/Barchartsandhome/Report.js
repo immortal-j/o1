@@ -142,9 +142,6 @@ function Report(props) {
             <Typography variant="h6" className={classes.title}>
               Questions
             </Typography>
-            <Button autoFocus color="inherit" onClick={handleClosewithpost}>
-              Get Analysis
-            </Button>
           </Toolbar>
         </AppBar>
         <Box m={10}>
@@ -167,6 +164,10 @@ function Report(props) {
                 </Grid>
               );
             })}
+            <br/><br/><br/>
+            <Button autoFocus color="inherit" onClick={handleClosewithpost}>
+              Get Analysis
+            </Button>
           </Grid>
         </Box>
       </Dialog>

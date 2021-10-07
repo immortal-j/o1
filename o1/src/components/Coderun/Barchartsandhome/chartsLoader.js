@@ -219,7 +219,7 @@ export default function ChartsLoader(props) {
     <div>
       <Container>
         <Grid container xs={12} sm={12} justifyContent="center">
-          {conteststatus === false && contestdata !== null ? (
+          {conteststatus === true && contestdata === null ? (
             <Contest
               x={contestdata}
               uid={props.uid}
