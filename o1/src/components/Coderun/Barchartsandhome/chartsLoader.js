@@ -15,7 +15,7 @@ import Doughnut from "./doughnut";
 import Contest from "./contest";
 import Diagtableloader from "./Diagtableload";
 import axios from "axios";
-import { read_cookie } from "sfcookies";
+import { read_cookie,delete_cookie,bake_cookie } from "sfcookies";
 const useStyles = makeStyles((theme) => ({
   charttitle: {
     textAlign: "center",
@@ -88,7 +88,9 @@ export default function ChartsLoader(props) {
         uid: props.uid,
       })
       .then(function (response) {
-        //  console.log(response)
+          setConteststatus(response.data.user.status);
+          delete_cookie("conteststatus");
+          bake_cookie("conteststatus",response.data.user.status);
         var arr = response.data,
           tmp1 = [],
           tmp2 = [];
