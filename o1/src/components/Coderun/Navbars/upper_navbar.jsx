@@ -75,6 +75,8 @@ export default function MenuAppBar(props) {
   const logout = () => {
     delete_cookie("loggedin");
     delete_cookie("uid");
+    delete_cookie("conteststatus")
+    delete_cookie("div");
     props.handleLogout();
     props.uidnull();
     history.push("/");
