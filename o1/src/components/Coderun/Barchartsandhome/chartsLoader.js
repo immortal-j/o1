@@ -88,7 +88,7 @@ export default function ChartsLoader(props) {
         uid: props.uid,
       })
       .then(function (response) {
-          setConteststatus(response.data.user.status);
+                  setConteststatus(response.data.user.status);
           delete_cookie("conteststatus");
           bake_cookie("conteststatus",response.data.user.status);
         var arr = response.data,
@@ -144,8 +144,6 @@ export default function ChartsLoader(props) {
         uid: props.uid,
       })
       .then(function (response) {
-        //  console.log("yehwala");
-        //  console.log(response.data);
         setArr(response.data);
       })
       .catch(function (error) {

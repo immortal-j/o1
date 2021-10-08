@@ -65,7 +65,7 @@ function Diagtableloader(props) {
         <div>
           <Typography variant="h3" className={classes.diagnosis}>
             {" "}
-            Hi !!!!!!!!!!
+            Hi user !
           </Typography>
           <Typography variant="h6">
             Our algorithm analysed your recent contest's performance and found
