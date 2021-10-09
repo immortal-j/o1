@@ -134,6 +134,7 @@ function NewCard(props) {
     props.ts({ uid: props.uid, day: props.x.id, problems: tosend });
     setsnack(true);
     handleClose();
+    window.location.reload();
   };
   const handleClosesnack = () => {
     setsnack(false);

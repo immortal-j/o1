@@ -9,6 +9,13 @@ function Linechart(props) {
       width={400}
       options={{
         maintainAspectRatio: false,
+        plugins:{
+        legend:{
+          labels:{
+            boxHeight:1,
+          }
+        }
+      }
       }}
     />
   );
