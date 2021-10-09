@@ -64,8 +64,7 @@ function Diagtableloader(props) {
       <Grid item container justifyContent="center" xs={12} sm={12}>
         <div>
           <Typography variant="h3" className={classes.diagnosis}>
-            {" "}
-            Hi user !
+            Hi {props.data!=null?props.data.user.name:''}
           </Typography>
           <Typography variant="h6">
             Our algorithm analysed your recent contest's performance and found

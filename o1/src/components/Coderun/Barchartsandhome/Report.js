@@ -99,7 +99,7 @@ function Report(props) {
       questions: props.x.questions,
       status: checked,
     };
-    console.log(obj);
+    // console.log(obj);
     axios
       .post(`https://coderun-temp.herokuapp.com/report/`, obj)
 

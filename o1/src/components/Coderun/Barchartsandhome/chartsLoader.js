@@ -69,6 +69,7 @@ export default function ChartsLoader(props) {
   const [label1, setLabel1] = useState([]);
   const [label2, setLabel2] = useState([]);
   const [label3, setLabel3] = useState([]);
+  const [data,setData] =useState(null);
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
   const [data3, setData3] = useState([]);
@@ -88,9 +89,11 @@ export default function ChartsLoader(props) {
         uid: props.uid,
       })
       .then(function (response) {
+        // console.log(response);
                   setConteststatus(response.data.user.status);
           delete_cookie("conteststatus");
           bake_cookie("conteststatus",response.data.user.status);
+          setData(response.data);
         var arr = response.data,
           tmp1 = [],
           tmp2 = [];
@@ -217,6 +220,7 @@ export default function ChartsLoader(props) {
   };
   return (
     <div>
+
       <Container>
         <Grid container xs={12} sm={12} justifyContent="center">
           {conteststatus === false && contestdata !== null ? (
@@ -231,6 +235,7 @@ export default function ChartsLoader(props) {
               arr={arr}
               arrlen={arrlen}
               mark={markque}
+              data={data}
             />
           )}
         </Grid>

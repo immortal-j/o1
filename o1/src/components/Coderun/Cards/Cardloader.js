@@ -32,7 +32,7 @@ function Practiceloader(props) {
         uid: props.uid,
       })
       .then(function (response) {
-        // console.log(response);
+        // console.log(response.data)
         setArr(response.data);
       })
       .catch(function (error) {
@@ -40,18 +40,24 @@ function Practiceloader(props) {
       });
   }
   if (arr.length > 0 && flag == 0) {
+    // console.log(arr);
     displayusers = arr.slice(pagevisited, pagevisited + usersperpage);
     setFlag(1);
     setPageCount(Math.ceil(arr.length / usersperpage));
     setTemp(displayusers);
   }
   function markque(tosend) {
-    // console.log(tosend);
-    axios.post(`https://coderun-temp.herokuapp.com/update/`, tosend);
-    getdata();
+     console.log(tosend);
+    axios.post(`https://coderun-temp.herokuapp.com/update/`, tosend)
+    .then(function(response){
+      // console.log(response);
+    })
+    .catch(function(err){
+      console.log(err);
+    })
   }
   function changePage({selected}){
-    console.log(selected);
+    // console.log(selected);
     setPagenumber(selected);
   }
   return (
@@ -60,8 +66,9 @@ function Practiceloader(props) {
         <Grid container justifyContent="center">
           {temp.map((x) => {
             return (
-              <Grid item xs={12} sm={4} container justifyContent="center">
-                <NewCard x={x} uid={props.uid} ts={markque} />
+              
+              <Grid  item xs={12} sm={4} container justifyContent="center">
+                <NewCard key={x.id} x={x} uid={props.uid} ts={markque} />
               </Grid>
             );
           })}
@@ -79,7 +86,7 @@ function Practiceloader(props) {
           activeClassName={"paginationActive"}
         />
         </Grid>
-        {console.log(pagecount)}
+       
         
       </Box>
     </div>
