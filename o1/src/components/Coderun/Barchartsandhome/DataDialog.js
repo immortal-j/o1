@@ -7,6 +7,38 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 import HashLoader from "react-spinners/HashLoader";
+import {Grid} from '@material-ui/core'
+
+const messages = ["fetching your data...", "creating your analysis...", "Showing it to you..."];
+
+
+const Loader = props => {
+  const { messages } = props;
+  const [messageIndex, setMessageIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    let timeout;
+    if (messageIndex < messages.length - 1) {
+      timeout = setTimeout(() => setMessageIndex(messageIndex + 1), 1000);
+    }
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [messages, messageIndex]);
+  return <Grid container item>
+  <Grid container xs={0} sm={3} >
+  </Grid>
+  <Grid item container xs={12} sm={6}>
+    <Grid item container xs={0} sm={1}></Grid>
+    <Grid item container xs={12} sm={10} justifyContent='center' style={{textAlign:'center'}} >{messages[messageIndex]}</Grid>
+    <Grid item container xs={0} sm={1}></Grid>
+  </Grid>
+  <Grid item container xs={0} sm={3} >
+  </Grid>
+  </Grid> 
+};
+
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -18,12 +50,6 @@ export default function AlertDialogSlide() {
   const handleClickOpen = () => {
     setOpen(true);
   };
-  // useEffect(() => {
-  //   setLoading(true);
-  //   setTimeout(() => {
-  //     setLoading(false);
-  //   }, 2000);
-  // }, [])
   const handleClose = () => {
     setOpen(false);
   };
@@ -31,9 +57,6 @@ export default function AlertDialogSlide() {
 
   return (
     <div>
-      {/* <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Slide in alert dialog
-      </Button> */}
       <Dialog 
         disableBackdropClick 
         open={open}
@@ -46,7 +69,9 @@ export default function AlertDialogSlide() {
         <div className="AnalysisLoader" >
         <HashLoader color={"#8739f9"} loading={loading} size={85}   />
         </div>
-        <DialogTitle id="alert-dialog-slide-title">{"Wait while we get ready with your diagnostics"}</DialogTitle>
+        <DialogTitle id="alert-dialog-slide-title">
+          <Loader messages={messages} />
+        </DialogTitle>
         <DialogContent>
         </DialogContent>
       </Dialog>
