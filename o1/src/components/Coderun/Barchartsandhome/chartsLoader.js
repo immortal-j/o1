@@ -62,6 +62,28 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#000",
     color: "#fff",
   },
+  nodata1:{
+    height:"90px",
+   
+    [theme.breakpoints.up("sm")]: {
+      height:"300px",
+    },
+  },
+  nodata2:{
+    height:"90px",
+  
+    [theme.breakpoints.up("sm")]: {
+      height:"304px",
+    },
+  },
+  nodata3:{
+    height:"112px",
+   
+    [theme.breakpoints.up("sm")]: {
+      height:"400px",
+    },
+  },
+
 }));
 export default function ChartsLoader(props) {
   const [arr, setArr] = useState([]);
@@ -244,21 +266,21 @@ export default function ChartsLoader(props) {
         <Grid container spacing={4}>
           <Grid item xs={12} sm={12}>
             <h1 className={classes.charttitle}>Rating Wise Problems Solved</h1>
-            <Paper elevation={3}>
+          {label1.length>0?  <Paper elevation={3}>
               <Barchart obj={obj1} />
-            </Paper>
+            </Paper>:<img src="Barchart.png" className={classes.nodata1} />}
           </Grid>
           <Grid item xs={12} sm={12}>
             <h1 className={classes.charttitle}>Rating Graph</h1>
-            <Paper elevation={3}>
+           {label2.length>0? <Paper elevation={3}>
               <Linechart obj={obj2} />
-            </Paper>
+            </Paper>:<img  src="Rating.png" className={classes.nodata2} />}
           </Grid>
           <Grid item xs={12} sm={12}>
             <h1 className={classes.charttitle}>Tag wise Problems Solved</h1>
-            <Paper elevation={3}>
+            {label3.length>0?<Paper elevation={3}>
               <Doughnut obj={obj3} />
-            </Paper>
+            </Paper>:<img src="Dougnut.png" className={classes.nodata3}/>}
           </Grid>
         </Grid>
       </Container>

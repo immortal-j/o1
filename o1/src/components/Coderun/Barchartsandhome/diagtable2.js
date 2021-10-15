@@ -22,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
   },
   btn: {
     backgroundColor: "#8739f9",
+    "&:hover": {
+      backgroundColor: "#f50057",
+    },
     color: "#fff",
   },
   anchr: {
@@ -29,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
   btn2: {
     fontSize: "18px",
+    
     [theme.breakpoints.down("sm")]: {
       fontSize: "10px",
     },

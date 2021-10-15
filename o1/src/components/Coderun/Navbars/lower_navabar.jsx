@@ -22,6 +22,8 @@ const useStyles = makeStyles((theme) => ({
   },
   btn: {
     color: "black",
+    fontSize:'15px',
+    fontWeight:600,
   },
   abar: {
     backgroundColor: "#fff",

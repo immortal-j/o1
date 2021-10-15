@@ -62,6 +62,8 @@ function Alumni() {
             <Grid item xs={0} sm={1}></Grid>
             <Grid item sm={12}>
               <br></br>
+              <br />
+              <br />
             </Grid>
             <Grid item container xs={12} justifyContent="center">
               <br />
