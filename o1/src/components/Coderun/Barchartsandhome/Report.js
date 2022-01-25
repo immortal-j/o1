@@ -16,28 +16,36 @@ import {
   IconButton,
   Typography,
   Slide,
+  Paper,
 } from "@material-ui/core";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
 import axios from "axios";
 import CloseIcon from "@material-ui/icons/Close";
 import { color } from "@mui/system";
 import { delete_cookie, bake_cookie } from "sfcookies";
-import DataDialog from './DataDialog';
-
+import DataDialog from "./DataDialog";
 
 const useStyles = makeStyles((theme) => ({
-  appBar: {
-    position: "relative",
-  },
+ 
   title: {
     marginLeft: theme.spacing(2),
     flex: 1,
+    color:'#ffd79d',
+    fontSize:'20px',
+    fontWeight:600,
+
   },
   con: {
     fontSize: "30px",
   },
   btn: {
-    backgroundColor: "#8739f9",
-    color: "#fff",
+    backgroundColor: "#320d3e",
+    color:'#ffd79d',
     fontSize: "18px",
     fontWeight: 600,
   },
@@ -49,6 +57,38 @@ const useStyles = makeStyles((theme) => ({
       width: "800px",
     },
   },
+  appbar:{
+    position:'relative',
+    backgroundColor:"#320d3e",
+  },
+  tablehead: {
+    fontSize: "20px",
+    fontWeight: 600,
+    color:'#ffd79d',
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "10px",
+    },
+  },
+  headrow: {
+    backgroundColor: "#320d3e",
+  },
+  tablesize: {
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "300px",
+    },
+  },
+  navbartext:{
+    color:'#ffd79d',
+    fontSize:'16px',
+    fontWeight:600,
+  },
+  anchr: {
+    textDecoration: "none",
+  },
+  tabletext:{
+    fontSize:'16px',
+    fontWeight:600,
+  }
 }));
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -58,8 +98,8 @@ function Report(props) {
   const classes = useStyles();
   const [checked, setChecked] = useState([]);
   const [open, setOpen] = useState(false);
-  const[showDialog,setshowDialog] = useState(false);
-  const [showdemoDialog,setshowDemoDialog] = useState(false);
+  const [showDialog, setshowDialog] = useState(false);
+  const [showdemoDialog, setshowDemoDialog] = useState(false);
 
   useEffect(() => {
     setchecked();
@@ -86,7 +126,7 @@ function Report(props) {
 
   const handleHEllo = () => {
     setshowDemoDialog(true);
-  }
+  };
 
   const handleClose = () => {
     setOpen(false);
@@ -99,7 +139,7 @@ function Report(props) {
       questions: props.x.questions,
       status: checked,
     };
-    // console.log(obj);
+    console.log(obj);
     axios
       .post(`https://coderun-temp.herokuapp.com/report/`, obj)
 
@@ -108,7 +148,7 @@ function Report(props) {
         delete_cookie("conteststatus");
         bake_cookie("conteststatus", true);
         setOpen(false);
-        window.location.reload();
+        // window.location.reload();
       })
       .catch(function (error) {
         console.log(error);
@@ -140,7 +180,7 @@ function Report(props) {
         onClose={handleClose}
         TransitionComponent={Transition}
       >
-        <AppBar className={classes.appBar}>
+        <AppBar className={classes.appbar}>
           <Toolbar>
             <IconButton
               edge="start"
@@ -151,7 +191,7 @@ function Report(props) {
               <CloseIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-              Questions
+             Contest Questions
             </Typography>
             {/* <Button onClick={handleHEllo}>
               Hello
@@ -162,7 +202,7 @@ function Report(props) {
             ""} */}
           </Toolbar>
         </AppBar>
-        <Box m={10}>
+        {/* <Box m={10}>
           <Grid container justifyContent="center">
             {props.x.questions.map((value) => {
               return (
@@ -182,11 +222,74 @@ function Report(props) {
                 </Grid>
               );
             })}
-            <Button style={{marginTop:'45px'}} color="inherit" onClick={handleClosewithpost} variant='contained' >
+            <Button
+              style={{ marginTop: "45px" }}
+              color="inherit"
+              onClick={handleClosewithpost}
+              variant="contained"
+            >
               Get Analysis
             </Button>
-            {showDialog?<DataDialog />:""}
+            {showDialog ? <DataDialog /> : ""}
           </Grid>
+        </Box> */}
+
+        <Box m={3}>
+          <TableContainer component={Paper} className={classes.tablesize}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableBody>
+                <TableRow className={classes.headrow}>
+                  <TableCell>
+                    <Typography className={classes.tablehead}>
+                      Problems
+                    </Typography>
+                  </TableCell>
+                 
+                  <TableCell>
+                    <Typography className={classes.tablehead}>
+                      status
+                    </Typography>
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+              <TableBody>
+                {props.x.questions.map((value) => {
+                  return (
+                    <TableRow>
+                      <TableCell>
+                      <a href={value.url} target="_blank" className={classes.anchr}>
+                      <Button>{value.title}</Button>
+                    </a>
+                      </TableCell>
+                      {/* <TableCell>
+                        <Typography>
+                          {props.x.ratings[props.x.questions.indexOf(value)]}
+                        </Typography>
+                      </TableCell> */}
+                      <TableCell>
+                      <Checkbox
+                      edge="end"
+                      onChange={handleToggle(props.x.questions.indexOf(value))}
+                      checked={checked[props.x.questions.indexOf(value)]}
+                    />
+                      </TableCell>
+                    </TableRow>
+                  );
+                })}
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <Grid container justifyContent='center'>
+          <Button
+          className={classes.btn}
+              style={{ marginTop: "45px"  }}
+              color="inherit"
+              onClick={handleClosewithpost}
+              variant="contained"
+            >
+              Get Analysis
+            </Button>
+            </Grid>
         </Box>
       </Dialog>
     </Grid>

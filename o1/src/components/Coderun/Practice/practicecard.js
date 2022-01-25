@@ -20,7 +20,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-
+import Practicelottie from './practicelottie';
 const useStyles = makeStyles((theme) => ({
   ncroot: {
     maxWidth: 450,
@@ -106,6 +106,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#320d3e",
   },
   appbar:{
+    position:'relative',
     backgroundColor:"#320d3e",
   },
   tablehead: {
@@ -135,6 +136,12 @@ const useStyles = makeStyles((theme) => ({
   tabletext:{
     fontSize:'16px',
     fontWeight:600,
+  },
+  hide:{
+    display:'none',
+    [theme.breakpoints.down("sm")]: {
+      display:'block',
+    },
   }
 }));
 
@@ -231,10 +238,10 @@ function NewCard(props) {
               </Toolbar>
             </AppBar>
 
-            <Box m={10}>
+            <Box m={1}>
               <Grid item container spacing={1}>
-                <Grid item container xs={12} sm={2}></Grid>
-                <Grid item container xs={12} sm={4} justifyContent="center">
+                
+                <Grid item container xs={12} sm={4} justifyContent="center" >
                   <Card className={classes.fullCard} sx={{ minWidth: 300 }}>
                     <CardContent>
                       <Typography className={classes.cardhead}>
@@ -246,7 +253,10 @@ function NewCard(props) {
                     </CardContent>
                   </Card>
                 </Grid>
-                <Grid item container xs={0} sm={3} justifyContent="center">
+                <Grid item container xs={0} sm={4} justifyContent="center">
+                 <Practicelottie />
+                </Grid>
+                <Grid item container xs={12} sm={4} justifyContent="center">
                   <Card className={classes.fullCard} sx={{ minWidth: 300 }}>
                     <CardContent>
                       <Typography
@@ -303,7 +313,7 @@ function NewCard(props) {
                 })}
               </Grid> */} 
             </Box>
-            <Box m={3}>
+            <Box m={4}>
             <TableContainer component={Paper} className={classes.tablesize}>
         <Table className={classes.table} aria-label="simple table">
           <TableBody>

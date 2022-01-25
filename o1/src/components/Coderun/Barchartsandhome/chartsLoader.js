@@ -12,10 +12,13 @@ import {
 import Barchart from "./Barchart";
 import Linechart from "./Linechart";
 import Doughnut from "./doughnut";
+import Apexline from "./apexline";
+import Heatmap from "./heatmap";
 import Contest from "./contest";
 import Diagtableloader from "./Diagtableload";
+import Submitquestion from "./submitquestion";
 import axios from "axios";
-import { read_cookie,delete_cookie,bake_cookie } from "sfcookies";
+import { read_cookie, delete_cookie, bake_cookie } from "sfcookies";
 const useStyles = makeStyles((theme) => ({
   charttitle: {
     textAlign: "center",
@@ -62,36 +65,36 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#000",
     color: "#fff",
   },
-  nodata1:{
-    height:"90px",
-   
-    [theme.breakpoints.up("sm")]: {
-      height:"300px",
-    },
-  },
-  nodata2:{
-    height:"90px",
-  
-    [theme.breakpoints.up("sm")]: {
-      height:"304px",
-    },
-  },
-  nodata3:{
-    height:"112px",
-   
-    [theme.breakpoints.up("sm")]: {
-      height:"400px",
-    },
-  },
+  nodata1: {
+    height: "90px",
 
+    [theme.breakpoints.up("sm")]: {
+      height: "300px",
+    },
+  },
+  nodata2: {
+    height: "90px",
+
+    [theme.breakpoints.up("sm")]: {
+      height: "304px",
+    },
+  },
+  nodata3: {
+    height: "112px",
+
+    [theme.breakpoints.up("sm")]: {
+      height: "400px",
+    },
+  },
 }));
 export default function ChartsLoader(props) {
   const [arr, setArr] = useState([]);
   const [contestdata, setContestdata] = useState(null);
   const [label1, setLabel1] = useState([]);
   const [label2, setLabel2] = useState([]);
+  const [color2, setColor2] = useState([]);
   const [label3, setLabel3] = useState([]);
-  const [data,setData] =useState(null);
+  const [data, setData] = useState(null);
   const [data1, setData1] = useState([]);
   const [data2, setData2] = useState([]);
   const [data3, setData3] = useState([]);
@@ -105,26 +108,31 @@ export default function ChartsLoader(props) {
     getgraphs();
   }, []);
   const arrlen = arr.length;
+
   async function getgraphs() {
     await axios
       .post(`https://coderun-temp.herokuapp.com/chartdata/`, {
         uid: props.uid,
       })
       .then(function (response) {
-        // console.log(response);
-                  setConteststatus(response.data.user.status);
-          delete_cookie("conteststatus");
-          bake_cookie("conteststatus",response.data.user.status);
-          setData(response.data);
+        setConteststatus(response.data.user.status);
+        delete_cookie("conteststatus");
+        bake_cookie("conteststatus", response.data.user.status);
+        setData(response.data);
         var arr = response.data,
           tmp1 = [],
-          tmp2 = [];
-        for (var i = 0; i < arr.contest_wise.length; i++) {
-          tmp1.push(i + 1);
-          tmp2.push(arr.contest_wise[i]);
+          tmp2 = [],
+          tmp3 = [];
+        // console.log(arr.contest_wise);
+        for (var i = 0; i < arr.contest_wise[0].length; i++) {
+          // tmp1.push(arr.contest_wise[0][i]);
+          tmp2.push(arr.contest_wise[0][i]);
+          // tmp3.push(arr.contest_wise[2][i]);
         }
-        setLabel2(tmp1);
+        console.log(tmp2);
+        // setLabel2(tmp1);
         setData2(tmp2);
+        setColor2(tmp3);
         tmp1 = [];
         tmp2 = [];
         for (const [key, value] of Object.entries(arr.rating_wise)) {
@@ -175,7 +183,6 @@ export default function ChartsLoader(props) {
         console.log(error);
       });
   }
-
   function markque(tosend) {
     axios.post(`https://coderun-temp.herokuapp.com/update/`, tosend);
     getdata();
@@ -189,12 +196,12 @@ export default function ChartsLoader(props) {
         label: "Problems Solved",
         data: data1,
         backgroundColor: [
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
+          "rgba(255, 99, 132, 0.4)",
+          "rgba(54, 162, 235, 0.4)",
+          "rgba(255, 206, 86, 0.4)",
+          "rgba(75, 192, 192, 0.4)",
+          "rgba(153, 102, 255, 0.4)",
+          "rgba(255, 159, 64, 0.4)",
         ],
         borderColor: [
           "rgba(255, 99, 132, 1)",
@@ -210,11 +217,14 @@ export default function ChartsLoader(props) {
   };
   var obj2 = {
     labels: label2,
+    data: data2,
+    color: color2,
     datasets: [
       {
         label: "Rating",
         data: data2,
-        borderColor: ["rgba(255, 99, 132, 1)"],
+        // backgroundColor: color2,
+        borderColor: ["rgba(0,0,0, 1)"],
         borderWidth: 1,
       },
     ],
@@ -242,8 +252,8 @@ export default function ChartsLoader(props) {
   };
   return (
     <div>
-
       <Container>
+        {/* When contests start  IMP */}
         <Grid container xs={12} sm={12} justifyContent="center">
           {conteststatus === false && contestdata !== null ? (
             <Contest
@@ -261,26 +271,50 @@ export default function ChartsLoader(props) {
             />
           )}
         </Grid>
+        <Submitquestion />
       </Container>
       <Container>
         <Grid container spacing={4}>
           <Grid item xs={12} sm={12}>
             <h1 className={classes.charttitle}>Rating Wise Problems Solved</h1>
-          {label1.length>0?  <Paper elevation={3}>
-              <Barchart obj={obj1} />
-            </Paper>:<img src="Barchart.png" className={classes.nodata1} />}
+            {label1.length > 0 ? (
+              <Paper elevation={3}>
+                <Barchart obj={obj1} />
+              </Paper>
+            ) : (
+              <img src="Barchart.png" className={classes.nodata1} />
+            )}
           </Grid>
           <Grid item xs={12} sm={12}>
             <h1 className={classes.charttitle}>Rating Graph</h1>
-           {label2.length>0? <Paper elevation={3}>
-              <Linechart obj={obj2} />
-            </Paper>:<img  src="Rating.png" className={classes.nodata2} />}
+            {obj2.data.length > 0 ? (
+              <Paper elevation={3}>
+                {/* <Linechart obj={obj2} /> */}
+                <Apexline obj={obj2} />
+              </Paper>
+            ) : (
+              <img src="Rating.png" className={classes.nodata2} />
+            )}
           </Grid>
           <Grid item xs={12} sm={12}>
             <h1 className={classes.charttitle}>Tag wise Problems Solved</h1>
-            {label3.length>0?<Paper elevation={3}>
-              <Doughnut obj={obj3} />
-            </Paper>:<img src="Dougnut.png" className={classes.nodata3}/>}
+            {label3.length > 0 ? (
+              <Paper elevation={3}>
+                <Doughnut obj={obj3} />
+              </Paper>
+            ) : (
+              <img src="Dougnut.png" className={classes.nodata3} />
+            )}
+          </Grid>
+          <Grid item xs={12} sm={12}>
+            <h1 className={classes.charttitle}>Heatmap</h1>
+            {label3.length > 0 ? (
+              <Paper elevation={3}>
+               <Heatmap />
+              </Paper>
+            ) : (
+              <img src="Dougnut.png" className={classes.nodata3} />
+            )}
           </Grid>
         </Grid>
       </Container>

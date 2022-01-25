@@ -11,7 +11,7 @@ const Chartsloader = lazy(() =>
 );
 const Footer = lazy(() => import("./Footer/Footer"));
 const Button = lazy(() => import("@material-ui/core"));
-const Cardloader = lazy(() => import("./Cards/Cardloader"));
+const Cardloader = lazy(() => import("./Practice/Cardloader"));
 const useStyles = makeStyles((theme) => ({
   btn: {
     color: "#fff",
@@ -88,6 +88,7 @@ function Loader() {
               />
             </Suspense>
             <Suspense fallback={<Preload />}>
+            <br/><br/><br/><br/><br/><br/>
               <Footer />
             </Suspense>
           </div>

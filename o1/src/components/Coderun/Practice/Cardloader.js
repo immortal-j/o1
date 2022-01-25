@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Box, Grid } from "@material-ui/core";
-import NewCard from "./newcard";
+import NewCard from "./practicecard";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
 
