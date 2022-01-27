@@ -271,7 +271,7 @@ export default function ChartsLoader(props) {
             />
           )}
         </Grid>
-        <Submitquestion />
+        {/* <Submitquestion /> */}
       </Container>
       <Container>
         <Grid container spacing={4}>
@@ -310,7 +310,7 @@ export default function ChartsLoader(props) {
             <h1 className={classes.charttitle}>Heatmap</h1>
             {label3.length > 0 ? (
               <Paper elevation={3}>
-               <Heatmap />
+                <Heatmap />
               </Paper>
             ) : (
               <img src="Dougnut.png" className={classes.nodata3} />

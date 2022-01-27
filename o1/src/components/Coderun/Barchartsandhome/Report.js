@@ -148,7 +148,7 @@ function Report(props) {
         delete_cookie("conteststatus");
         bake_cookie("conteststatus", true);
         setOpen(false);
-        // window.location.reload();
+        window.location.reload();
       })
       .catch(function (error) {
         console.log(error);
@@ -171,7 +171,7 @@ function Report(props) {
       </Grid>
       <Grid xs={12} sm={12} item container justifyContent="center">
         <Button className={classes.btn} onClick={handleClick}>
-          Get Analysis
+        Submit
         </Button>
       </Grid>
       <Dialog
@@ -230,7 +230,7 @@ function Report(props) {
             >
               Get Analysis
             </Button>
-            {showDialog ? <DataDialog /> : ""}
+           
           </Grid>
         </Box> */}
 
@@ -287,8 +287,9 @@ function Report(props) {
               onClick={handleClosewithpost}
               variant="contained"
             >
-              Get Analysis
+             SUBMIT
             </Button>
+            {showDialog ? <DataDialog /> : ""}
             </Grid>
         </Box>
       </Dialog>

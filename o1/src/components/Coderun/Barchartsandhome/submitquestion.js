@@ -2,6 +2,32 @@ import React from "react";
 import { useEffect, useState } from "react";
 import {Button, Grid, TextField,makeStyles,Paper, Typography } from "@material-ui/core";
 import { Prev } from "react-bootstrap/esm/PageItem";
+const tags = [
+  {
+    value: 'Greedy',
+    label: 'Greedy',
+  },
+  {
+    value: 'DP',
+    label: 'DP',
+  },
+  {
+    value: 'Constructive',
+    label: 'Constructive',
+  },
+  {
+    value: 'Implementation',
+    label: 'Implementation',
+  },
+  {
+    value: 'Binary Search',
+    label: 'Binary Search',
+  },
+  {
+    value: 'Graph',
+    label: 'Graph',
+  },
+];
 const useStyles = makeStyles((theme) => ({
     TextField:{
         width:'100%'
@@ -32,7 +58,7 @@ function Submitquestion(props) {
     const classes = useStyles();
     const [questions,setQuestions]=useState([]);
   const [link, setLink] = useState("");
-  const [tag, setTag] = useState("");
+  const [tag, setTag] = useState("Greedy");
   const [difficulty, setDifficulty] = useState('');
   const handleLink = (e) => {
     setLink(e.target.value);
@@ -84,7 +110,7 @@ function Submitquestion(props) {
         className={classes.TextField}
        
          type="url"
-          label="Link"
+          label="Submission Link"
           variant="filled"
           value={link}
           onChange={handleLink}
@@ -92,7 +118,7 @@ function Submitquestion(props) {
         />
       </Grid>
       <Grid item xs={12} sm={4}>
-        <TextField
+        {/* <TextField
         className={classes.TextField}
           id="Tag"
           label="Tag"
@@ -100,7 +126,26 @@ function Submitquestion(props) {
           value={tag}
           onChange={handleTag}
           color="secondary"
-        />
+        /> */}
+        <TextField
+          id="filled-select-currency-native"
+          select
+          label="TAG"
+          value={tag}
+          onChange={handleTag}
+          SelectProps={{
+            native: true,
+          }}
+          helperText="Please select your currency"
+          variant="filled"
+          className={classes.TextField}
+        >
+          {tags.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </TextField>
       </Grid>
       <Grid item xs={12} sm={4}>
         <TextField
@@ -112,6 +157,7 @@ function Submitquestion(props) {
           onChange={handleDifficulty}
           color="secondary"
         />
+        
       </Grid>
       {/* {console.log(questions)} */}
       <Grid container item xs={12} sm={12} justifyContent="center">

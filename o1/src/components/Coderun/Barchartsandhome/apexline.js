@@ -25,19 +25,19 @@ function Apexline(props) {
         markers: {
           size: 3,
         },
-        annotations:{
+        annotations: {
           xaxis: [
-    {
-      x: new Date('23 Nov 2021').getTime(),
-      borderColor: '#775DD0',
-      label: {
-        style: {
-          color: '#000',
-        },
-        text: 'Super 30'
-      }
-    }
-  ]
+            {
+              x: new Date("15 Jan 2022").getTime(),
+              borderColor: "#775DD0",
+              label: {
+                style: {
+                  color: "#000",
+                },
+                text: "Super 30",
+              },
+            },
+          ],
         },
         grid: {
           show: true,
