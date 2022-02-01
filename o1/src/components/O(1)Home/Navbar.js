@@ -109,7 +109,7 @@ export default function ButtonAppBar() {
             <Button href="#Alumni" className={classes.btn}>
               Stories
             </Button>
-            <Button href="/login" target="__blank" className={classes.btn}>
+            <Button href="/coderun" target="__blank" className={classes.btn}>
               CodeRun
             </Button>
           </div>
