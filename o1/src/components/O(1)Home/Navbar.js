@@ -152,7 +152,7 @@ export default function ButtonAppBar() {
                 Stories
               </MenuItem>
             </a>
-            <a className={classes.anchor} href="/login" target="__blank">
+            <a className={classes.anchor} href="/coderun" target="__blank">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
                 CodeRun
               </MenuItem>

@@ -149,19 +149,29 @@ export default function ButtonAppBar() {
                 Home
               </MenuItem>
             </a>
-            <a className={classes.anchor} href="#Events">
+            <a className={classes.anchor} href="#Features">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
-                Events
+                Features
               </MenuItem>
             </a>
-            <a className={classes.anchor} href="#Alumni">
+            <a className={classes.anchor} href="#Plans">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
-                Stories
+                Pricing
+              </MenuItem>
+            </a>
+            <a className={classes.anchor} href="#register">
+              <MenuItem className={classes.menuitm} onClick={handleClose}>
+                Pricing
+              </MenuItem>
+            </a>
+            <a className={classes.anchor} href="#testimonials">
+              <MenuItem className={classes.menuitm} onClick={handleClose}>
+                Testimonials
               </MenuItem>
             </a>
             <a className={classes.anchor} href="/login" target="__blank">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
-                CodeRun
+                CodeRun login
               </MenuItem>
             </a>
           </Menu>
