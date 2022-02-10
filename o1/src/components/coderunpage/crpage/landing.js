@@ -19,13 +19,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   btn: {
-    fontSize: "22px",
+    fontSize: "20px",
     color: "white",
     fontWeight: "800",
     borderRadius: "10px",
     backgroundColor: "#8739f9",
-    padding: "20px",
-    marginTop: "5px",
+    padding: "15px",
+    marginTop: "25px",
     textDecoration: "none",
     [theme.breakpoints.down("xs")]: {
       fontSize: "15px",
@@ -64,7 +64,7 @@ function CoderunLanding() {
           Average ₹ 5 - 33 lakhs/annum placement
         </p>
         <p className="phead white ">Next Batch : February</p>
-        <a href="https://t.me/+uqRJFStXh0ljNmI1">
+        <a href="https://t.me/+gLuvqwwQsfY5OTQ1">
           <Button className={classes.btn}>Register for Webinar</Button>
         </a>
         <a href="#register">
