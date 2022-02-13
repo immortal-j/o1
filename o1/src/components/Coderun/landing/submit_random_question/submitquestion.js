@@ -1,31 +1,57 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import {Button, Grid, TextField,makeStyles,Paper, Typography } from "@material-ui/core";
-import { Prev } from "react-bootstrap/esm/PageItem";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
+import axios from "axios";
 const tags = [
   {
-    value: 'Greedy',
-    label: 'Greedy',
+    value:'',
+    label:'',
   },
   {
-    value: 'DP',
-    label: 'DP',
+    value: 'greedy',
+    label: 'greedy',
   },
   {
-    value: 'Constructive',
-    label: 'Constructive',
+    value: 'dp',
+    label: 'dp',
   },
   {
-    value: 'Implementation',
-    label: 'Implementation',
+    value: 'constructive',
+    label: 'constructive',
   },
   {
-    value: 'Binary Search',
-    label: 'Binary Search',
+    value: 'implementation',
+    label: 'implementation',
   },
   {
-    value: 'Graph',
-    label: 'Graph',
+    value: 'binary Search',
+    label: 'binary Search',
+  },
+  {
+    value: 'graphs',
+    label: 'graphs',
+  },
+  {
+    value: 'strings',
+    label: 'strings',
+  },
+  {
+    value: 'searching',
+    label: 'searching',
+  },
+  {
+    value: 'math',
+    label: 'math',
+  },
+  {
+    value: 'data structure',
+    label: 'data structure',
+  },
+  {
+    value: 'combinatorics',
+    label: 'combinatorics',
   },
 ];
 const useStyles = makeStyles((theme) => ({
@@ -52,12 +78,17 @@ const useStyles = makeStyles((theme) => ({
     head:{
       fontSize:'20px',
       fontWeight:600,
+    },
+    phead:{
+      fontSize:'15px',
+      fontWeight:600,
     }
   }));
 function Submitquestion(props) {
     const classes = useStyles();
     const [questions,setQuestions]=useState([]);
   const [link, setLink] = useState("");
+  const [snack, setsnack] =useState(false);
   const [tag, setTag] = useState("Greedy");
   const [difficulty, setDifficulty] = useState('');
   const handleLink = (e) => {
@@ -69,14 +100,17 @@ function Submitquestion(props) {
   const handleDifficulty = (e) => {
     setDifficulty(e.target.value);
   };
+  const handleClosesnack = () => {
+    setsnack(false);
+  };
   const handleClickAdd = (e) => {
     
-    if(link.lenght!=0&&tag.length!=0&&difficulty>=1000&&difficulty<=4000)
+    if(link.length!=0&&tag.length!=0&&difficulty>=800&&difficulty<=4000)
     {
       var obj={
-        link,
-        tag,
-        difficulty
+        url:link,
+        tag:tag,
+        rating:difficulty
       }
       setQuestions((prev)=>{
         return [...prev,obj];
@@ -90,6 +124,23 @@ function Submitquestion(props) {
     }
   };
   const handleClickSubmit = (e) => {
+    const obj={
+      uid:props.uid,
+      questions:questions
+    }
+    console.log(obj);
+    axios.post(`https://coderun-temp.herokuapp.com/ques/solved/`,obj)
+    .then(function(res){
+      console.log(res);
+      setQuestions([]);
+      setsnack(true);
+      setTimeout(()=>{
+        handleClosesnack()
+      },5000)
+    })
+    .catch(function(err){
+      console.log(err);
+    })
   };
   const handleRemove = (obj) => {
     const index=questions.indexOf(obj);
@@ -102,9 +153,13 @@ function Submitquestion(props) {
     setTag("");
     setDifficulty("");
   };
+  const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
   return (
     <Grid container xs={12} sm={12} justifyContent="center" spacing={3}>
     <Grid item xs={12} sm={12}><Typography className={classes.head}>QUESTIONS SOLVED</Typography></Grid>
+    <Grid item xs={12} sm={12}><Typography className={classes.phead}>Enter the daily solved questions here</Typography></Grid>
      <Grid item xs={12} sm={4}>
         <TextField
         className={classes.TextField}
@@ -170,9 +225,9 @@ function Submitquestion(props) {
         <Grid container item xs={12} sm={12} justifyContent="center">
         {questions.map((x,i)=>{
           return <Grid container item xs={12} sm={12}>
-          <Grid item xs={12} sm={3}><Typography className={classes.text}>{x.link.slice(0,15)+"..."}</Typography></Grid>
+          <Grid item xs={12} sm={3}><Typography className={classes.text}>{x.url.slice(0,15)+"..."}</Typography></Grid>
           <Grid item xs={12} sm={3}><Typography className={classes.text}>{x.tag.slice(0,15)}</Typography></Grid>
-          <Grid item xs={12} sm={3}><Typography className={classes.text}>{x.difficulty}</Typography></Grid>
+          <Grid item xs={12} sm={3}><Typography className={classes.text}>{x.rating}</Typography></Grid>
           <Grid item xs={12} sm={3}><Button className={classes.btn} onClick={(e)=>{
             handleRemove(x);
           }}>Remove</Button></Grid>
@@ -183,7 +238,17 @@ function Submitquestion(props) {
           </Grid>
         </Paper>
       </Grid>
+      <Snackbar open={snack} onClose={handleClosesnack}>
+            <Alert
+              onClose={handleClosesnack}
+              severity="success"
+              sx={{ width: "100%" }}
+            >
+              Submitted!
+            </Alert>
+          </Snackbar>
     </Grid>
+    
   );
 }
 

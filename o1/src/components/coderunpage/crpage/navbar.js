@@ -116,6 +116,9 @@ export default function ButtonAppBar() {
             <Button href="#testimonials" className={classes.btn}>
               Testimonials
             </Button>
+            <Button href="/login" className={classes.btn}>
+              Login
+            </Button>
             {/* <Button href="/login" target="__blank" className={classes.btn}>
               CodeRun
             </Button> */}

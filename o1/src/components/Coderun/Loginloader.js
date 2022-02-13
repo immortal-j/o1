@@ -7,11 +7,11 @@ import Login from "./Login/login";
 import { read_cookie } from "sfcookies";
 import Preload from "../../preload";
 const Chartsloader = lazy(() =>
-  import("./Barchartsandhome/chartsLoader")
+  import("./landing/charts/chartsLoader")
 );
 const Footer = lazy(() => import("./Footer/Footer"));
 const Button = lazy(() => import("@material-ui/core"));
-const Cardloader = lazy(() => import("./Practice/Cardloader"));
+const Cardloader = lazy(() => import("./Practice/practice_loader"));
 const useStyles = makeStyles((theme) => ({
   btn: {
     color: "#fff",

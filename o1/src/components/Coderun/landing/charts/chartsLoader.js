@@ -10,13 +10,12 @@ import {
   Container,
 } from "@material-ui/core";
 import Barchart from "./Barchart";
-import Linechart from "./Linechart";
 import Doughnut from "./doughnut";
 import Apexline from "./apexline";
 import Heatmap from "./heatmap";
-import Contest from "./contest";
-import Diagtableloader from "./Diagtableload";
-import Submitquestion from "./submitquestion";
+import Contest from "../contest/contest";
+import Diagtableloader from "../Diagnosis_table/Diagtableload";
+import Submitquestion from "../submit_random_question/submitquestion";
 import axios from "axios";
 import { read_cookie, delete_cookie, bake_cookie } from "sfcookies";
 const useStyles = makeStyles((theme) => ({
@@ -119,6 +118,7 @@ export default function ChartsLoader(props) {
         delete_cookie("conteststatus");
         bake_cookie("conteststatus", response.data.user.status);
         setData(response.data);
+        console.log(response.data);
         var arr = response.data,
           tmp1 = [],
           tmp2 = [],
@@ -129,7 +129,7 @@ export default function ChartsLoader(props) {
           tmp2.push(arr.contest_wise[0][i]);
           // tmp3.push(arr.contest_wise[2][i]);
         }
-        console.log(tmp2);
+
         // setLabel2(tmp1);
         setData2(tmp2);
         setColor2(tmp3);
@@ -250,6 +250,14 @@ export default function ChartsLoader(props) {
       },
     ],
   };
+  // When want to enable diagnosis table
+{/* <Diagtableloader
+              uid={props.uid}
+              arr={arr}
+              arrlen={arrlen}
+              mark={markque}
+              data={data}
+            /> */}
   return (
     <div>
       <Container>
@@ -262,16 +270,11 @@ export default function ChartsLoader(props) {
               statuschange={props.conteststatuschange}
             />
           ) : (
-            <Diagtableloader
-              uid={props.uid}
-              arr={arr}
-              arrlen={arrlen}
-              mark={markque}
-              data={data}
-            />
+            // To add when want questions as analysis
+            ''
           )}
         </Grid>
-        {/* <Submitquestion /> */}
+        <Submitquestion uid={props.uid} />
       </Container>
       <Container>
         <Grid container spacing={4}>
@@ -310,7 +313,7 @@ export default function ChartsLoader(props) {
             <h1 className={classes.charttitle}>Heatmap</h1>
             {label3.length > 0 ? (
               <Paper elevation={3}>
-                <Heatmap />
+                <Heatmap heatmaparr={data.heatmap} />
               </Paper>
             ) : (
               <img src="Dougnut.png" className={classes.nodata3} />

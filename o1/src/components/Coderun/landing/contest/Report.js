@@ -26,7 +26,6 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import axios from "axios";
 import CloseIcon from "@material-ui/icons/Close";
-import { color } from "@mui/system";
 import { delete_cookie, bake_cookie } from "sfcookies";
 import DataDialog from "./DataDialog";
 
@@ -124,10 +123,6 @@ function Report(props) {
     setChecked(newChecked);
   };
 
-  const handleHEllo = () => {
-    setshowDemoDialog(true);
-  };
-
   const handleClose = () => {
     setOpen(false);
   };
@@ -139,9 +134,8 @@ function Report(props) {
       questions: props.x.questions,
       status: checked,
     };
-    console.log(obj);
     axios
-      .post(`https://coderun-temp.herokuapp.com/report/`, obj)
+      .post(`https://coderun-temp.herokuapp.com/contest/submit/`, obj)
 
       .then(function (response) {
         props.statuschange(true);

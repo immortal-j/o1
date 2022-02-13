@@ -106,8 +106,8 @@ function Diagtableloader(props) {
       </Grid>
       <br />
       <br />
-      <Grid item sm={12}>
-        <Container maxWidth="xl">
+      <Grid item xs={12} sm={12}>
+        <Container  maxWidth="xl">
          
           {props.arrlen > 0 ? (
             <Diagtable uid={props.uid} mark={props.mark} x={props.arr[0]} />

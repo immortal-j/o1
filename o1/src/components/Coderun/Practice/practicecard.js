@@ -1,6 +1,13 @@
 import React from "react";
 import { useState } from "react";
-import { Box, Typography, Grid, Button, makeStyles,Paper } from "@material-ui/core";
+import {
+  Box,
+  Typography,
+  Grid,
+  Button,
+  makeStyles,
+  Paper,
+} from "@material-ui/core";
 import Dialog from "@material-ui/core/Dialog";
 import Slide from "@material-ui/core/Slide";
 import AppBar from "@mui/material/AppBar";
@@ -10,7 +17,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import Checkbox from "@mui/material/Checkbox";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
-import Progress from "./progress";
+import Progress from "./practice_progress";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -20,7 +27,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import Practicelottie from './practicelottie';
+import Practicelottie from "./practicelottie";
 const useStyles = makeStyles((theme) => ({
   ncroot: {
     maxWidth: 450,
@@ -87,32 +94,32 @@ const useStyles = makeStyles((theme) => ({
   space: {
     flexGrow: 1,
   },
-   cardhead: {
-    textAlign:'center',
-    color:'#ffd79d',
+  cardhead: {
+    textAlign: "center",
+    color: "#ffd79d",
     fontSize: "26px",
     fontWeight: 600,
     fontFamily: "Roboto,sans-serif",
   },
   topic: {
-    marginTop:'40px',
-    color:'#f162ff',
+    marginTop: "40px",
+    color: "#f162ff",
     fontSize: "24px",
-    fontWeight:600,
-    textAlign:"center",
+    fontWeight: 600,
+    textAlign: "center",
   },
   fullCard: {
-    height:'175px',
+    height: "175px",
     backgroundColor: "#320d3e",
   },
-  appbar:{
-    position:'relative',
-    backgroundColor:"#320d3e",
+  appbar: {
+    position: "relative",
+    backgroundColor: "#320d3e",
   },
   tablehead: {
     fontSize: "20px",
     fontWeight: 600,
-    color:'#ffd79d',
+    color: "#ffd79d",
     [theme.breakpoints.down("sm")]: {
       fontSize: "10px",
     },
@@ -125,24 +132,24 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: "300px",
     },
   },
-  navbartext:{
-    color:'#ffd79d',
-    fontSize:'16px',
-    fontWeight:600,
+  navbartext: {
+    color: "#ffd79d",
+    fontSize: "16px",
+    fontWeight: 600,
   },
   anchr: {
     textDecoration: "none",
   },
-  tabletext:{
-    fontSize:'16px',
-    fontWeight:600,
+  tabletext: {
+    fontSize: "16px",
+    fontWeight: 600,
   },
-  hide:{
-    display:'none',
+  hide: {
+    display: "none",
     [theme.breakpoints.down("sm")]: {
-      display:'block',
+      display: "block",
     },
-  }
+  },
 }));
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -183,9 +190,14 @@ function NewCard(props) {
   };
   const handleClick = () => {
     props.ts({ uid: props.uid, day: props.x.id, problems: tosend });
-    setsnack(true);
-    handleClose();
-    window.location.reload();
+    
+    setTimeout(()=>{
+      handleClose();
+      setsnack(true);
+      window.location.reload();
+    },1000)
+   
+    
   };
   const handleClosesnack = () => {
     setsnack(false);
@@ -199,7 +211,7 @@ function NewCard(props) {
             <h6 className={classes.lefttitle}>Day{props.x.id}</h6>
           </div>
           <div className={classes.courseinfo}>
-          {/* {console.log(props.x)} */}
+            {/* {console.log(props.x)} */}
             <Progress solved={props.x.solved} length={props.x.names.length} />
             <br />
             <Button
@@ -218,7 +230,7 @@ function NewCard(props) {
             onClose={handleClose}
             TransitionComponent={Transition}
           >
-            <AppBar sx={{ position: "relative"}} className={classes.appbar}>
+            <AppBar sx={{ position: "relative" }} className={classes.appbar}>
               <Toolbar>
                 <IconButton
                   edge="start"
@@ -228,11 +240,20 @@ function NewCard(props) {
                 >
                   <CloseIcon />
                 </IconButton>
-                <Typography variant="h6" component="div" className={classes.navbartext} >
+                <Typography
+                  variant="h6"
+                  component="div"
+                  className={classes.navbartext}
+                >
                   Day{props.x.id}
                 </Typography>
                 <div className={classes.space}></div>
-                <Button autoFocus color="inherit" onClick={handleClick} className={classes.navbartext}>
+                <Button
+                  autoFocus
+                  color="inherit"
+                  onClick={handleClick}
+                  className={classes.navbartext}
+                >
                   Submit
                 </Button>
               </Toolbar>
@@ -240,8 +261,7 @@ function NewCard(props) {
 
             <Box m={1}>
               <Grid item container spacing={1}>
-                
-                <Grid item container xs={12} sm={4} justifyContent="center" >
+                <Grid item container xs={12} sm={4} justifyContent="center">
                   <Card className={classes.fullCard} sx={{ minWidth: 300 }}>
                     <CardContent>
                       <Typography className={classes.cardhead}>
@@ -254,7 +274,7 @@ function NewCard(props) {
                   </Card>
                 </Grid>
                 <Grid item container xs={0} sm={4} justifyContent="center">
-                 <Practicelottie />
+                  <Practicelottie />
                 </Grid>
                 <Grid item container xs={12} sm={4} justifyContent="center">
                   <Card className={classes.fullCard} sx={{ minWidth: 300 }}>
@@ -275,15 +295,9 @@ function NewCard(props) {
                 <Grid item container xs={0} sm={2}></Grid>
               </Grid>
 
-              
-
-
-
-
-
               {/* {/* <Grid container justifyContent="center"> */}
-                {/* {console.log(props.x)} */}
-                {/* {props.x.problems.map((value) => {
+              {/* {console.log(props.x)} */}
+              {/* {props.x.problems.map((value) => {
                   return (
                     <Grid item container>
                       <Grid item container xs={6} sm={6}>
@@ -311,58 +325,72 @@ function NewCard(props) {
                     </Grid>
                   );
                 })}
-              </Grid> */} 
+              </Grid> */}
             </Box>
             <Box m={4}>
-            <TableContainer component={Paper} className={classes.tablesize}>
-        <Table className={classes.table} aria-label="simple table">
-          <TableBody>
-            <TableRow className={classes.headrow}>
-              <TableCell>
-                <Typography className={classes.tablehead}>Problems</Typography>
-              </TableCell>
-              <TableCell>
-                <Typography className={classes.tablehead}>Rating</Typography>
-              </TableCell>
-              <TableCell>
-                <Typography className={classes.tablehead}>status</Typography>
-              </TableCell>
-            </TableRow>
-          </TableBody>
-          <TableBody>
-          {props.x.problems.map((value) => {
-              return (
-                <TableRow>
-                  <TableCell>
-                    <a className={classes.anchr} href={value} target="_blank">
-                      <Button className={classes.btn2}>
-                        <Typography className={classes.tabletext}>
-                          {props.x.names[props.x.problems.indexOf(value)]}
+              <TableContainer component={Paper} className={classes.tablesize}>
+                <Table className={classes.table} aria-label="simple table">
+                  <TableBody>
+                    <TableRow className={classes.headrow}>
+                      <TableCell>
+                        <Typography className={classes.tablehead}>
+                          Problems
                         </Typography>
-                      </Button>
-                    </a>
-                  </TableCell>
-                  <TableCell>
-                    <Typography>
-                      {props.x.ratings[props.x.problems.indexOf(value)]}
-                    </Typography>
-                  </TableCell>
-                  <TableCell>
-                    <Checkbox
-                      edge="end"
-                          onChange={handleToggle(
-                            props.x.problems.indexOf(value)
-                          )}
-                          checked={checked[props.x.problems.indexOf(value)]}
-                    />
-                  </TableCell>
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      </Box>
+                      </TableCell>
+                      <TableCell>
+                        <Typography className={classes.tablehead}>
+                          Rating
+                        </Typography>
+                      </TableCell>
+                      <TableCell>
+                        <Typography className={classes.tablehead}>
+                          status
+                        </Typography>
+                      </TableCell>
+                    </TableRow>
+                  </TableBody>
+                  <TableBody>
+                    {props.x.problems.map((value) => {
+                      return (
+                        <TableRow>
+                          <TableCell>
+                            <a
+                              className={classes.anchr}
+                              href={value}
+                              target="_blank"
+                            >
+                              <Button className={classes.btn2}>
+                                <Typography className={classes.tabletext}>
+                                  {
+                                    props.x.names[
+                                      props.x.problems.indexOf(value)
+                                    ]
+                                  }
+                                </Typography>
+                              </Button>
+                            </a>
+                          </TableCell>
+                          <TableCell>
+                            <Typography>
+                              {props.x.ratings[props.x.problems.indexOf(value)]}
+                            </Typography>
+                          </TableCell>
+                          <TableCell>
+                            <Checkbox
+                              edge="end"
+                              onChange={handleToggle(
+                                props.x.problems.indexOf(value)
+                              )}
+                              checked={checked[props.x.problems.indexOf(value)]}
+                            />
+                          </TableCell>
+                        </TableRow>
+                      );
+                    })}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </Box>
           </Dialog>
 
           <Snackbar open={snack} onClose={handleClosesnack}>

@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
   tablesize: {
     [theme.breakpoints.down("sm")]: {
-      maxWidth: "300px",
+      // maxWidth: "300px",
     },
   },
 }));
