@@ -63,10 +63,10 @@ function CoderunLanding() {
         <p className="phead martop-15 white">
           Average ₹ 5 - 33 lakhs/annum placement
         </p>
-        <p className="phead white ">Next Batch : February</p>
-        <a href="https://t.me/+gLuvqwwQsfY5OTQ1">
+        <p className="phead white ">Next Batch : March</p>
+        {/* <a href="https://t.me/+gLuvqwwQsfY5OTQ1">
           <Button className={classes.btn}>Register for Webinar</Button>
-        </a>
+        </a> */}
         <a href="#register">
           <Button className={classes.btn}>Apply</Button>
         </a>

@@ -1,96 +1,95 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import {Button, Grid, TextField,makeStyles,Paper, Typography } from "@material-ui/core";
+import {
+  Button,
+  Grid,
+  TextField,
+  makeStyles,
+  Paper,
+  Typography,
+} from "@material-ui/core";
 import Snackbar from "@mui/material/Snackbar";
 import MuiAlert from "@mui/material/Alert";
 import axios from "axios";
 const tags = [
   {
-    value:'',
-    label:'',
+    value: "",
+    label: "",
   },
   {
-    value: 'greedy',
-    label: 'greedy',
+    value: "greedy",
+    label: "greedy",
   },
   {
-    value: 'dp',
-    label: 'dp',
+    value: "dp",
+    label: "dp",
   },
   {
-    value: 'constructive',
-    label: 'constructive',
+    value: "implementation",
+    label: "implementation",
   },
   {
-    value: 'implementation',
-    label: 'implementation',
+    value: "binary search",
+    label: "binary search",
   },
   {
-    value: 'binary Search',
-    label: 'binary Search',
+    value: "graphs",
+    label: "graphs",
   },
   {
-    value: 'graphs',
-    label: 'graphs',
+    value: "strings",
+    label: "strings",
   },
   {
-    value: 'strings',
-    label: 'strings',
+    value: "searching",
+    label: "searching",
   },
   {
-    value: 'searching',
-    label: 'searching',
+    value: "math",
+    label: "math",
   },
   {
-    value: 'math',
-    label: 'math',
-  },
-  {
-    value: 'data structure',
-    label: 'data structure',
-  },
-  {
-    value: 'combinatorics',
-    label: 'combinatorics',
+    value: "data structures",
+    label: "data structures",
   },
 ];
 const useStyles = makeStyles((theme) => ({
-    TextField:{
-        width:'100%'
+  TextField: {
+    width: "100%",
+  },
+  btn: {
+    backgroundColor: "#8739f9",
+    color: "#fff",
+    margin: "10px",
+    fontWeight: 600,
+    "&:hover": {
+      backgroundColor: "#333",
     },
-    btn:{
-        backgroundColor:'#8739f9',
-        color:'#fff',
-        margin:'10px',
-        fontWeight:600,
-        "&:hover":{
-            backgroundColor:"#333",
-        }
-    },
-    paper:{
-      width:'100%',
-      // alignContent:'center',
-      textAlign:'center',
-    },
-    text:{
-      margin:'12px',
-    },
-    head:{
-      fontSize:'20px',
-      fontWeight:600,
-    },
-    phead:{
-      fontSize:'15px',
-      fontWeight:600,
-    }
-  }));
+  },
+  paper: {
+    width: "100%",
+    // alignContent:'center',
+    textAlign: "center",
+  },
+  text: {
+    margin: "12px",
+  },
+  head: {
+    fontSize: "20px",
+    fontWeight: 600,
+  },
+  phead: {
+    fontSize: "15px",
+    fontWeight: 600,
+  },
+}));
 function Submitquestion(props) {
-    const classes = useStyles();
-    const [questions,setQuestions]=useState([]);
+  const classes = useStyles();
+  const [questions, setQuestions] = useState([]);
   const [link, setLink] = useState("");
-  const [snack, setsnack] =useState(false);
+  const [snack, setsnack] = useState(false);
   const [tag, setTag] = useState("Greedy");
-  const [difficulty, setDifficulty] = useState('');
+  const [difficulty, setDifficulty] = useState("");
   const handleLink = (e) => {
     setLink(e.target.value);
   };
@@ -104,51 +103,54 @@ function Submitquestion(props) {
     setsnack(false);
   };
   const handleClickAdd = (e) => {
-    
-    if(link.length!=0&&tag.length!=0&&difficulty>=800&&difficulty<=4000)
-    {
-      var obj={
-        url:link,
-        tag:tag,
-        rating:difficulty
-      }
-      setQuestions((prev)=>{
-        return [...prev,obj];
+    if (
+      link.length != 0 &&
+      tag.length != 0 &&
+      difficulty >= 800 &&
+      difficulty <= 4000
+    ) {
+      var obj = {
+        url: link,
+        tag: tag,
+        rating: difficulty,
+      };
+      setQuestions((prev) => {
+        return [...prev, obj];
       });
       setLink("");
       setTag("");
       setDifficulty("");
-    }
-    else{
+    } else {
       console.log("error");
     }
   };
   const handleClickSubmit = (e) => {
-    const obj={
-      uid:props.uid,
-      questions:questions
-    }
+    const obj = {
+      uid: props.uid,
+      questions: questions,
+    };
     console.log(obj);
-    axios.post(`https://coderun-temp.herokuapp.com/ques/solved/`,obj)
-    .then(function(res){
-      console.log(res);
-      setQuestions([]);
-      setsnack(true);
-      setTimeout(()=>{
-        handleClosesnack()
-      },5000)
-    })
-    .catch(function(err){
-      console.log(err);
-    })
+    axios
+      .post(`https://coderun-temp.herokuapp.com/ques/solved/`, obj)
+      .then(function (res) {
+        console.log(res);
+        setQuestions([]);
+        setsnack(true);
+        setTimeout(() => {
+          handleClosesnack();
+        }, 5000);
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
   };
   const handleRemove = (obj) => {
-    const index=questions.indexOf(obj);
-    setQuestions((prev)=>{
-      var tmp=[...prev];
-      tmp.splice(index,1);
+    const index = questions.indexOf(obj);
+    setQuestions((prev) => {
+      var tmp = [...prev];
+      tmp.splice(index, 1);
       return tmp;
-    })
+    });
     setLink("");
     setTag("");
     setDifficulty("");
@@ -158,13 +160,18 @@ function Submitquestion(props) {
   });
   return (
     <Grid container xs={12} sm={12} justifyContent="center" spacing={3}>
-    <Grid item xs={12} sm={12}><Typography className={classes.head}>QUESTIONS SOLVED</Typography></Grid>
-    <Grid item xs={12} sm={12}><Typography className={classes.phead}>Enter the daily solved questions here</Typography></Grid>
-     <Grid item xs={12} sm={4}>
+      <Grid item xs={12} sm={12}>
+        <Typography className={classes.head}>QUESTIONS SOLVED</Typography>
+      </Grid>
+      <Grid item xs={12} sm={12}>
+        <Typography className={classes.phead}>
+          Enter the daily solved questions here
+        </Typography>
+      </Grid>
+      <Grid item xs={12} sm={4}>
         <TextField
-        className={classes.TextField}
-       
-         type="url"
+          className={classes.TextField}
+          type="url"
           label="Submission Link"
           variant="filled"
           value={link}
@@ -204,7 +211,7 @@ function Submitquestion(props) {
       </Grid>
       <Grid item xs={12} sm={4}>
         <TextField
-        className={classes.TextField}
+          className={classes.TextField}
           id="Difficulty"
           label="Difficulty"
           variant="filled"
@@ -212,43 +219,64 @@ function Submitquestion(props) {
           onChange={handleDifficulty}
           color="secondary"
         />
-        
       </Grid>
       {/* {console.log(questions)} */}
       <Grid container item xs={12} sm={12} justifyContent="center">
-        <Button className={classes.btn} onClick={handleClickAdd}>ADD</Button>
-        <Button className={classes.btn} onClick={handleClickSubmit}>SUBMIT</Button>
+        <Button className={classes.btn} onClick={handleClickAdd}>
+          ADD
+        </Button>
+        <Button className={classes.btn} onClick={handleClickSubmit}>
+          SUBMIT
+        </Button>
       </Grid>
       <Grid container item xs={12} sm={12} justifyContent="center">
         <Paper className={classes.paper} elevation={2}>
-        <Typography className={classes.head}>Questions Added ({questions.length})</Typography>
-        <Grid container item xs={12} sm={12} justifyContent="center">
-        {questions.map((x,i)=>{
-          return <Grid container item xs={12} sm={12}>
-          <Grid item xs={12} sm={3}><Typography className={classes.text}>{x.url.slice(0,15)+"..."}</Typography></Grid>
-          <Grid item xs={12} sm={3}><Typography className={classes.text}>{x.tag.slice(0,15)}</Typography></Grid>
-          <Grid item xs={12} sm={3}><Typography className={classes.text}>{x.rating}</Typography></Grid>
-          <Grid item xs={12} sm={3}><Button className={classes.btn} onClick={(e)=>{
-            handleRemove(x);
-          }}>Remove</Button></Grid>
-          </Grid>
-        })}
-         
-          
+          <Typography className={classes.head}>
+            Questions Added ({questions.length})
+          </Typography>
+          <Grid container item xs={12} sm={12} justifyContent="center">
+            {questions.map((x, i) => {
+              return (
+                <Grid container item xs={12} sm={12}>
+                  <Grid item xs={12} sm={3}>
+                    <Typography className={classes.text}>
+                      {x.url.slice(0, 15) + "..."}
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12} sm={3}>
+                    <Typography className={classes.text}>
+                      {x.tag.slice(0, 15)}
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12} sm={3}>
+                    <Typography className={classes.text}>{x.rating}</Typography>
+                  </Grid>
+                  <Grid item xs={12} sm={3}>
+                    <Button
+                      className={classes.btn}
+                      onClick={(e) => {
+                        handleRemove(x);
+                      }}
+                    >
+                      Remove
+                    </Button>
+                  </Grid>
+                </Grid>
+              );
+            })}
           </Grid>
         </Paper>
       </Grid>
       <Snackbar open={snack} onClose={handleClosesnack}>
-            <Alert
-              onClose={handleClosesnack}
-              severity="success"
-              sx={{ width: "100%" }}
-            >
-              Submitted!
-            </Alert>
-          </Snackbar>
+        <Alert
+          onClose={handleClosesnack}
+          severity="success"
+          sx={{ width: "100%" }}
+        >
+          Submitted!
+        </Alert>
+      </Snackbar>
     </Grid>
-    
   );
 }
 

@@ -192,7 +192,7 @@ export default function RegisterSteps() {
                 >
                   Submit your application in{" "}
                   <a
-                    href="https://forms.gle/siZ3jgUD7Ecy7XJM7"
+                    href="https://forms.gle/PQmNgPfN3UHbBeCm7"
                     target="_blank"
                     className={classes.anc}
                   >
