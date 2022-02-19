@@ -13,7 +13,7 @@ import { useHistory } from "react-router-dom";
 import { bake_cookie } from "sfcookies";
 const useStyles = makeStyles(() => ({
   login: {
-    backgroundImage: `url(${Loginimg})`,
+    background:`linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)),url(${Loginimg}) `,
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "repeat",
