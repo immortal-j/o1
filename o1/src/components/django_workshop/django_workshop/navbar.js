@@ -8,6 +8,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Fade from "@material-ui/core/Fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
+
 const useStyles = makeStyles((theme) => ({
   title: {
     textAlign: "center",
@@ -97,24 +98,30 @@ export default function ButtonAppBar() {
           <a href="/">
             <img src={"logo2.svg"} height="50px" />
           </a>
-          <Typography className={classes.title}>O(1) Coding Club</Typography>
+          <Typography className={classes.title}>Django Workshop</Typography>
           <div className={classes.menuSpace2}></div>
           <div className={classes.desktop}>
-            <Button href="#Landing" className={classes.btn}>
+            <Button href="#" className={classes.btn}>
               Home
             </Button>
-            <Button href="#Events" className={classes.btn}>
-              Events
+            <Button href="#features" className={classes.btn}>
+              Features
             </Button>
-            <Button href="#Alumni" className={classes.btn}>
-              Stories
+            <Button href="#plans" className={classes.btn}>
+              Pricing
             </Button>
-            <Button href="/coderun" target="__blank" className={classes.btn}>
+            <Button href="#register" className={classes.btn}>
+              Register
+            </Button>
+            <Button href="#testimonials" className={classes.btn}>
+              Testimonials
+            </Button>
+            <Button href="/login" className={classes.btn}>
+              Login
+            </Button>
+            {/* <Button href="/login" target="__blank" className={classes.btn}>
               CodeRun
-            </Button>
-            <Button href="/django_workshop" target="__blank" className={classes.btn}>
-              Django Workshop
-            </Button>
+            </Button> */}
           </div>
           <Button
             className={classes.mobile}
@@ -145,24 +152,29 @@ export default function ButtonAppBar() {
                 Home
               </MenuItem>
             </a>
-            <a className={classes.anchor} href="#Events">
+            <a className={classes.anchor} href="#Features">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
-                Events
+                Features
               </MenuItem>
             </a>
-            <a className={classes.anchor} href="#Alumni">
+            <a className={classes.anchor} href="#Plans">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
-                Stories
+                Pricing
               </MenuItem>
             </a>
-            <a className={classes.anchor} href="/coderun" target="__blank">
+            <a className={classes.anchor} href="#register">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
-                CodeRun
+                Pricing
               </MenuItem>
             </a>
-            <a className={classes.anchor} href="/django_workshop" target="__blank">
+            <a className={classes.anchor} href="#testimonials">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
-                Django Workshop
+                Testimonials
+              </MenuItem>
+            </a>
+            <a className={classes.anchor} href="/login" target="__blank">
+              <MenuItem className={classes.menuitm} onClick={handleClose}>
+                CodeRun login
               </MenuItem>
             </a>
           </Menu>
