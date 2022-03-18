@@ -4,17 +4,22 @@ import { Card, Grid } from "@material-ui/core/";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import DoneOutlineIcon from '@material-ui/icons/DoneOutline';
+import Lotie from "./lotie";
 const useStyles = makeStyles({
   root: {
     minWidth: 250,
     marginBottom: "50px",
     minHeight: "450px",
-    "&:hover": {
+    textAlign:'left',
+    transition:'0.5s',
+    "&:hover":{
       marginTop: "-10px",
-      border: "2px solid transparent",
+      border: "3px solid transparent",
+     
       borderImageSlice: "1",
       animation: "$myEffect 3000ms linear infinite",
-    },
+    }
+     
   },
   "@keyframes myEffect": {
     "0%": {
@@ -42,37 +47,16 @@ const useStyles = makeStyles({
     marginBottom: "20px",
     fontSize: "15px",
   },
-  table: {
-    border: "2px solid forestgreen",
-    width: "85%",
-    margin: "auto",
+  text:{
     marginTop: "25px",
+     fontSize: "25px",
+      fontWeight: "550",
+      marginLeft:'7vw',
   },
-  tr: {
-    borderBottom: "1px solid black",
-  },
-  th: {
-    borderBottom: "1px solid black",
-    borderLeft: "2px solid green",
-    fontSize: "20px",
-    padding: "10px",
-  },
-  th1: {
-    borderBottom: "1px solid black",
-    fontSize: "20px",
-    padding: "10px",
-  },
-  td: {
-    textAlign: "center",
-    borderLeft: "2px solid green",
-    fontSize: "20px",
-    padding: "10px",
-  },
-  td1: {
-    textAlign: "center",
-    fontSize: "20px",
-    padding: "10px",
-  },
+  tick:{
+    backgroundColor:'#32cd32',
+    borderRadius:'50%'
+  }
 });
 
 export default function YouGet() {
@@ -84,41 +68,41 @@ export default function YouGet() {
         <Card className={classes.root}>
           <CardContent>
           
-          
+            <Lotie  />
             <Typography
-              style={{ marginTop: "25px", fontSize: "25px", fontWeight: "550" }}
+             className={classes.text}
               variant="h5"
               component="h2"
             >
-              <DoneOutlineIcon fontSize="large"/>An impressive project on your resume
+              <DoneOutlineIcon className={classes.tick} fontSize="medium"/> An impressive project on your resume
             </Typography>
             <Typography
-              style={{ marginTop: "25px", fontSize: "25px", fontWeight: "550" }}
+              className={classes.text}
               variant="h5"
               component="h2"
             >
-              <DoneOutlineIcon fontSize="large"/>A trending skill to enhance your resume
+              <DoneOutlineIcon className={classes.tick} fontSize="medium"/> A trending skill to enhance your resume
             </Typography>
             <Typography
-              style={{ marginTop: "25px", fontSize: "25px", fontWeight: "550" }}
+              className={classes.text}
               variant="h5"
               component="h2"
             >
-              <DoneOutlineIcon fontSize="large"/>Course Certification
+              <DoneOutlineIcon className={classes.tick} fontSize="medium"/> Course Certification
             </Typography>
             <Typography
-              style={{ marginTop: "25px", fontSize: "25px", fontWeight: "550" }}
+              className={classes.text}
               variant="h5"
               component="h2"
             >
-              <DoneOutlineIcon fontSize="large"/> Lifetime Access
+              <DoneOutlineIcon className={classes.tick} fontSize="medium"/> Lifetime Access
             </Typography>
             <Typography
-              style={{ marginTop: "25px", fontSize: "25px", fontWeight: "550" }}
+              className={classes.text}
               variant="h5"
               component="h2"
             >
-              <DoneOutlineIcon fontSize="large"/> Internship offer to top performers
+              <DoneOutlineIcon className={classes.tick} fontSize="medium"/>   Internship offer to top performers
             </Typography>
 
           </CardContent>

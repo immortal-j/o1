@@ -15,7 +15,10 @@ const useStyles = makeStyles((theme) => ({
   large: {
     width: theme.spacing(35),
     height: theme.spacing(35),
-    marginLeft: "55px",
+    marginLeft:'55px',
+    [theme.breakpoints.down('xs')]: {
+      marginLeft:'0px',
+    },
   },
   mar:{
     marginLeft:'-30px',
@@ -59,7 +62,7 @@ World Rank 3 at Code Gladiators</Typography>
           </a>
         </Grid>
         <Grid sm={4} item>
-          <Avatar src="saurabh.jpg" className={classes.large} />
+          <Avatar src="aditya.jpeg" className={classes.large} />
           <Typography style={{ fontSize: "18px"}} className={classes.mar}>Aditya Sharma</Typography>
           <Typography style={{ fontSize: "12px"}}>SDE at Amazon |
 3x ICPC Regionalist</Typography>

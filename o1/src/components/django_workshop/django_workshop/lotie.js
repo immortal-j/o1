@@ -1,6 +1,6 @@
 import React from "react";
 import Lottie from "react-lottie";
-import animationData from "./wave1.json";
+import animationData from "./badge.json";
 export default function Lotie() {
   const defaultOptions = {
     loop: true,
@@ -13,7 +13,7 @@ export default function Lotie() {
 
   return (
     <div>
-      <Lottie options={defaultOptions} height={800} width={800} speed={5} />
+      <Lottie options={defaultOptions} height={100} width={100} speed={5} />
     </div>
   );
 }

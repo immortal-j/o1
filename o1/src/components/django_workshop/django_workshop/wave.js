@@ -1,4 +1,4 @@
-import "./crlan.css";
+import "./django.css";
 
 function Wave() {
   return (

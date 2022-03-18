@@ -1,4 +1,4 @@
-import "./crlan.css";
+import "./django.css";
 import { makeStyles } from "@material-ui/core/styles";
 import Navbar from "./navbar";
 import Wave from "./wave";
@@ -27,8 +27,12 @@ const useStyles = makeStyles((theme) => ({
     padding: "15px",
     marginTop: "25px",
     textDecoration: "none",
+    transition:"1s",
     [theme.breakpoints.down("xs")]: {
       fontSize: "15px",
+    },
+    "&:hover":{
+      backgroundImage:'linear-gradient(120deg,#3571a3 50%,#fed142 50%)',
     },
   },
 }));
@@ -40,8 +44,8 @@ function DjangoLanding() {
         <Navbar />
       </div>
 
-      <section class="section1">
-        <h1 class="mhead white martop-35">Django for All</h1>
+      <section class="section_django">
+        <h1 class="lhead white martop-35">Django for All</h1>
         {/* <iframe
           width="100%"
           height="450"
@@ -58,10 +62,10 @@ function DjangoLanding() {
           <Lotie />
         </div> */}
         <br />
-
+        <p className="phead martop-15 white">Upskill your resume with the most trending skill in the industry</p>
         <br />
 
-        <p className="phead white ">Date : 28th-29th March 2022</p>
+        <p className="phead white ">Date : 25th-28th March 2022</p>
         {/* <a href="https://t.me/+gLuvqwwQsfY5OTQ1">
           <Button className={classes.btn}>Register for Webinar</Button>
         </a> */}
@@ -72,7 +76,7 @@ function DjangoLanding() {
         {/* <Wave /> */}
       </section>
 
-      <section class="purplebg section2">
+      {/* <section class="purplebg section2">
         <Grid container justifyContent="center" spacing={6}>
           <Grid item xs={3} sm={3}>
             <p class="placedhead mar10 pcenter">6</p>
@@ -91,10 +95,10 @@ function DjangoLanding() {
             <p class="placedsub mar10 pcenter">students placed</p>
           </Grid>
         </Grid>
-      </section>
+      </section> */}
 
       <section className="section3" id="features">
-        <div class="wave3">
+        {/* <div class="wave3">
           <svg
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
@@ -106,18 +110,18 @@ function DjangoLanding() {
               class="shape-fill"
             />
           </svg>
-        </div>
+        </div> */}
 
         <Grid container justifyContent="center" spacing={6}>
           <Grid sm={12}>
             <p class="lhead black mar80">Features</p>
-            <Typography class="shead black mar30">
+            {/* <Typography class="shead black mar30">
               Designed with an initiative to improve one's coding abilities,
               preparing them not only for high paying off-campus placement
               opportunities but also for coding rounds/interviews of campus
               companies. We assure to take one's coding skills to the next level
               & make you placement-ready.
-            </Typography>
+            </Typography> */}
           </Grid>
           {Arr.map((x, i) => {
             return (

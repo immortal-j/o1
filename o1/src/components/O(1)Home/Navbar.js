@@ -112,7 +112,7 @@ export default function ButtonAppBar() {
             <Button href="/coderun" target="__blank" className={classes.btn}>
               CodeRun
             </Button>
-            <Button href="/django_workshop" target="__blank" className={classes.btn}>
+            <Button href="/django" target="__blank" className={classes.btn}>
               Django Workshop
             </Button>
           </div>
@@ -160,7 +160,7 @@ export default function ButtonAppBar() {
                 CodeRun
               </MenuItem>
             </a>
-            <a className={classes.anchor} href="/django_workshop" target="__blank">
+            <a className={classes.anchor} href="/django" target="__blank">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
                 Django Workshop
               </MenuItem>

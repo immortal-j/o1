@@ -15,7 +15,7 @@ function Loader() {
         <Route exact path="/coderun">
           <CoderunLanding />
         </Route>
-        <Route exact path="/django_workshop">
+        <Route exact path="/django">
           <DjangoLanding />
         </Route>
         <Suspense>

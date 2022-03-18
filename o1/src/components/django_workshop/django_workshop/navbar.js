@@ -101,7 +101,7 @@ export default function ButtonAppBar() {
           <Typography className={classes.title}>Django Workshop</Typography>
           <div className={classes.menuSpace2}></div>
           <div className={classes.desktop}>
-            <Button href="#" className={classes.btn}>
+            <Button href="/" className={classes.btn}>
               Home
             </Button>
             <Button href="#features" className={classes.btn}>
@@ -115,9 +115,6 @@ export default function ButtonAppBar() {
             </Button>
             <Button href="#testimonials" className={classes.btn}>
               Testimonials
-            </Button>
-            <Button href="/login" className={classes.btn}>
-              Login
             </Button>
             {/* <Button href="/login" target="__blank" className={classes.btn}>
               CodeRun

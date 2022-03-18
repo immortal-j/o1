@@ -130,9 +130,9 @@ export default function RegisterSteps() {
                   className={classes.pos}
                 >
                  
-                  <br />
                   Fill your details & attach payment proof in the Google Form.
                 </Typography>
+                <br/>
               </Grid>
             </Grid>
           </CardContent>
