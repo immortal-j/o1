@@ -6,12 +6,10 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Login from "./Login/login";
 import { read_cookie } from "sfcookies";
 import Preload from "../../preload";
-const Chartsloader = lazy(() =>
-  import("./Barchartsandhome/chartsLoader")
-);
+const Chartsloader = lazy(() => import("./landing/charts/chartsLoader"));
 const Footer = lazy(() => import("./Footer/Footer"));
 const Button = lazy(() => import("@material-ui/core"));
-const Cardloader = lazy(() => import("./Cards/Cardloader"));
+const Cardloader = lazy(() => import("./Practice/practice_loader"));
 const useStyles = makeStyles((theme) => ({
   btn: {
     color: "#fff",
@@ -32,8 +30,8 @@ function Loader() {
   const [conteststatus, SetConteststaus] = useState(false);
   const [uid, setUid] = useState("Null");
   useEffect(() => {
-    var x = read_cookie("loggedin");
-    var y = read_cookie("uid");
+    var x = read_cookie("loggedin"); //check whether logged in or not
+    var y = read_cookie("uid"); // for uid of the user
     if (y.length > 0) {
       setUid(y);
     }
@@ -88,6 +86,12 @@ function Loader() {
               />
             </Suspense>
             <Suspense fallback={<Preload />}>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
               <Footer />
             </Suspense>
           </div>

@@ -3,7 +3,8 @@
   background-repeat: no-repeat;
   background-position-x: -245px;
   background-position-y: 60px;
-
+  text-align: center;
+  overflow-x: hidden !important;
   /* background-color: #fdce68; */
 }
 .loader {

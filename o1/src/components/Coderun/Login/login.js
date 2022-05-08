@@ -7,18 +7,27 @@ import MuiAlert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 
 import "./loginstyles.css";
-import Loginimg from "./images.jpg";
+import Loginimg from "./analyze1.jpg";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { bake_cookie } from "sfcookies";
 const useStyles = makeStyles(() => ({
   login: {
-    backgroundImage: `url(${Loginimg})`,
+    background:`linear-gradient(0deg, rgba(255, 0, 150, 0.3), rgba(255, 0, 150, 0.3)),url(${Loginimg}) `,
     backgroundPosition: "center",
     backgroundSize: "cover",
     backgroundRepeat: "repeat",
-    height: "100vh",
-    margin: 0,
+    minHeight: '100%',
+    minWidth: '1024px',
+      
+    /* Set up proportionate scaling */
+    width: '100%',
+    height: 'auto',
+      
+    /* Set up positioning */
+    position: 'fixed',
+    top: '0',
+    left: '0',
   },
 }));
 const Alert = React.forwardRef(function Alert(props, ref) {

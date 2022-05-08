@@ -8,7 +8,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50% , -50%);
-    background: #2C394B;
+    background: rgba(0,0,0,0.7);
     text-align: center;
 }
 
@@ -55,6 +55,6 @@
 
 }
 .box input[type="submit"]:hover{
-        background:#B1E693;
+        background:#8739f9;
 
 }
