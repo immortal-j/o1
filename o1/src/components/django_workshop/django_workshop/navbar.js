@@ -101,21 +101,19 @@ export default function ButtonAppBar() {
           <Typography className={classes.title}>Django Workshop</Typography>
           <div className={classes.menuSpace2}></div>
           <div className={classes.desktop}>
-            <Button href="/" className={classes.btn}>
+            <Button href="#" className={classes.btn}>
               Home
             </Button>
             <Button href="#features" className={classes.btn}>
               Features
             </Button>
             <Button href="#plans" className={classes.btn}>
-              Pricing
+              You Get
             </Button>
             <Button href="#register" className={classes.btn}>
               Register
             </Button>
-            <Button href="#testimonials" className={classes.btn}>
-              Testimonials
-            </Button>
+           
             {/* <Button href="/login" target="__blank" className={classes.btn}>
               CodeRun
             </Button> */}
@@ -144,34 +142,24 @@ export default function ButtonAppBar() {
             <Button onClick={handleClose}>
               <FontAwesomeIcon icon={faTimes} size="2x" color="#8739f9" />
             </Button>
-            <a className={classes.anchor} href="#Landing">
+            <a className={classes.anchor} href="#">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
                 Home
               </MenuItem>
             </a>
-            <a className={classes.anchor} href="#Features">
+            <a className={classes.anchor} href="#features">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
                 Features
               </MenuItem>
             </a>
-            <a className={classes.anchor} href="#Plans">
+            <a className={classes.anchor} href="#plans">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
-                Pricing
+                You Get
               </MenuItem>
             </a>
             <a className={classes.anchor} href="#register">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
-                Pricing
-              </MenuItem>
-            </a>
-            <a className={classes.anchor} href="#testimonials">
-              <MenuItem className={classes.menuitm} onClick={handleClose}>
-                Testimonials
-              </MenuItem>
-            </a>
-            <a className={classes.anchor} href="/login" target="__blank">
-              <MenuItem className={classes.menuitm} onClick={handleClose}>
-                CodeRun login
+                Register
               </MenuItem>
             </a>
           </Menu>

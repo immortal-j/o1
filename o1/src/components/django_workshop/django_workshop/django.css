@@ -1,4 +1,3 @@
-
 /*Custom  Styling */
 
 .section_django {
@@ -8,14 +7,15 @@
   align-items: center;
   padding: 30px 20vw 80px 20vw;
   min-height: 600px;
-  background:url("../../../images/django.png") rgba(0,0,0,0.5);
+  background: url("../../../images/intro.jpg") rgba(0, 0, 0, 0.5);
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;  
+  background-attachment: fixed;
+  background-blend-mode: multiply;
   /* padding: 160px 20vw; */
   /* background-color: #61dafb; */
 }
-a{
+a {
   text-decoration: none;
 }
 .section2 {
@@ -84,14 +84,13 @@ a{
 }
 
 @media screen and (max-width: 480px) {
-  .section_django{
-    background:url("../../../images/python.jpg") rgba(0,0,0,0.5);
-    background-repeat: no-repeat; 
+  .section_django {
+    background: url("../../../images/intro.jpg") rgba(0, 0, 0, 0.5);
+    background-repeat: no-repeat;
     background-position: center;
-       
-  
+    background-blend-mode: multiply;
+
     background-size: cover;
-    
   }
   .pos1 {
     display: none;
@@ -99,7 +98,7 @@ a{
   .pos2 {
     display: none;
   }
-  .section2{
+  .section2 {
     padding: 30px 15vw 0 3vw;
   }
 }
@@ -115,8 +114,8 @@ a{
   font-size: 20px;
   font-weight: 600;
 }
-.phead{
-  font-size:25px;
+.phead {
+  font-size: 25px;
   font-weight: 600;
 }
 .black {
@@ -128,6 +127,9 @@ a{
 }
 .pleft {
   text-align: left;
+}
+.bold {
+  font-weight: 800;
 }
 .pcenter {
   text-align: center;
@@ -164,8 +166,12 @@ a{
   .shead {
     font-size: 12px;
   }
+  .lhead {
+    font-size: 45px;
+    font-weight: 800;
+  }
 }
-.white{
+.white {
   color: #fff;
 }
 
@@ -214,10 +220,10 @@ a{
     font-size: 15px;
     font-weight: 600;
   }
-  .martop-35{
+  .martop-35 {
     margin-top: 25%;
   }
-  .phead{
+  .phead {
     font-size: 20px;
   }
 }

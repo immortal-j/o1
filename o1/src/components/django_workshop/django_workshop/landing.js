@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundImage:'linear-gradient(120deg,#3571a3 50%,#fed142 50%)',
     },
   },
+  
 }));
 function DjangoLanding() {
   const classes = useStyles();
@@ -62,10 +63,10 @@ function DjangoLanding() {
           <Lotie />
         </div> */}
         <br />
-        <p className="phead martop-15 white">Upskill your resume with the most trending skill in the industry</p>
+        <p className="phead martop-15 white bold">Upskill &nbsp;your  &nbsp;resume &nbsp; with &nbsp; the&nbsp;  most&nbsp;  trending &nbsp; skill &nbsp; in &nbsp; the &nbsp; industry</p>
         <br />
 
-        <p className="phead white ">Date : 25th-28th March 2022</p>
+        <p className="phead white ">Date : 1st-4th April 2022</p>
         {/* <a href="https://t.me/+gLuvqwwQsfY5OTQ1">
           <Button className={classes.btn}>Register for Webinar</Button>
         </a> */}
@@ -125,7 +126,7 @@ function DjangoLanding() {
           </Grid>
           {Arr.map((x, i) => {
             return (
-              <Grid key={i} item sm={4}>
+              <Grid key={i} item sm={6}>
                 <Card x={x} />
               </Grid>
             );
@@ -135,7 +136,7 @@ function DjangoLanding() {
 
       <section className="section4" id="plans">
         <Grid sm={12}>
-          <p style={{ fontSize: "60px", fontWeight: "800" }}>YOU GET !</p>
+          <p class="lhead">YOU GET !</p>
         </Grid>
 
         <Grid sm={12}>
@@ -144,7 +145,7 @@ function DjangoLanding() {
       </section>
 
       <section className="section4" id="register">
-        <p style={{ fontSize: "60px", fontWeight: "800" }}>How to Register?</p>
+        <p class="lhead">How to Register?</p>
         <RegisterSteps />
       </section>
 

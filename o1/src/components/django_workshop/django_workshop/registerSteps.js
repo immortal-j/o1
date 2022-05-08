@@ -89,7 +89,9 @@ export default function RegisterSteps() {
                   className={classes.pos}
                 >
                 Pay Rs.200 to the upi id -<b> namanvid30@oksbi </b> and take a screenshot for payment proof.
+              
                 </Typography>
+                <br/>
               </Grid>
             </Grid>
           </CardContent>
@@ -131,6 +133,8 @@ export default function RegisterSteps() {
                 >
                  
                   Fill your details & attach payment proof in the Google Form.
+                  <br/>
+                  <a href="https://forms.gle/u1uZQnJ6s6aXbwJw7"> Apply Here</a>
                 </Typography>
                 <br/>
               </Grid>

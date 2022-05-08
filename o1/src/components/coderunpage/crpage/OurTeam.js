@@ -47,7 +47,7 @@ export default function OurTeam() {
           </a>
         </Grid>
         <Grid sm={4} item>
-          <Avatar src="rishabh.jpg" className={classes.large} />
+          <Avatar src="rishabh1.jpg" className={classes.large} />
           <Typography style={{ fontSize: "18px" }} className={classes.mar}>Rishabh Rathi</Typography>
           <Typography style={{ fontSize: "12px"}} className={classes.mar}>MTS at VMware |
 World Rank 3 at Code Gladiators</Typography>
