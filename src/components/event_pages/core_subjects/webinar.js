@@ -48,6 +48,11 @@ const useStyles = makeStyles({
   },
   image: {
     maxWidth: "100%",
+    // height: "100%",
+    // width: "100%",
+    // [theme.breakpoints.up("xs")]: {
+    //   maxWidth: "10%",
+    // },
   },
   btn: {
     backgroundColor: "#8739f9",

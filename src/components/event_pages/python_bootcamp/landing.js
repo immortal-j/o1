@@ -61,19 +61,19 @@ function PythonBootcampLanding() {
 
       <section className="purplebg section2">
         <Grid container justifyContent="center" spacing={6}>
-          <Grid item xs={3} sm={3}>
+          <Grid item xs={6} sm={3}>
             <p className="placedhead mar10 pcenter">25+</p>
             <p className="placedsub mar10 pcenter">Hours of live sessions</p>
           </Grid>
-          <Grid item xs={3} sm={3}>
+          <Grid item xs={6} sm={3}>
             <p className="placedhead mar10 pcenter">10+</p>
             <p className="placedsub mar10 pcenter">Programming Assignments</p>
           </Grid>
-          <Grid item xs={3} sm={3}>
+          <Grid item xs={6} sm={3}>
             <p className="placedhead mar10 pcenter">15+</p>
             <p className="placedsub mar10 pcenter">Important Concepts</p>
           </Grid>
-          <Grid item xs={3} sm={3}>
+          <Grid item xs={6} sm={3}>
             <p className="placedhead mar10 pcenter">500+</p>
             <p className="placedsub mar10 pcenter">Students Placed </p>
           </Grid>

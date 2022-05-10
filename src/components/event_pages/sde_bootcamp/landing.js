@@ -98,7 +98,7 @@ function SDEBootcampLanding() {
         <Grid container justifyContent="center" spacing={6}>
           <Grid sm={12}>
             <p className="lhead black mar80">Features</p>
-            <Typography className="shead black mar30">
+            <Typography className="shead black padlr">
               When it comes to placements, time is the big concern and most
               students give up on the most important skills because of time
               constant. No worries, you can start from scratch and build up to

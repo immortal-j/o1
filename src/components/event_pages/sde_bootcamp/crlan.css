@@ -187,6 +187,10 @@ a{
 .mar30 {
   margin: 30px;
 }
+.padlr{
+  padding-left: 30px;
+  padding-right: 30px;
+}
 .placedhead {
   font-size: 70px;
   font-weight: 600;

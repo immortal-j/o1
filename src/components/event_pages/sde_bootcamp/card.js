@@ -7,7 +7,7 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
-    height: 275,
+    height: 320,
     transition: "0.5s",
     "&:hover": {
       marginTop: "-10px",

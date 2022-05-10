@@ -63,19 +63,19 @@ function CoreSubjectsLanding() {
 
       <section className="purplebg section2">
         <Grid container justifyContent="center" spacing={6}>
-          <Grid item xs={3} sm={3}>
+          <Grid item xs={6} sm={3}>
             <p className="placedhead mar10 pcenter">30+</p>
             <p className="placedsub mar10 pcenter">Hours of live sessions</p>
           </Grid>
-          <Grid item xs={3} sm={3}>
+          <Grid item xs={6} sm={3}>
             <p className="placedhead mar10 pcenter">10+</p>
             <p className="placedsub mar10 pcenter">Continuous Assessments</p>
           </Grid>
-          <Grid item xs={3} sm={3}>
+          <Grid item xs={6} sm={3}>
             <p className="placedhead mar10 pcenter">25+</p>
             <p className="placedsub mar10 pcenter">Important topics</p>
           </Grid>
-          <Grid item xs={3} sm={3}>
+          <Grid item xs={6} sm={3}>
             <p className="placedhead mar10 pcenter">500+</p>
             <p className="placedsub mar10 pcenter">students placed</p>
           </Grid>
@@ -100,7 +100,7 @@ function CoreSubjectsLanding() {
         <Grid container justifyContent="center" spacing={6}>
           <Grid sm={12}>
             <p className="lhead black mar80">Features</p>
-            <Typography className="shead black mar30">
+            <Typography className="shead black padlr">
               Considering the very little amount of time left for placements,
               this crash course ensures to strengthen all the listed core
               subjects within just 15 days. All the subjects covered in this
