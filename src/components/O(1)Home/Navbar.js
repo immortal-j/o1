@@ -152,17 +152,27 @@ export default function ButtonAppBar() {
             </a>
             <a className={classes.anchor} href="#Alumni">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
-                Stories
+                Testimonials
               </MenuItem>
             </a>
-            <a className={classes.anchor} href="/coderun" target="__blank">
+            <a className={classes.anchor} href="/aptitude">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
-                CodeRun
+                Aptitude Series
               </MenuItem>
             </a>
-            <a className={classes.anchor} href="/django" target="__blank">
+            <a className={classes.anchor} href="/python-bootcamp">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
-                Django Workshop
+                Python Bootcamp
+              </MenuItem>
+            </a>
+            <a className={classes.anchor} href="/sde-bootcamp">
+              <MenuItem className={classes.menuitm} onClick={handleClose}>
+                Complete SDE Bootcamp
+              </MenuItem>
+            </a>
+            <a className={classes.anchor} href="/core-subjects">
+              <MenuItem className={classes.menuitm} onClick={handleClose}>
+                Crash Course
               </MenuItem>
             </a>
           </Menu>

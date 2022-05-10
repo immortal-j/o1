@@ -12,12 +12,12 @@ const arr = [
   {
     feature: "No Prerequisites",
     data: "You just need to have an interest in learning Python Programming and that's it",
-    img: "./placed.svg",
+    img: "./teacher.svg",
   },
   {
     feature: "Superdream Placed Industry Experts",
     data: "Our instructors are not only experts in the subjects but themselves are working at Superdream companies.",
-    img: "./ic.svg",
+    img: "./placed.svg",
   },
   {
     feature: "Practice Coding Questions",
@@ -27,7 +27,7 @@ const arr = [
   {
     feature: "100% Money Back Policy",
     data: "If a candidate religiously attends & completes the course but still is unsatisfied with the course we offer 100% refund.",
-    img: "./analysis.svg",
+    img: "./refund.svg",
   },
 ];
 export default arr;

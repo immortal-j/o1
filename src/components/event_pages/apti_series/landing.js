@@ -11,6 +11,7 @@ import Footer from "./Footer";
 import Arr from "./featuresdata";
 import RegisterSteps from "./registerSteps";
 import Carousel from "./carousel";
+import Webinar from "./webinar";
 
 const useStyles = makeStyles((theme) => ({
   mar: {
@@ -63,10 +64,6 @@ function AptiSeriesLanding() {
           <Grid item xs={3} sm={3}>
             <p className="placedhead mar10 pcenter">20+</p>
             <p className="placedsub mar10 pcenter">Aptitude Tests</p>
-          </Grid>
-          <Grid item xs={3} sm={3}>
-            <p className="placedhead mar10 pcenter">7+</p>
-            <p className="placedsub mar10 pcenter">Companies</p>
           </Grid>
           <Grid item xs={3} sm={3}>
             <p className="placedhead mar10 pcenter">3+</p>
@@ -137,6 +134,15 @@ function AptiSeriesLanding() {
       <section className="section6" id="register">
         <p style={{ fontSize: "60px", fontWeight: "800" }}>How to Register?</p>
         <RegisterSteps />
+      </section>
+
+      <hr />
+
+      <section className="section6">
+        <p style={{ fontSize: "60px", fontWeight: "800" }}>
+          Still have doubts?
+        </p>
+        <Webinar />
       </section>
 
       <hr />

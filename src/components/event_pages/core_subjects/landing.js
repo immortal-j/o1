@@ -11,6 +11,7 @@ import Footer from "./Footer";
 import Arr from "./featuresdata";
 import RegisterSteps from "./registerSteps";
 import Carousel from "./carousel";
+import Webinar from "../apti_series/webinar";
 
 const useStyles = makeStyles((theme) => ({
   mar: {
@@ -149,6 +150,15 @@ function CoreSubjectsLanding() {
       <section className="section6" id="register">
         <p style={{ fontSize: "60px", fontWeight: "800" }}>How to Register?</p>
         <RegisterSteps />
+      </section>
+
+      <hr />
+
+      <section className="section6">
+        <p style={{ fontSize: "60px", fontWeight: "800" }}>
+          Still have doubts?
+        </p>
+        <Webinar />
       </section>
 
       <hr />

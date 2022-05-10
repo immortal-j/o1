@@ -2,7 +2,7 @@ const arr = [
   {
     feature: "All Topics Covered",
     data: "String Manipulation, Array, Sorting, Searching, Stack, Queue, Linkedlist, Tree, Graph, Greedy, Dynamic Programming, Divide And Conquer and everything in between.",
-    img: "./placed.svg",
+    img: "./achievement.svg",
   },
   {
     feature: "Superdream Placed Industry Experts",
@@ -27,7 +27,7 @@ const arr = [
   {
     feature: "100% Money Back Policy",
     data: "If a candidate religiously attends & completes the course but still is unsatisfied with the course we offer 100% refund.",
-    img: "./analysis.svg",
+    img: "./refund.svg",
   },
 ];
 export default arr;

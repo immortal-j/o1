@@ -89,8 +89,8 @@ export default function IncomeAgreement() {
               variant="h5"
               component="h2"
             >
-              INR 800 <br />
-              <strike style={{ color: "grey" }}> INR 1000 </strike>
+              INR 1000 <br />
+              <strike style={{ color: "grey" }}> INR 2000 </strike>
             </Typography>
             <Typography className={classes.pos} color="textSecondary">
               Upfront Registration Fees

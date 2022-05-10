@@ -24,6 +24,8 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     fontSize: "18px",
+    fontWeight: "bold",
+    padding: "5px",
   },
   logo: {
     color: "#2962ff",
@@ -37,23 +39,20 @@ export default function OurTeam() {
 
   return (
     <div>
-      <h2 className="lhead">Our Team</h2>
-      <Typography
-        style={{
-          fontSize: "20px",
-          fontWeight: "600",
-          margin: "50px",
-          marginTop: "-35px",
-        }}
-      >
-        We have a huge team of 1 person
-      </Typography>
+      <h2 className="lhead">Instructors</h2>
       <Grid container spacing={5} justifyContent="center">
-        <Grid sm={3} item>
-          <Avatar src="rajatagrawal.jpg" className={classes.photo} />
+        <Grid sm={6} item>
+          <Avatar src="rajatagrawal.png" className={classes.photo} />
           <Typography className={classes.name}>R.S. Agrawal</Typography>
           <Typography className={classes.title}>
             Full Stack Engineer at Accenture
+          </Typography>
+          <Typography>
+            Hi, I'm R.S. Agrawal, not only do I have the experience of training
+            over 500 students for Aptitude tests of various IT companies but
+            have myself aced through every aptitude test that I appeared for &
+            ultimately landed a superdream job. I'm here to guide you for the
+            same.
           </Typography>
           <a
             href="https://in.linkedin.com/in/rajat-agrawal-231273185"

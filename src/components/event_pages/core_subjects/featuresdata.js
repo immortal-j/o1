@@ -20,9 +20,14 @@ const arr = [
     img: "./code.svg",
   },
   {
+    feature: "All Topics Covered",
+    data: "All the topics & sub-topics required for placements from the subjects Operating System, Database Management System, Computer Networks will be covered.",
+    img: "./achievement.svg",
+  },
+  {
     feature: "100% Money Back Policy",
     data: "If a candidate religiously attends & completes the course but still is unsatisfied with the course we offer 100% refund.",
-    img: "./analysis.svg",
+    img: "./refund.svg",
   },
 ];
 export default arr;

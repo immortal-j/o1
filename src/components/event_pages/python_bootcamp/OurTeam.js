@@ -37,12 +37,19 @@ export default function OurTeam() {
 
   return (
     <div>
-      <h2 className="lhead">Our Team</h2>
+      <h2 className="lhead">Instructors</h2>
       <Grid container spacing={5} justifyContent="center">
-        <Grid sm={3} item>
+        <Grid sm={6} item>
           <Avatar src="" className={classes.photo} />
           <Typography className={classes.name}>Aditya Sharma</Typography>
           <Typography className={classes.title}>SDE at Persistent</Typography>
+          <Typography>
+            Hi, I am Aditya Sharma. I have experience of training more than 200
+            students for python language. We all know how important is a command
+            over programming language for IT placements. I cracked multiple
+            dream and superdream offers using python and I am here to guide you
+            for the same.
+          </Typography>
           <a
             href="https://in.linkedin.com/in/aditya-sharma-0b21a3197"
             target="_blank"
@@ -51,7 +58,7 @@ export default function OurTeam() {
           </a>
         </Grid>
 
-        <Grid sm={3} item>
+        <Grid sm={6} item>
           <Avatar src="" className={classes.photo} />
           <Typography className={classes.name}>Rohit Doshi</Typography>
           <Typography className={classes.title}>
