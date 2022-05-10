@@ -1,0 +1,278 @@
+
+/*Custom  Styling */
+
+.section1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20vw 80px 20vw;
+  min-height: 600px;
+  background:url("../../../images/intro.jpg") rgba(0,0,0,0.5);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  /* padding: 160px 20vw; */
+  /* background-color: #61dafb; */
+}
+a{
+  text-decoration: none;
+}
+.section2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+  padding: 30px 3vw 0 3vw;
+  color: #fff;
+  /* background-color: #61dafb; */
+}
+
+.section3 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 3vw 50px 3vw;
+  color: #fff;
+  /* background-color: #61dafb; */
+}
+
+.section4 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 3vw;
+  /* color: #000; */
+  /* background-color: #61dafb; */
+}
+
+.section5 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 3vw;
+  color: #fff;
+  background-color: #8739f9;
+}
+
+.section6 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 3vw;
+}
+
+.hr1 {
+  margin-left: 20vw;
+  margin-right: 20vw;
+}
+.navsection {
+  min-height: 60px;
+  max-height: 30px;
+}
+.pos1 {
+  position: absolute;
+  left: 0px;
+  top: -100px;
+  transform: rotate(180deg);
+}
+.pos2 {
+  position: absolute;
+  right: 0px;
+  top: -10px;
+}
+
+@media screen and (max-width: 480px) {
+  .pos1 {
+    display: none;
+  }
+  .pos2 {
+    display: none;
+  }
+  .section2{
+    padding: 30px 15vw 0 3vw;
+  }
+}
+.lhead {
+  font-size: 60px;
+  font-weight: 800;
+}
+.mhead {
+  font-size: 45px;
+  font-weight: 800;
+}
+.shead {
+  font-size: 20px;
+  font-weight: 600;
+}
+.phead{
+  font-size:25px;
+  font-weight: 600;
+}
+.black {
+  color: black;
+}
+.text {
+  font-size: 15px;
+  font-weight: 600;
+}
+.pleft {
+  text-align: left;
+}
+.pcenter {
+  text-align: center;
+}
+.purple {
+  color: #8739f9;
+}
+.purplebg {
+  /* background-color: rgb(135, 57, 249);
+  background-image: url("https://www.transparenttextures.com/patterns/climpek.png"); */
+  background-color: #8739f9;
+  background-image: url("https://www.transparenttextures.com/patterns/climpek.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+.whitebg {
+  background-color: rgb(255, 255, 255);
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+}
+.curvegrid {
+  border-radius: 20px;
+  max-width: 235px !important;
+  margin: 10px !important;
+  box-shadow: 5px 10px 18px 10px #a308eb;
+  z-index: 3;
+}
+@media screen and (max-width: 480px) {
+  .curvegrid {
+    border-radius: 20px;
+    max-width: 165px !important;
+    margin: 5px !important;
+    box-shadow: 2px 5px 12px 6px #9917cc;
+    z-index: 3;
+  }
+  .shead {
+    font-size: 12px;
+  }
+}
+.white{
+  color: #fff;
+}
+
+.btn {
+  color: white;
+  font-weight: 800;
+  border-radius: 10px;
+  background-color: #8739f9;
+  width: 100px;
+  padding: 10px;
+  margin-top: 35px;
+  z-index: 1000 !important;
+  text-decoration: none;
+}
+.martop-35 {
+  margin-top: 15%;
+}
+.martop-15 {
+  margin-top: -15px;
+}
+.mar10 {
+  margin: 10px;
+}
+.mar80 {
+  margin-top: 80px;
+  margin-bottom: 0px;
+}
+.mar30 {
+  margin: 30px;
+}
+.placedhead {
+  font-size: 70px;
+  font-weight: 600;
+}
+.placedsub {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 480px) {
+  .placedhead {
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .placedsub {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .martop-35{
+    margin-top: 25%;
+  }
+  .phead{
+    font-size: 20px;
+  }
+}
+
+.wave1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave1 svg {
+  position: relative;
+  display: block;
+  width: calc(300% + 1.3px);
+  height: 269px;
+  transform: rotateY(180deg);
+}
+
+.wave1 .shape-fill {
+  /* fill: #8739f9; */
+  fill: #8739f9;
+}
+.wave2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave2 svg {
+  position: relative;
+  display: block;
+  width: calc(300% + 1.3px);
+  height: 270px;
+  transform: rotateY(180deg);
+}
+
+.wave2 .shape-fill {
+  fill: #8739f9;
+}
+
+.wave3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave3 svg {
+  position: relative;
+  display: block;
+  width: calc(300% + 1.3px);
+  height: 100px;
+  transform: rotateY(180deg);
+}
+
+.wave3 .shape-fill {
+  fill: #8739f9;
+}
