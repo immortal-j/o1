@@ -7,7 +7,7 @@ import {
   Button,
   Link,
 } from "@material-ui/core";
-import { useHistory } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 
 import TrophyMake from "./TrophyMake";
 import InternshipMake from "./InternshipMake";
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   hname: {
     fontSize: 25,
-    marginLeft: -10,
+    // marginLeft: -20,
   },
   coursecontainer: {
     maxWidth: 350,
@@ -40,11 +40,12 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "10px",
     boxShadow: "0 10px 10px rgba(0, 0, 0, 0.2)",
     display: "flex",
-    minHeight: 100,
+    minHeight: 200,
+    minWidth: 350,
     margin: "2%",
     overflow: "hidden",
     [theme.breakpoints.up("sm")]: {
-      minHeight: 350,
+      minHeight: 400,
     },
   },
   courseinfo: {
@@ -54,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
   },
   desfont: {
-    fontSize: 9,
+    fontSize: 12,
     [theme.breakpoints.up("sm")]: {
       fontSize: 20,
     },
@@ -63,10 +64,11 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#2A265F",
     color: "#fff",
     padding: "30px",
-    minWidth: "100px",
+    minWidth: "120px",
     margin: "auto",
     [theme.breakpoints.up("sm")]: {
       minWidth: "150px",
+      minHeight: "300px"
     },
   },
   btn: {
@@ -179,7 +181,7 @@ function OurEvents() {
                           className={classes.btn}
                           variant="contained"
                           color="secondary"
-                          onClick={() => history.push("/python-bootcamp")}
+                          onClick={() => history.replace({pathname:'/python-bootcamp'})}
                         >
                           Details
                         </Button>

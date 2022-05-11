@@ -19,10 +19,10 @@ function TrophyMake() {
       <div
         className="container"
         style={{
-          width: 190,
-          height: 160,
+          width: 150,
+          height: 150,
           alignSelf: "center",
-          marginLeft: -40,
+          marginLeft: -17,
         }}
         ref={container}
       ></div>
