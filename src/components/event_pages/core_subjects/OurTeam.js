@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
     padding: "5px",
   },
   title: {
-    fontSize: "18px",
+    fontSize: "16px",
+    fontWeight: "bold",
   },
   logo: {
     color: "#2962ff",
@@ -40,7 +41,7 @@ export default function OurTeam() {
       <h2 className="lhead">Instructors</h2>
       <Grid container spacing={5} justifyContent="center">
         <Grid sm={4} item>
-          <Avatar src="" className={classes.photo} />
+          <Avatar src="nikeshbaghel.jpeg" className={classes.photo} />
           <Typography className={classes.name}>Nikeshsingh Baghel</Typography>
           <Typography className={classes.title}>
             SDE-T at ZS Associates

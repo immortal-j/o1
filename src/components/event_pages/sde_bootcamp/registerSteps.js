@@ -133,7 +133,7 @@ export default function RegisterSteps() {
                   >
                     Submit your application in{" "}
                     <a
-                      href="https://forms.gle/PQmNgPfN3UHbBeCm7"
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSeoWnHS45d6CoMaqd-Nuv-lOuFWi2KMvwgXpsdnM_9Hsb_Z1w/viewform?usp=sf_link"
                       target="_blank"
                       className={classes.anc}
                     >

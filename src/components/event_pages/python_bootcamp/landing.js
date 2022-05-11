@@ -11,7 +11,7 @@ import Footer from "./Footer";
 import Arr from "./featuresdata";
 import RegisterSteps from "./registerSteps";
 import Carousel from "./carousel";
-import Webinar from "../apti_series/webinar";
+import Webinar from "./webinar";
 
 const useStyles = makeStyles((theme) => ({
   mar: {
@@ -124,7 +124,7 @@ function PythonBootcampLanding() {
             }}
           >
             Register fast to get our course at a flat{" "}
-            <font color="red"> 20% </font> discount
+            <font color="red"> 50% </font> discount
           </Typography>
         </Grid>
 

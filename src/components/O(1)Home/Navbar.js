@@ -172,7 +172,7 @@ export default function ButtonAppBar() {
             </a>
             <a className={classes.anchor} href="/core-subjects">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
-                Crash Course
+                Core Subjects Course
               </MenuItem>
             </a>
           </Menu>

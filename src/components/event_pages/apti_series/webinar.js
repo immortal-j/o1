@@ -4,7 +4,7 @@ import { Button, Card, Grid } from "@material-ui/core";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: 275,
     transition: "0.5s",
@@ -37,24 +37,35 @@ const useStyles = makeStyles({
     fontSize: "25px",
     fontWeight: 600,
     textAlign: "center",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "20px",
+    },
   },
   pos: {
     marginTop: 12,
     marginBottom: 12,
     fontSize: "18px",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "15px",
+    },
   },
   step: {
-    // backgroundColor: "#8739f9",
+    margin: "auto",
   },
   image: {
-    maxWidth: "100%",
+    width: 200,
+    height: 200,
+    [theme.breakpoints.down("sm")]: {
+      width: 150,
+      height: 200,
+    },
   },
   btn: {
     backgroundColor: "#8739f9",
     color: "white",
     margin: "2%",
   },
-});
+}));
 
 export default function Webinar() {
   const classes = useStyles();
@@ -71,13 +82,13 @@ export default function Webinar() {
                   justifyContent="center"
                   item
                   sm={4}
-                  xs={4}
+                  xs={5}
                   className={classes.step}
                 >
                   <img src="doubts.png" className={classes.image} />
                 </Grid>
 
-                <Grid item sm={8} xs={8}>
+                <Grid item sm={8} xs={7}>
                   <Typography
                     variant="h5"
                     component="h2"
@@ -95,7 +106,10 @@ export default function Webinar() {
                     doubts cleared.
                   </Typography>
                   <div style={{ textAlign: "center" }}>
-                    <a href="">
+                    <a
+                      href="https://chat.whatsapp.com/Dlx0EaKallZHzgH6urZJaf"
+                      target="_blank"
+                    >
                       <Button className={classes.btn}>Join Group</Button>
                     </a>
                   </div>

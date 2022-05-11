@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Typography,
-  Grid,
-  makeStyles,
-  Button,
-  Link,
-} from "@material-ui/core";
-import { Redirect, useHistory } from "react-router-dom";
+import { Box, Typography, Grid, makeStyles, Button } from "@material-ui/core";
 
 import TrophyMake from "./TrophyMake";
 import InternshipMake from "./InternshipMake";
@@ -48,27 +40,28 @@ const useStyles = makeStyles((theme) => ({
       minHeight: 400,
     },
   },
+  coursepreview: {
+    backgroundColor: "#2A265F",
+    color: "#fff",
+    padding: "30px",
+    minWidth: "150px",
+    minHeight: "300px",
+    margin: "auto",
+    [theme.breakpoints.down("sm")]: {
+      minWidth: "100px",
+    },
+  },
   courseinfo: {
     padding: "30px",
     position: "relative",
     width: "100%",
     margin: "auto",
+    [theme.breakpoints.down("sm")]: {},
   },
   desfont: {
-    fontSize: 12,
-    [theme.breakpoints.up("sm")]: {
-      fontSize: 20,
-    },
-  },
-  coursepreview: {
-    backgroundColor: "#2A265F",
-    color: "#fff",
-    padding: "30px",
-    minWidth: "120px",
-    margin: "auto",
-    [theme.breakpoints.up("sm")]: {
-      minWidth: "150px",
-      minHeight: "300px"
+    fontSize: 20,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: 15,
     },
   },
   btn: {
@@ -98,7 +91,6 @@ const useStyles = makeStyles((theme) => ({
 
 function OurEvents() {
   const classes = useStyles();
-  const history = useHistory();
 
   return (
     <section id="Events">
@@ -139,14 +131,15 @@ function OurEvents() {
                           with the latest test format.
                         </Typography>
                         <br />
-                        <Button
-                          className={classes.btn}
-                          variant="contained"
-                          color="secondary"
-                          onClick={() => history.push("/aptitude")}
-                        >
-                          Details
-                        </Button>
+                        <a href="/aptitude">
+                          <Button
+                            className={classes.btn}
+                            variant="contained"
+                            color="secondary"
+                          >
+                            Details
+                          </Button>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -177,14 +170,15 @@ function OurEvents() {
                           high paying IT jobs
                         </Typography>
                         <br />
-                        <Button
-                          className={classes.btn}
-                          variant="contained"
-                          color="secondary"
-                          onClick={() => history.replace({pathname:'/python-bootcamp'})}
-                        >
-                          Details
-                        </Button>
+                        <a href="/python-bootcamp">
+                          <Button
+                            className={classes.btn}
+                            variant="contained"
+                            color="secondary"
+                          >
+                            Details
+                          </Button>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -214,14 +208,15 @@ function OurEvents() {
                           Dream Placement.
                         </Typography>
                         <br />
-                        <Button
-                          className={classes.btn}
-                          variant="contained"
-                          color="secondary"
-                          onClick={() => history.push("/sde-bootcamp")}
-                        >
-                          Details
-                        </Button>
+                        <a href="/sde-bootcamp">
+                          <Button
+                            className={classes.btn}
+                            variant="contained"
+                            color="secondary"
+                          >
+                            Details
+                          </Button>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -250,14 +245,15 @@ function OurEvents() {
                           ready to ace through placements
                         </Typography>
                         <br />
-                        <Button
-                          className={classes.btn}
-                          variant="contained"
-                          color="secondary"
-                          onClick={() => history.push("/core-subjects")}
-                        >
-                          Details
-                        </Button>
+                        <a href="/core-subjects">
+                          <Button
+                            className={classes.btn}
+                            variant="contained"
+                            color="secondary"
+                          >
+                            Details
+                          </Button>
+                        </a>
                       </div>
                     </div>
                   </div>

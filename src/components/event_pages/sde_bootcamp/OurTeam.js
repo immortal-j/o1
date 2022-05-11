@@ -23,7 +23,8 @@ const useStyles = makeStyles((theme) => ({
     padding: "5px",
   },
   title: {
-    fontSize: "18px",
+    fontSize: "16px",
+    fontWeight: "bold",
   },
   logo: {
     color: "#2962ff",
@@ -40,7 +41,7 @@ export default function OurTeam() {
       <h2 className="lhead">Instructors</h2>
       <Grid container spacing={5} justifyContent="center">
         <Grid sm={4} item>
-          <Avatar src="" className={classes.photo} />
+          <Avatar src="aditya.jpeg" className={classes.photo} />
           <Typography className={classes.name}>Aditya Sharma</Typography>
           <Typography className={classes.title}>SDE at Persistent</Typography>
           <Typography>
@@ -65,6 +66,12 @@ export default function OurTeam() {
             Googler
             <br />
             Candidate master on codeforces
+          </Typography>
+          <Typography>
+            Hi, I'm Eshaan Gupta from IIT BHU. I am a Candidate Master on
+            Codeforces. Competitive programming improved my grip over DSA &
+            Problem Solving and helped me land an internship at Google India.
+            I'm here to guide you for the same.
           </Typography>
           <a
             href="https://www.linkedin.com/in/eshaan-gupta-6b5b081b2/"
