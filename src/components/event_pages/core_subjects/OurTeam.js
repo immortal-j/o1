@@ -65,7 +65,13 @@ export default function OurTeam() {
           <Avatar src="monica.jpeg" className={classes.photo} />
           <Typography className={classes.name}>Monica Dholwani</Typography>
           <Typography className={classes.title}>SDE at Fivetran</Typography>
-          <Typography></Typography>
+          <Typography>
+            Hi, I am Monica Dholwani. Well the thing I like the most is
+            mentoring, what better profession than teaching where my talking
+            skills can come in use! I believe that we can only gain knowledge
+            when we aim to spread it too. So I am here to share what I know and
+            learn what I don't know
+          </Typography>
           <a
             href="https://www.linkedin.com/in/monica-dholwani/"
             target="_blank"
