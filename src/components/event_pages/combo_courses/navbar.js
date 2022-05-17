@@ -8,6 +8,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Fade from "@material-ui/core/Fade";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faBars } from "@fortawesome/free-solid-svg-icons";
+
 const useStyles = makeStyles((theme) => ({
   title: {
     textAlign: "center",
@@ -97,27 +98,33 @@ export default function ButtonAppBar() {
           <a href="/">
             <img src={"logo2.svg"} height="50px" />
           </a>
-          <Typography className={classes.title}>O(1) Coding Club</Typography>
+          <Typography className={classes.title}>COMBO OFFERS</Typography>
           <div className={classes.menuSpace2}></div>
           <div className={classes.desktop}>
-            <Button href="#Landing" className={classes.btn}>
-              Home
+            <Button href="/aptitude" className={classes.btn} target="_blank">
+              Aptitude Series
             </Button>
-            <Button href="#Events" className={classes.btn}>
-              Events
+            <Button
+              href="/python-bootcamp"
+              className={classes.btn}
+              target="_blank"
+            >
+              Python Bootcamp
             </Button>
-            <Button href="#Alumni" className={classes.btn}>
-              Testimonials
+            <Button
+              href="/sde-bootcamp"
+              className={classes.btn}
+              target="_blank"
+            >
+              Complete SDE Bootcamp
             </Button>
-            <Button href="/combo" className={classes.btn}>
-              Combo Offers
+            <Button
+              href="/core-subjects"
+              className={classes.btn}
+              target="_blank"
+            >
+              Core Subjects Course
             </Button>
-            {/* <Button href="/coderun" target="__blank" className={classes.btn}>
-              CodeRun
-            </Button>
-            <Button href="/django" target="__blank" className={classes.btn}>
-              Django Workshop
-            </Button> */}
           </div>
           <Button
             className={classes.mobile}
@@ -143,21 +150,6 @@ export default function ButtonAppBar() {
             <Button onClick={handleClose}>
               <FontAwesomeIcon icon={faTimes} size="2x" color="#8739f9" />
             </Button>
-            <a className={classes.anchor} href="#Landing">
-              <MenuItem className={classes.menuitm} onClick={handleClose}>
-                Home
-              </MenuItem>
-            </a>
-            <a className={classes.anchor} href="#Events">
-              <MenuItem className={classes.menuitm} onClick={handleClose}>
-                Events
-              </MenuItem>
-            </a>
-            <a className={classes.anchor} href="#Alumni">
-              <MenuItem className={classes.menuitm} onClick={handleClose}>
-                Testimonials
-              </MenuItem>
-            </a>
             <a className={classes.anchor} href="/aptitude">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
                 Aptitude Series
@@ -176,11 +168,6 @@ export default function ButtonAppBar() {
             <a className={classes.anchor} href="/core-subjects">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
                 Core Subjects Course
-              </MenuItem>
-            </a>
-            <a className={classes.anchor} href="/combo">
-              <MenuItem className={classes.menuitm} onClick={handleClose}>
-                Combo Offers
               </MenuItem>
             </a>
           </Menu>

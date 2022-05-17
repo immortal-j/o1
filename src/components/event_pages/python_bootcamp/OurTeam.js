@@ -60,11 +60,17 @@ export default function OurTeam() {
         </Grid>
 
         <Grid sm={6} item>
-          <Avatar src="" className={classes.photo} />
+          <Avatar src="rohitdoshi.jpg" className={classes.photo} />
           <Typography className={classes.name}>Rohit Doshi</Typography>
           <Typography className={classes.title}>
             SDE-T at ZS Associates
             <br /> 2x ICPC Regionalist
+          </Typography>
+          <Typography>
+            Hi, I'm Rohit Doshi, and I had recieved multiple dream and super
+            dream offers because of my language and problem solving skills. Also
+            I am here to help you develop one of the most important and basic
+            skill in acing any interviews.
           </Typography>
           <a
             href="https://www.linkedin.com/in/rohit-bhavesh-doshi/"

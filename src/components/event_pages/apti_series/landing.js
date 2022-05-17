@@ -12,6 +12,7 @@ import Arr from "./featuresdata";
 import RegisterSteps from "./registerSteps";
 import Carousel from "./carousel";
 import Webinar from "./webinar";
+import Combo from "./combo";
 
 const useStyles = makeStyles((theme) => ({
   mar: {
@@ -135,6 +136,10 @@ function AptiSeriesLanding() {
         <p style={{ fontSize: "60px", fontWeight: "800" }}>How to Register?</p>
         <RegisterSteps />
       </section>
+
+      <hr />
+
+      <Combo />
 
       <hr />
 

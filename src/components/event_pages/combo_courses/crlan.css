@@ -187,6 +187,10 @@ a{
 .mar30 {
   margin: 30px;
 }
+.padlr{
+  padding-left: 30px;
+  padding-right: 30px;
+}
 .placedhead {
   font-size: 70px;
   font-weight: 600;
@@ -275,23 +279,4 @@ a{
 
 .wave3 .shape-fill {
   fill: #8739f9;
-}
-
-
-.combo-section {
-  background-image: url("../../../images/banner.png");
-  background-color: red;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* position: relative; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
-  /* padding: 30px 20vw 80px 20vw; */
-  min-height: 1080px;
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
-  /* padding: 160px 20vw; */
-  /* background-color: #61dafb; */
 }

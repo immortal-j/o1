@@ -42,7 +42,7 @@ export default function OurTeam() {
       <h2 className="lhead">Instructors</h2>
       <Grid container spacing={5} justifyContent="center">
         <Grid sm={6} item>
-          <Avatar src="rajatagrawal.png" className={classes.photo} />
+          <Avatar src="rajatagrawal.jpg" className={classes.photo} />
           <Typography className={classes.name}>R.S. Agrawal</Typography>
           <Typography className={classes.title}>
             Full Stack Engineer at Accenture

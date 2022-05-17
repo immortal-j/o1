@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Box, Typography, Grid, Avatar } from "@material-ui/core";
 import Lottie from "./lottie";
-import { findByPlaceholderText } from "@testing-library/react";
+
 const useStyles = makeStyles((theme) => ({
   title: {
     textAlign: "center",
@@ -72,13 +72,11 @@ function Landing() {
   const classes = useStyles();
   return (
     <div>
-      <section id="Landing">
+      <section id="Landing" style={{ marginTop: "5%", marginBottom: "5%" }}>
         <Box>
-          <br />
-          <br />
           <Typography className={classes.title}>O(1) Coding Club</Typography>
           <Typography className={classes.subtitle}>
-            Closer to your AMBITIONS, a step at a time.
+            Closer to your AMBITIONS, <br />a step at a time.
           </Typography>
           <Lottie />
           <Typography className={classes.aboutus}>About Us</Typography>
@@ -156,11 +154,35 @@ function Landing() {
             </Grid>
           </Grid>
         </Box>
-
-        <br></br>
-        <hr className={classes.hr} />
-        <br />
       </section>
+
+      <hr className={classes.hr} />
+
+      <section
+        className="purplebg"
+        style={{ marginBottom: "2%", marginTop: "2%", color: "white" }}
+      >
+        <Grid container justifyContent="center" spacing={6}>
+          <Grid item xs={6} sm={3}>
+            <p className="placedhead mar10 pcenter">100%</p>
+            <p className="placedsub mar10 pcenter">Placements</p>
+          </Grid>
+          <Grid item xs={6} sm={3}>
+            <p className="placedhead mar10 pcenter">50+</p>
+            <p className="placedsub mar10 pcenter">Dream Companies Cracked</p>
+          </Grid>
+          <Grid item xs={6} sm={3}>
+            <p className="placedhead mar10 pcenter">50+</p>
+            <p className="placedsub mar10 pcenter">Placed in Amazon</p>
+          </Grid>
+          <Grid item xs={6} sm={3}>
+            <p className="placedhead mar10 pcenter">500+</p>
+            <p className="placedsub mar10 pcenter">students placed</p>
+          </Grid>
+        </Grid>
+      </section>
+
+      <hr className={classes.hr} />
     </div>
   );
 }

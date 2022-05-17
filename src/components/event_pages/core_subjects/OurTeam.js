@@ -75,12 +75,18 @@ export default function OurTeam() {
         </Grid>
 
         <Grid sm={4} item>
-          <Avatar src="" className={classes.photo} />
+          <Avatar src="rohitdoshi.jpg" className={classes.photo} />
           <Typography className={classes.name}>Rohit Doshi</Typography>
           <Typography className={classes.title}>
             SDE at ZS Associates |<br /> 2x ICPC Regionalist
           </Typography>
-          <Typography></Typography>
+          <Typography>
+            Hi, I'm Rohit Doshi, and I had recieved multiple dream and super
+            dream offers because of my DSA and problem solving skills. Also I
+            have a great passion for teaching and making other people good at
+            problem solving skills. I am here to help you develop one of the
+            most important skills in acing any interviews.
+          </Typography>
           <a
             href="https://www.linkedin.com/in/rohit-bhavesh-doshi/"
             target="_blank"
@@ -88,18 +94,6 @@ export default function OurTeam() {
             <FontAwesomeIcon icon={faLinkedin} className={classes.logo} />
           </a>
         </Grid>
-
-        {/* <Grid sm={3} item>
-          <Avatar src="monica.jpeg" className={classes.photo} />
-          <Typography className={classes.name}>Monica Dholwani</Typography>
-          <Typography className={classes.title}>SDE at Fivetran</Typography>
-          <a
-            href="https://www.linkedin.com/in/monica-dholwani/"
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faLinkedin} className={classes.logo} />
-          </a>
-        </Grid> */}
       </Grid>
     </div>
   );
