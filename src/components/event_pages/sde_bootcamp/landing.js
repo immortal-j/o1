@@ -102,11 +102,11 @@ function SDEBootcampLanding() {
             <Typography className="shead black padlr">
               When it comes to placements, time is the big concern and most
               students give up on the most important skills because of time
-              constant. No worries, you can start from scratch and build up to
-              the highest level in this 45 days crash course. We'll cover every
-              topic important for placement, practice hard and work smart with
-              specially curated set of problems that includes standard as well
-              as the most frequently asked questions.
+              constraints. No worries, you can start from scratch and build up
+              to the highest level in this 45 days crash course. We'll cover
+              every topic important for placement, practice hard and work smart
+              with specially curated set of problems that includes standard as
+              well as the most frequently asked questions.
             </Typography>
           </Grid>
           {Arr.map((x, i) => {

@@ -41,25 +41,6 @@ export default function OurTeam() {
       <h2 className="lhead">Instructors</h2>
       <Grid container spacing={5} justifyContent="center">
         <Grid sm={4} item>
-          <Avatar src="aditya.jpeg" className={classes.photo} />
-          <Typography className={classes.name}>Aditya Sharma</Typography>
-          <Typography className={classes.title}>SDE at Persistent</Typography>
-          <Typography>
-            Hi, I am Aditya Sharma. I have experience of training more than 200
-            students for DSA and have my self aced many coding rounds of top IT
-            companies. I have landaded multiple superdream offers through
-            regular and systematic practice of DSA. I am here to guide you for
-            the same.
-          </Typography>
-          <a
-            href="https://in.linkedin.com/in/aditya-sharma-0b21a3197"
-            target="_blank"
-          >
-            <FontAwesomeIcon icon={faLinkedin} className={classes.logo} />
-          </a>
-        </Grid>
-
-        <Grid sm={4} item>
           <Avatar src="eshaangupta.jpg" className={classes.photo} />
           <Typography className={classes.name}>Eshaan Gupta</Typography>
           <Typography className={classes.title}>
@@ -75,6 +56,25 @@ export default function OurTeam() {
           </Typography>
           <a
             href="https://www.linkedin.com/in/eshaan-gupta-6b5b081b2/"
+            target="_blank"
+          >
+            <FontAwesomeIcon icon={faLinkedin} className={classes.logo} />
+          </a>
+        </Grid>
+
+        <Grid sm={4} item>
+          <Avatar src="aditya.jpeg" className={classes.photo} />
+          <Typography className={classes.name}>Aditya Sharma</Typography>
+          <Typography className={classes.title}>SDE at Persistent</Typography>
+          <Typography>
+            Hi, I am Aditya Sharma. I have experience of training more than 200
+            students for DSA and have my self aced many coding rounds of top IT
+            companies. I have landaded multiple superdream offers through
+            regular and systematic practice of DSA. I am here to guide you for
+            the same.
+          </Typography>
+          <a
+            href="https://in.linkedin.com/in/aditya-sharma-0b21a3197"
             target="_blank"
           >
             <FontAwesomeIcon icon={faLinkedin} className={classes.logo} />
