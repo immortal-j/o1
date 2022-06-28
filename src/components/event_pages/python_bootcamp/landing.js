@@ -51,7 +51,7 @@ function PythonBootcampLanding() {
           our highly rated training program
         </p>
         <br />
-        <p className="phead white ">Next Batch : June</p>
+        <p className="phead white ">Next Batch : Early July</p>
         {/* <a href="https://t.me/+gLuvqwwQsfY5OTQ1">
           <Button className={classes.btn}>Register for Webinar</Button>
         </a> */}
@@ -124,8 +124,8 @@ function PythonBootcampLanding() {
               marginTop: "-35px",
             }}
           >
-            Register fast to get our course at a flat{" "}
-            <font color="red"> 50% </font> discount
+            {/* Register fast to get our course at a flat{" "}
+            <font color="red"> 50% </font> discount */}
           </Typography>
         </Grid>
 

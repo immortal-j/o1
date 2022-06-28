@@ -91,7 +91,7 @@ export default function IncomeAgreement() {
               variant="h5"
               component="h2"
             >
-              INR 2000 <br />
+              INR 3000 <br />
               <strike style={{ color: "grey" }}> INR 5000 </strike>
             </Typography>
             <Typography className={classes.pos} color="textSecondary">

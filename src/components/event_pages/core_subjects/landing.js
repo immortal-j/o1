@@ -53,7 +53,7 @@ function CoreSubjectsLanding() {
         </p>
         <br />
         <p className="phead martop-15 white">Within just 15 days</p>
-        <p className="phead white ">Next Batch : June</p>
+        <p className="phead white ">Next Batch : Early July</p>
         {/* <a href="https://t.me/+gLuvqwwQsfY5OTQ1">
           <Button className={classes.btn}>Register for Webinar</Button>
         </a> */}

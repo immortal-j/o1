@@ -49,7 +49,7 @@ function SDEBootcampLanding() {
         <p className="phead martop-15 white">Master DSA + Problem Solving</p>
         <br />
         <p className="phead martop-15 white">in just 45 days</p>
-        <p className="phead white ">Next Batch : June</p>
+        <p className="phead white ">Next Batch : Early July</p>
         {/* <a href="https://t.me/+gLuvqwwQsfY5OTQ1">
           <Button className={classes.btn}>Register for Webinar</Button>
         </a> */}
@@ -133,7 +133,7 @@ function SDEBootcampLanding() {
             }}
           >
             Register fast to get our course at a flat{" "}
-            <font color="red"> 60% </font> discount
+            <font color="red"> 40% </font> discount
           </Typography>
         </Grid>
 
