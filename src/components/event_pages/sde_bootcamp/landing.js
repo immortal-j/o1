@@ -1,18 +1,19 @@
-import "./crlan.css";
+import "../crlan.css";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Typography, Button } from "@material-ui/core";
 
-import Navbar from "./navbar";
-import Placedata from "./placeddata";
-import Card from "./card";
+import Navbar from "../navbar";
+import Placedata from "../placeddata";
+import Card from "../card";
+import Footer from "../Footer";
+import Carousel from "../carousel";
+import Webinar from "../webinar";
+import Combo from "../combo";
+import RegisterSteps from "../registerSteps";
+
 import IncomeAgreement from "./incomeAgreement";
 import OurTeam from "./OurTeam";
-import Footer from "./Footer";
 import Arr from "./featuresdata";
-import RegisterSteps from "./registerSteps";
-import Carousel from "./carousel";
-import Webinar from "./webinar";
-import Combo from "./combo";
 
 const useStyles = makeStyles((theme) => ({
   mar: {
@@ -40,7 +41,7 @@ function SDEBootcampLanding() {
   return (
     <div>
       <div className="navsection">
-        <Navbar />
+        <Navbar title={"SDE Bootcamp"} />
       </div>
 
       <section className="section1">
@@ -49,7 +50,7 @@ function SDEBootcampLanding() {
         <p className="phead martop-15 white">Master DSA + Problem Solving</p>
         <br />
         <p className="phead martop-15 white">in just 45 days</p>
-        <p className="phead white ">Next Batch : Early July</p>
+        <p className="phead white ">Next Batch : Mid July</p>
         {/* <a href="https://t.me/+gLuvqwwQsfY5OTQ1">
           <Button className={classes.btn}>Register for Webinar</Button>
         </a> */}
@@ -124,17 +125,6 @@ function SDEBootcampLanding() {
       <section className="section4" id="plans">
         <Grid sm={12}>
           <p style={{ fontSize: "60px", fontWeight: "800" }}>Pricing</p>
-          <Typography
-            style={{
-              fontSize: "20px",
-              fontWeight: "600",
-              margin: "50px",
-              marginTop: "-35px",
-            }}
-          >
-            Register fast to get our course at a flat{" "}
-            <font color="red"> 40% </font> discount
-          </Typography>
         </Grid>
 
         <Grid sm={12}>
@@ -146,7 +136,11 @@ function SDEBootcampLanding() {
 
       <section className="section6" id="register">
         <p style={{ fontSize: "60px", fontWeight: "800" }}>How to Register?</p>
-        <RegisterSteps />
+        <RegisterSteps
+          googleForm={
+            "https://docs.google.com/forms/d/e/1FAIpQLSdUu5GVble6fw8wyeO6nC6uKh2LQhFbrq79qXdgTkITbe5TJQ/viewform?usp=sf_link"
+          }
+        />
       </section>
 
       <hr />
@@ -155,12 +149,12 @@ function SDEBootcampLanding() {
 
       <hr />
 
-      <section className="section6">
+      {/* <section className="section6">
         <p style={{ fontSize: "60px", fontWeight: "800" }}>
           Still have doubts?
         </p>
         <Webinar />
-      </section>
+      </section> */}
 
       <hr />
 

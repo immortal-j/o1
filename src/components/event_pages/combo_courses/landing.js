@@ -1,11 +1,11 @@
-import "./crlan.css";
+import "../crlan.css";
 import { makeStyles } from "@material-ui/core/styles";
 
 import Navbar from "./navbar";
-import RegisterSteps from "./registerSteps";
-import Footer from "./Footer";
-import Webinar from "./webinar";
-import Combo from "./combo";
+import RegisterSteps from "../registerSteps";
+import Footer from "../Footer";
+import Webinar from "../webinar";
+import Combo from "../combo";
 
 const useStyles = makeStyles((theme) => ({}));
 
@@ -23,7 +23,11 @@ function ComboCoursesLanding() {
 
       <section className="section6" id="register" style={{ marginTop: "-5%" }}>
         <p style={{ fontSize: "60px", fontWeight: "800" }}>How to Register?</p>
-        <RegisterSteps />
+        <RegisterSteps
+          googleForm={
+            "https://docs.google.com/forms/d/e/1FAIpQLSdE25NO5_8cmGUXDcV82kfZMzUgf1E0hf7qkeGdmR8HinwAsg/viewform?usp=sf_link"
+          }
+        />
       </section>
 
       <hr />

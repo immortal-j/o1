@@ -1,18 +1,19 @@
-import "./crlan.css";
+import "../crlan.css";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Typography, Button } from "@material-ui/core";
 
-import Navbar from "./navbar";
-import Placedata from "./placeddata";
-import Card from "./card";
+import Navbar from "../navbar";
+import Placedata from "../placeddata";
+import Card from "../card";
+import Footer from "../Footer";
+import Carousel from "../carousel";
+import Webinar from "../webinar";
+import Combo from "../combo";
+import RegisterSteps from "../registerSteps";
+
 import IncomeAgreement from "./incomeAgreement";
 import OurTeam from "./OurTeam";
-import Footer from "./Footer";
 import Arr from "./featuresdata";
-import RegisterSteps from "./registerSteps";
-import Carousel from "./carousel";
-import Webinar from "./webinar";
-import Combo from "./combo";
 
 const useStyles = makeStyles((theme) => ({
   mar: {
@@ -40,7 +41,7 @@ function PythonBootcampLanding() {
   return (
     <div>
       <div className="navsection">
-        <Navbar />
+        <Navbar title={"Python Bootcamp"} />
       </div>
 
       <section className="section1">
@@ -138,7 +139,11 @@ function PythonBootcampLanding() {
 
       <section className="section6" id="register">
         <p style={{ fontSize: "60px", fontWeight: "800" }}>How to Register?</p>
-        <RegisterSteps />
+        <RegisterSteps
+          googleForm={
+            "https://docs.google.com/forms/d/e/1FAIpQLSfDqkv--n0gaKm0QkuK1OrKcRQlB_gXkPgqbECmeJyHTEzJBQ/viewform?usp=sf_link"
+          }
+        />
       </section>
 
       <hr />

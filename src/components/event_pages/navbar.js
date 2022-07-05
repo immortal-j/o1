@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -98,7 +98,7 @@ export default function ButtonAppBar() {
           <a href="/">
             <img src={"logo2.svg"} height="50px" />
           </a>
-          <Typography className={classes.title}>Apti Series</Typography>
+          <Typography className={classes.title}>{props.title}</Typography>
           <div className={classes.menuSpace2}></div>
           <div className={classes.desktop}>
             <Button href="#" className={classes.btn}>

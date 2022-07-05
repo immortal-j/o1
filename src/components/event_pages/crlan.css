@@ -8,7 +8,7 @@
   align-items: center;
   padding: 30px 20vw 80px 20vw;
   min-height: 600px;
-  background:url("../../../images/intro.jpg") rgba(0,0,0,0.5);
+  background:url("../../images/intro.jpg") rgba(0,0,0,0.5);
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: multiply;
@@ -187,7 +187,6 @@ a{
 .mar30 {
   margin: 30px;
 }
-
 .padlr{
   padding-left: 30px;
   padding-right: 30px;

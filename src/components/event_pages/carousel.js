@@ -45,7 +45,7 @@ const data = [
     linkedin: "https://www.linkedin.com/in/bhumikanagrecha/",
   },
   {
-    name: "Monica Dholwani | SDE Intern @ Fivetran",
+    name: "Monica Dholwani | SDE @ Fivetran",
     label: `O(1) Coding Club helped me achieve this opportunity. My mentors were always there to guide & train me.
     Initially I was not good at coding, I didn't even know what competitive coding is!
     All thanks to CodeRun program which helped me improve my coding skills and achieve a super dream job!`,
@@ -53,7 +53,7 @@ const data = [
     linkedin: "https://www.linkedin.com/in/monica-dholwani/",
   },
   {
-    name: "Halry Bhalodia | SDE-T Intern @ ZS Associates",
+    name: "Halry Bhalodia | SDE-T @ ZS Associates",
     label: `At first, I didn't know where to start so I talked to mentors in O(1), they helped me from the beginning till the time I got placed in a Dream company, and even after that.
     With the help of Coderun, I could set a target for every day to practice coding questions and track my progress which helped me find out my weak topics and suggest related questions for more practice.
     Also, I could secure the Runner up position in Top Women Coders of Regional Challenge by Capgemini by practicing coding questions in coderun.`,
@@ -61,7 +61,7 @@ const data = [
     linkedin: "https://www.linkedin.com/in/monica-dholwani/",
   },
   {
-    name: "Aditya Sharma | SDE Intern @ Persistent",
+    name: "Aditya Sharma | SDE @ Kickdrum",
     label: `I am associated with O(1) coding club for a long time and gained a lot of knowledge regarding coding and placements through it.
     With the help of different sessions conducted by O(1) coding club, I was able to bag dream package placements with offers like SDE at Persistent Systems and SDE-T at ZS associates.
     O1 also helped me in my second year to bag summer internship at Microland Ltd. with their guidance.
@@ -70,16 +70,16 @@ const data = [
     linkedin: "https://www.linkedin.com/in/aditya-sharma-0b21a3197/",
   },
   {
-    name: "Rohit Doshi | SDE-T Intern @ ZS Associates",
+    name: "Rohit Doshi | SDE @ Amazon",
     label: `Back in my 2nd year, I was clueless about what skills were needed to be in a good company.
     Mentors at O(1) Coding Club showed me the path to follow to land a great job.
     What I understood was to trust the process and keep on enhancing my knowledge and expertise on the basics.
     If it weren't for O(1) coding club, I would've known this too late and might not have landed the job that I have now.`,
-    imgPath: "rohit.jpeg",
+    imgPath: "rohitdoshi.jpg",
     linkedin: "https://www.linkedin.com/in/rohit-bhavesh-doshi/",
   },
   {
-    name: "Tejas Tapas | SDE Intern @ ULA",
+    name: "Tejas Tapas | SDE @ ULA",
     label: `I was a part of the O(1) Coding Club for the last 1 year where I participated in some of their initiatives like CPL, coderun and aptitude series.
     I got to learn in a competitive environment with like-minded students and improve DSA and CP skills.
     The coding question which I solved during the CodeRun program highly benefited me in all companies Online Assessment and Interview rounds.`,
@@ -189,7 +189,14 @@ function Carousel() {
 
           <Grid item xs={12} sm={12}>
             <Typography className={classes.title}>
-             <a style={{textDecoration:'none',color:'#fff'}} href={data[activeStep].linkedin} target="_blank"> {data[activeStep].name}</a>
+              <a
+                style={{ textDecoration: "none", color: "#fff" }}
+                href={data[activeStep].linkedin}
+                target="_blank"
+              >
+                {" "}
+                {data[activeStep].name}
+              </a>
             </Typography>
           </Grid>
 

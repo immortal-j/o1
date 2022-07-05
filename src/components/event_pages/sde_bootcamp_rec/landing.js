@@ -36,26 +36,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function AptiSeriesLanding() {
+function SDEBootcampRecLanding() {
   const classes = useStyles();
   return (
     <div>
       <div className="navsection">
-        <Navbar title={"Apti Series"} />
+        <Navbar title={"SDE Bootcamp"} />
       </div>
 
       <section className="section1">
-        <h1 className="mhead white martop-35">Aptitude Series 2022</h1>
         <br />
-        <p className="phead martop-15 white">
-          A tailor made program to handle the requirement
-          <br /> hurdles of different formats
-        </p>
+        <h1 className="mhead white martop-35">The Complete SDE Bootcamp</h1>
         <br />
-        <p className="phead white ">Next Batch : Early July</p>
-        {/* <a href="https://t.me/+gLuvqwwQsfY5OTQ1">
-          <Button className={classes.btn}>Register for Webinar</Button>
-        </a> */}
+        <p className="phead martop-15 white">Master DSA + Problem Solving</p>
+        <br />
+        <p className="phead martop-15 white">in just 45 days</p>
         <a href="#register">
           <Button className={classes.btn}>Register Now</Button>
         </a>
@@ -64,16 +59,24 @@ function AptiSeriesLanding() {
       <section className="purplebg section2">
         <Grid container justifyContent="center" spacing={6}>
           <Grid item xs={3} sm={3}>
-            <p className="placedhead mar10 pcenter">20+</p>
-            <p className="placedsub mar10 pcenter">Aptitude Tests</p>
+            <p className="placedhead mar10 pcenter">25+</p>
+            <p className="placedsub mar10 pcenter">
+              Hours of recorded sessions
+            </p>
           </Grid>
           <Grid item xs={3} sm={3}>
-            <p className="placedhead mar10 pcenter">3+</p>
-            <p className="placedsub mar10 pcenter">Tests Per Company</p>
+            <p className="placedhead mar10 pcenter">100+</p>
+            <p className="placedsub mar10 pcenter">
+              Most Frequently Asked Questions
+            </p>
           </Grid>
           <Grid item xs={3} sm={3}>
-            <p className="placedhead mar10 pcenter">50+</p>
-            <p className="placedsub mar10 pcenter">Hand Picked Resources </p>
+            <p className="placedhead mar10 pcenter">100+</p>
+            <p className="placedsub mar10 pcenter">Handpicked Questions</p>
+          </Grid>
+          <Grid item xs={3} sm={3}>
+            <p className="placedhead mar10 pcenter">500+</p>
+            <p className="placedsub mar10 pcenter">students placed</p>
           </Grid>
         </Grid>
       </section>
@@ -96,7 +99,15 @@ function AptiSeriesLanding() {
         <Grid container justifyContent="center" spacing={6}>
           <Grid sm={12}>
             <p className="lhead black mar80">Features</p>
-            <Typography className="shead black mar30"></Typography>
+            <Typography className="shead black padlr">
+              When it comes to placements, time is the big concern and most
+              students give up on the most important skills because of time
+              constraints. No worries, you can start from scratch and build up
+              to the highest level in this 45 days crash course. We'll cover
+              every topic important for placement, practice hard and work smart
+              with specially curated set of problems that includes standard as
+              well as the most frequently asked questions.
+            </Typography>
           </Grid>
           {Arr.map((x, i) => {
             return (
@@ -113,19 +124,7 @@ function AptiSeriesLanding() {
       <section className="section4" id="plans">
         <Grid sm={12}>
           <p style={{ fontSize: "60px", fontWeight: "800" }}>Pricing</p>
-          <Typography
-            style={{
-              fontSize: "20px",
-              fontWeight: "600",
-              margin: "50px",
-              marginTop: "-35px",
-            }}
-          >
-            {/* Register fast to get our course at a flat{" "}
-            <font color="red"> 50% </font> discount */}
-          </Typography>
         </Grid>
-
         <Grid sm={12}>
           <IncomeAgreement />
         </Grid>
@@ -137,22 +136,9 @@ function AptiSeriesLanding() {
         <p style={{ fontSize: "60px", fontWeight: "800" }}>How to Register?</p>
         <RegisterSteps
           googleForm={
-            "https://docs.google.com/forms/d/e/1FAIpQLSchaynZ00IkIUKSDolaX0MdhHBmt7jZ-og_AMuzBqpqcXXAbg/viewform?usp=sf_link"
+            "https://docs.google.com/forms/d/e/1FAIpQLSdUu5GVble6fw8wyeO6nC6uKh2LQhFbrq79qXdgTkITbe5TJQ/viewform?usp=sf_link"
           }
         />
-      </section>
-
-      <hr />
-
-      <Combo />
-
-      <hr />
-
-      <section className="section6">
-        <p style={{ fontSize: "60px", fontWeight: "800" }}>
-          Still have doubts?
-        </p>
-        <Webinar />
       </section>
 
       <hr />
@@ -189,4 +175,4 @@ function AptiSeriesLanding() {
   );
 }
 
-export default AptiSeriesLanding;
+export default SDEBootcampRecLanding;

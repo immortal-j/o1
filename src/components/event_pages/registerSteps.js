@@ -50,7 +50,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function RegisterSteps() {
+export default function RegisterSteps(props) {
   const classes = useStyles();
 
   return (
@@ -133,7 +133,7 @@ export default function RegisterSteps() {
                   >
                     Submit your application in{" "}
                     <a
-                      href="https://docs.google.com/forms/d/e/1FAIpQLSchaynZ00IkIUKSDolaX0MdhHBmt7jZ-og_AMuzBqpqcXXAbg/viewform?usp=sf_link"
+                      href={props.googleForm}
                       target="_blank"
                       className={classes.anc}
                     >
