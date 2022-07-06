@@ -15,9 +15,11 @@
   /* padding: 160px 20vw; */
   /* background-color: #61dafb; */
 }
+
 a{
   text-decoration: none;
 }
+
 .section2 {
   position: relative;
   display: flex;

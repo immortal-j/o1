@@ -9,6 +9,7 @@ import SDEBootcampLanding from "./components/event_pages/sde_bootcamp/landing";
 import SDEBootcampRecLanding from "./components/event_pages/sde_bootcamp_rec/landing";
 import AptiSeriesLanding from "./components/event_pages/apti_series/landing";
 import ComboCoursesLanding from "./components/event_pages/combo_courses/landing";
+import OfflineCoursesLanding from "./components/event_pages/offline_courses/landing";
 
 const Loginloader = lazy(() => import("./components/Coderun/Loginloader"));
 
@@ -21,6 +22,9 @@ function Loader() {
         </Route>
         <Route exact path="/coderun">
           <CoderunLanding />
+        </Route>
+        <Route exact path="/offline-courses">
+          <OfflineCoursesLanding />
         </Route>
         {/* <Route exact path="/django">
           <DjangoLanding />
