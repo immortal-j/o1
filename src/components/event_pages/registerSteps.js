@@ -147,6 +147,20 @@ export default function RegisterSteps(props) {
             </CardContent>
           </Card>
         </Grid>
+
+        <Typography
+          variant="h7"
+          style={{
+            margin: "auto",
+            fontWeight: "bold",
+            marginTop: "3%",
+            paddingLeft: "5%",
+            paddingRight: "5%",
+          }}
+        >
+          * You will get access to course within 24-48 hours of filling the
+          form.
+        </Typography>
       </Grid>
     </div>
   );

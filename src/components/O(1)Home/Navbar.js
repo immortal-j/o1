@@ -109,9 +109,9 @@ export default function ButtonAppBar() {
             <Button href="#Alumni" className={classes.btn}>
               Testimonials
             </Button>
-            <Button href="/combo" className={classes.btn}>
+            {/* <Button href="/combo" className={classes.btn}>
               Combo Offers
-            </Button>
+            </Button> */}
             {/* <Button href="/coderun" target="__blank" className={classes.btn}>
               CodeRun
             </Button>
@@ -158,7 +158,7 @@ export default function ButtonAppBar() {
                 Testimonials
               </MenuItem>
             </a>
-            <a className={classes.anchor} href="/aptitude">
+            {/* <a className={classes.anchor} href="/aptitude">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
                 Aptitude Series
               </MenuItem>
@@ -182,7 +182,7 @@ export default function ButtonAppBar() {
               <MenuItem className={classes.menuitm} onClick={handleClose}>
                 Combo Offers
               </MenuItem>
-            </a>
+            </a> */}
           </Menu>
         </Toolbar>
       </AppBar>

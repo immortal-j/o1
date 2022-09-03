@@ -31,11 +31,11 @@ function Loader() {
         </Suspense>
       </Fade>
 
-      <Fade>
+      {/* <Fade>
         <Suspense fallback={<Preload />}>
           <Combo />
         </Suspense>
-      </Fade>
+      </Fade> */}
 
       <Fade>
         <Suspense fallback={<Preload />}>

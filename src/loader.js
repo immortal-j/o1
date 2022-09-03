@@ -10,6 +10,7 @@ import SDEBootcampRecLanding from "./components/event_pages/sde_bootcamp_rec/lan
 import AptiSeriesLanding from "./components/event_pages/apti_series/landing";
 import ComboCoursesLanding from "./components/event_pages/combo_courses/landing";
 import OfflineCoursesLanding from "./components/event_pages/offline_courses/landing";
+import CoreSubjectsRecLanding from "./components/event_pages/core_subjects_recorded/landing";
 
 const Loginloader = lazy(() => import("./components/Coderun/Loginloader"));
 
@@ -31,6 +32,9 @@ function Loader() {
         </Route> */}
         <Route exact path="/core-subjects">
           <CoreSubjectsLanding />
+        </Route>
+        <Route exact path="/coresubjects-crashcourse">
+          <CoreSubjectsRecLanding />
         </Route>
         <Route exact path="/python-bootcamp">
           <PythonBootcampLanding />
