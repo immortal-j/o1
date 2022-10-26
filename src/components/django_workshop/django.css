@@ -7,7 +7,7 @@
   align-items: center;
   padding: 30px 20vw 80px 20vw;
   min-height: 600px;
-  background: url("../../../images/intro.jpg") rgba(0, 0, 0, 0.5);
+  background: url("../../images/intro.jpg") rgba(0, 0, 0, 0.5);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -85,7 +85,7 @@ a {
 
 @media screen and (max-width: 480px) {
   .section_django {
-    background: url("../../../images/intro.jpg") rgba(0, 0, 0, 0.5);
+    background: url("../../images/intro.jpg") rgba(0, 0, 0, 0.5);
     background-repeat: no-repeat;
     background-position: center;
     background-blend-mode: multiply;

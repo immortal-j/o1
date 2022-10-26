@@ -27,15 +27,14 @@ const useStyles = makeStyles((theme) => ({
     padding: "15px",
     marginTop: "25px",
     textDecoration: "none",
-    transition:"1s",
+    transition: "1s",
     [theme.breakpoints.down("xs")]: {
       fontSize: "15px",
     },
-    "&:hover":{
-      backgroundImage:'linear-gradient(120deg,#3571a3 50%,#fed142 50%)',
+    "&:hover": {
+      backgroundImage: "linear-gradient(120deg,#3571a3 50%,#fed142 50%)",
     },
   },
-  
 }));
 function DjangoLanding() {
   const classes = useStyles();
@@ -62,16 +61,22 @@ function DjangoLanding() {
         {/* <div className="pos2">
           <Lotie />
         </div> */}
+        <p className="phead martop-15 white bold">
+          100% &nbsp;FREE &nbsp;EVENT
+        </p>
         <br />
-        <p className="phead martop-15 white bold">Upskill &nbsp;your  &nbsp;resume &nbsp; with &nbsp; the&nbsp;  most&nbsp;  trending &nbsp; skill &nbsp; in &nbsp; the &nbsp; industry</p>
+        <p className="phead martop-15 white bold">
+          Upskill &nbsp;your &nbsp;resume &nbsp; with &nbsp; the&nbsp;
+          most&nbsp; trending &nbsp; skill &nbsp; in &nbsp; the &nbsp; industry
+        </p>
         <br />
 
-        <p className="phead white ">Date : 1st-4th April 2022</p>
+        <p className="phead white ">Date : 28th-30th October 2022</p>
         {/* <a href="https://t.me/+gLuvqwwQsfY5OTQ1">
           <Button className={classes.btn}>Register for Webinar</Button>
         </a> */}
-        <a href="#register">
-          <Button className={classes.btn}>Apply</Button>
+        <a href="https://chat.whatsapp.com/FoSKjyATS4A9SOs84d00aY">
+          <Button className={classes.btn}>Register</Button>
         </a>
 
         {/* <Wave /> */}
@@ -144,10 +149,10 @@ function DjangoLanding() {
         </Grid>
       </section>
 
-      <section className="section4" id="register">
+      {/* <section className="section4" id="register">
         <p class="lhead">How to Register?</p>
         <RegisterSteps />
-      </section>
+      </section> */}
 
       {/* <section className="section6">
         <Placedata />

@@ -110,7 +110,7 @@ export default function ButtonAppBar() {
             <Button href="#plans" className={classes.btn}>
               You Get
             </Button>
-            <Button href="#register" className={classes.btn}>
+            <Button href="https://chat.whatsapp.com/FoSKjyATS4A9SOs84d00aY" className={classes.btn}>
               Register
             </Button>
            
@@ -157,7 +157,7 @@ export default function ButtonAppBar() {
                 You Get
               </MenuItem>
             </a>
-            <a className={classes.anchor} href="#register">
+            <a className={classes.anchor} href="https://chat.whatsapp.com/FoSKjyATS4A9SOs84d00aY">
               <MenuItem className={classes.menuitm} onClick={handleClose}>
                 Register
               </MenuItem>

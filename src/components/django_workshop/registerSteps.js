@@ -9,11 +9,12 @@ const useStyles = makeStyles({
     minWidth: 275,
     transition: "0.5s",
     textAlign: "left",
+    marginTop: "-10px",
+    border: "2px solid transparent",
+    borderImageSlice: "1",
+    animation: "$myEffect 3000ms linear infinite",
     "&:hover": {
-      marginTop: "-10px",
-      border: "2px solid transparent",
-      borderImageSlice: "1",
-      animation: "$myEffect 3000ms linear infinite",
+     
     },
   },
   "@keyframes myEffect": {
@@ -36,6 +37,7 @@ const useStyles = makeStyles({
   title: {
     fontSize: "25px",
     fontWeight: 600,
+    textAlign: "center",
   },
   pos: {
     marginTop: 12,
@@ -55,7 +57,7 @@ export default function RegisterSteps() {
 
   return (
     <Grid sm={12} container justifyContent="center" spacing={3}>
-      <Grid sm={4} item>
+      {/* <Grid sm={4} item>
         <Card className={classes.root}>
           <CardContent>
             <Grid container spacing={3}>
@@ -96,13 +98,13 @@ export default function RegisterSteps() {
             </Grid>
           </CardContent>
         </Card>
-      </Grid>
+      </Grid> */}
 
-      <Grid sm={4} item>
+      <Grid sm={8} item>
         <Card className={classes.root}>
           <CardContent>
-            <Grid container spacing={3}>
-              <Grid
+            <Grid container spacing={3} justifyContent='center'>
+              {/* <Grid
                 container
                 justifyContent="center"
                 item
@@ -115,9 +117,9 @@ export default function RegisterSteps() {
                   component="h2"
                   style={{ margin: "auto" }}
                 >
-                  2
+                  1
                 </Typography>
-              </Grid>
+              </Grid> */}
               <Grid item sm={10} xs={10}>
                 <Typography
                   variant="h5"

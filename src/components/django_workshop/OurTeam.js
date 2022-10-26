@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   large: {
     width: theme.spacing(35),
     height: theme.spacing(35),
-    marginLeft:'65px',
+    marginLeft:'70px',
     [theme.breakpoints.down('xs')]: {
       marginLeft:'0px',
     },
@@ -61,8 +61,7 @@ export default function OurTeam() {
         <Grid sm={4} item>
           <Avatar src="rishabh1.jpg" className={classes.large} />
           <Typography style={{ fontSize: "18px" }} className={classes.mar}>Rishabh Rathi</Typography>
-          <Typography style={{ fontSize: "12px"}} className={classes.mar}> &bull;VMware <br/>
-          &bull; World Rank 3 at Code Gladiators <br/> &bull; ICPC Regionalist <br/> &bull; World Rank 2 Capgemini Tech Challenge</Typography>
+          <Typography style={{ fontSize: "12px"}} className={classes.mar}> SDE At Amazon | ICPC Regionalist </Typography>
           <a href="https://www.linkedin.com/in/rishabhrathi22/" target="_blank"  className={classes.mar}>
             <FontAwesomeIcon
               icon={faLinkedin}
@@ -70,18 +69,17 @@ export default function OurTeam() {
             ></FontAwesomeIcon>
           </a>
         </Grid>
-        {/* <Grid sm={4} item>
+        <Grid sm={4} item>
           <Avatar src="aditya.jpeg" className={classes.large} />
           <Typography style={{ fontSize: "18px"}} className={classes.mar}>Aditya Sharma</Typography>
-          <Typography style={{ fontSize: "12px"}}>SDE at Amazon |
-3x ICPC Regionalist</Typography>
-          <a href="https://www.linkedin.com/in/saurabh-talmale-639861157/" target="_blank"  className={classes.mar}>
+          <Typography style={{ fontSize: "12px"}} className={classes.mar}>SDE at Akamai Technologies</Typography>
+          <a href="https://in.linkedin.com/in/aditya-sharma-0b21a3197" target="_blank"  className={classes.mar}>
             <FontAwesomeIcon
               icon={faLinkedin}
               style={{ color: "#2962ff", fontSize: "20p className={classes.mar}x" }}
             ></FontAwesomeIcon>
           </a>
-        </Grid> */}
+        </Grid>
         {/* <Grid sm={4} item>
           <Avatar src="monica.jpeg" className={classes.large} />
           <Typography style={{ fontSize: "18px" }} className={classes.mar}>Monica Dholwani</Typography>
