@@ -71,7 +71,7 @@ function DjangoLanding() {
         </p>
         <br />
 
-        <p className="phead white ">Date : 28th-30th October 2022</p>
+        <p className="phead white ">Date : 11th - 13th November 2022</p>
         {/* <a href="https://t.me/+gLuvqwwQsfY5OTQ1">
           <Button className={classes.btn}>Register for Webinar</Button>
         </a> */}
